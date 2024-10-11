@@ -1,0 +1,9 @@
+- src
+    - assets: Imágenes/fotos
+    - auxiliar-classes: Clases de ayuda.
+        - BackendCaller: Para realizar llamadas a la API.
+    - components: Componentes para cada page. Los componentes compartidos usados por más de una page van en shared-components.
+    - context-providers: Por ahora sólo se provee el contexto de autorización.
+    - pages: Páginas que se renderizan según la ruta.
+    - routes: Definición de rutas públicas y privadas.
+    - styles: Estilos

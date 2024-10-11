@@ -12,9 +12,7 @@ function AppRouter() {
   return (
     <>
       <PublicRoutes />
-      {
-        isAuthorizated && (<PrivateRoutes />)
-      }
+      {isAuthorizated && (<PrivateRoutes />)}
     </>
   )
 }
