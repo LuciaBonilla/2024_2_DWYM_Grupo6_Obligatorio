@@ -1,0 +1,204 @@
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    html {
+        font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
+
+        background-color: #f47f5f;
+    }
+
+    .login-page {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        font-size: 30px;
+    }
+
+    .login-page__logo {
+        width: auto;
+        height: 20cqh;
+
+        background-color: #004856;
+
+        padding: 10px 20px 0 20px;
+        border-radius: 100%;
+
+        object-fit: cover;
+    }
+
+    .login-page__social-network-title {
+        font-size: 8cqh;
+        text-shadow: 2px 2px 4px #004856;
+
+        color: #39bcd6;
+
+        margin-top: 30px;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        row-gap: 4cqh;
+
+        background-color: #f4967c;
+
+        padding: 10px;
+
+        border-radius: 10px;
+
+        margin-top: 60px;
+    }
+
+    .login-form__input-container {
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 10px;
+
+        font-weight: bold;
+
+        color: #00333d;
+    }
+
+    .login-form__input {
+        width: 400px;
+        height: 60px;
+
+        border-radius: 10px;
+        padding-left: 50px;
+
+        color: #00333d;
+        background-color: #ffe3d4;
+    }
+
+    .login-form__input-icon {
+        position: absolute;
+        font-size: 32px;
+        padding: 55px 0 0 10px;
+    }
+
+    .login-form__ok-button {
+        width: 300px;
+        height: 40px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: #eb5535;
+        color: #ffe3d4;
+    }
+
+    .login-form__ok-button:hover {
+        background-color: #a93920;
+        color: #ccaa98;
+    }
+
+    .login-page__go-to-register-page-button {
+        width: 300px;
+        height: 40px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: #39bcd6;
+        color: #00333d;
+
+        margin-top: 10px;
+    }
+
+    .login-page__go-to-register-page-button:hover {
+        background-color: #22889c;
+        color: #024957;
+    }
+
+    @keyframes popup {
+        from {
+            transform: scale(0)
+        }
+
+        80% {
+            transform: scale(1.1)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    .unsuccessful-login-message {
+        animation: popup 0.7s;
+
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .unsuccessful-login-message__text {
+        text-align: center;
+
+        background-color: #00333d;
+        color: #ffe3d4;
+
+        width: 90vw;
+        height: 90vh;
+
+        padding: 20cqh 0 0 0;
+        border-radius: 10px;
+
+        position: absolute;
+    }
+
+    .unsuccessful-login-message__icon {
+        font-size: 15cqh;
+
+        position: absolute;
+
+        top: 50cqh;
+
+        color: #eb5535;
+    }
+
+    .unsuccessful-login-message__hide-button {
+        position: relative;
+
+        width: 150px;
+        height: 40px;
+
+        margin-top: 10px;
+        top: 30cqh;
+
+        border-radius: 10px;
+
+        background-color: #eb5535;
+        color: #ffe3d4;
+
+        font-weight: bold;
+    }
+
+    .unsuccessful-login-message__hide-button:hover {
+        background-color: #a93920;
+        color: #ccaa98;
+    }
+}
+
