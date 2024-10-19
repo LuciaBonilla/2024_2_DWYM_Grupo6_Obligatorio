@@ -1,9 +1,12 @@
 export class BackendCaller {
-    static #API_URL = "http://localhost:3001/api";
+    /**
+     * Identificador de la API.
+     */
+    static #API_URI = "http://localhost:3001/api";
 
     static async register(username, email, password) {
         try {
-            const response = await fetch(this.#API_URL + "/auth/register",
+            const response = await fetch(this.#API_URI + "/auth/register",
                 {
                     method: "POST",
                     headers: {
@@ -19,9 +22,12 @@ export class BackendCaller {
                 }
             );
 
+            const statusCode = response.status;
+
             // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
             const data = await response.json();
-            return data;
+
+            return { statusCode, data };
         } catch (error) {
             console.error("Error al registrar:", error);
         }
@@ -29,7 +35,7 @@ export class BackendCaller {
 
     static async login(email, password) {
         try {
-            const response = await fetch(this.#API_URL + "/auth/register",
+            const response = await fetch(this.#API_URI + "/auth/login",
                 {
                     method: "POST",
                     headers: {
@@ -44,9 +50,12 @@ export class BackendCaller {
                 }
             );
 
+            const statusCode = response.status;
+
             // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
             const data = await response.json();
-            return data;
+
+            return { statusCode, data };
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
         }
@@ -54,7 +63,7 @@ export class BackendCaller {
 
     static async getFeed(token) {
         try {
-            const response = await fetch(this.#API_URL + "/posts/feed",
+            const response = await fetch(this.#API_URI + "/posts/feed",
                 {
                     method: "POST",
                     headers: {
@@ -63,9 +72,12 @@ export class BackendCaller {
                 }
             );
 
+            const statusCode = response.status;
+
             // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
             const data = await response.json();
-            return data;
+
+            return { statusCode, data };
         } catch (error) {
             console.error("Error al obtener el feed:", error);
         }

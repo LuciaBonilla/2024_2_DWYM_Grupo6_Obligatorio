@@ -3,15 +3,23 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 // ESTILOS.
-import "./styles/index.css";
+import "normalize.css";
+import "./styles/mobile/LoginPage.css";
+import "./styles/tablet/LoginPage.css";
+import "./styles/desktop/LoginPage.css";
 
 // COMPONENTES.
 import AppRouter from "./AppRouter.jsx";
 
+// PROVEEDORES DE CONTEXTO.
+import { AuthContextProvider } from "./context-providers/AuthContextProvider.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <AppRouter />
+      <AuthContextProvider>
+        <AppRouter />
+      </AuthContextProvider>
     </BrowserRouter>
   </StrictMode>
 )
