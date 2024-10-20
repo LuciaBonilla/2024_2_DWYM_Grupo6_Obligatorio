@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useAsyncError, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 // CLASES AUXILIARES.
 import BackendCaller from "../../auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
 import NormalInput from "../shared-components/NormalInput";
+import RegisterButton from "./RegisterButton";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,14 +16,12 @@ import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
  * @param {*} handleShowUnsuccessfulRegisterMessage
  * @param {*} setUnsuccessfulRegisterMessageContent
  */
-function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRegisterMessageContent }) {
+function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRegisterMessageContent, handleShowSuccessfulRegisterMessage, setSuccessfulRegisterMessageContent }) {
     // Valores de los inputs.
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
-
-    const navigate = useNavigate();
 
     /**
      * Maneja el registro de un usuario.
@@ -37,7 +35,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
             // Renderiza el mensaje de registro no exitoso.
             setUnsuccessfulRegisterMessageContent("Hay campos vacíos");
             handleShowUnsuccessfulRegisterMessage();
-        } else if (password == !repeatPassword) {
+        } else if (password !== repeatPassword) {
             // Renderiza el mensaje de registro no exitoso.
             setUnsuccessfulRegisterMessageContent("Las contraseñas no coinciden");
             handleShowUnsuccessfulRegisterMessage();
@@ -45,18 +43,16 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
             // Resultado del register.
             const result = await BackendCaller.register(username, email, password);
 
-            if (!result.success) {
+            if (result.statusCode !== 201) { // Created.
                 // Renderiza el mensaje de registro no exitoso.
-                setUnsuccessfulRegisterMessageContent(result.message);
+                setUnsuccessfulRegisterMessageContent(result.data.message);
                 handleShowUnsuccessfulRegisterMessage();
+            } else {
+                // Renderiza el mensaje de registro exitoso.
+                setSuccessfulRegisterMessageContent(`¡Bienvenido, ${username}!`);
+                handleShowSuccessfulRegisterMessage();
             }
         }
-    }
-
-    function handleCancelRegister(event) {
-        event.preventDefault();
-
-        navigate("/login");
     }
 
     return (
@@ -69,7 +65,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
                 inputType="email"
                 setState={setEmail}
                 value={email}
-                icon={<FontAwesomeIcon icon={faEnvelope} />}
+                icon={<FontAwesomeIcon className="register-form__input-icon" icon={faEnvelope} />}
             />
             <NormalInput
                 labelClass="register-form__input-container register-form__input-container--username"
@@ -79,7 +75,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
                 inputType="text"
                 setState={setUsername}
                 value={username}
-                icon={<FontAwesomeIcon icon={faUser} />}
+                icon={<FontAwesomeIcon className="register-form__input-icon" icon={faUser} />}
             />
             <NormalInput
                 labelClass="register-form__input-container register-form__input-container--password"
@@ -89,7 +85,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
                 inputType="password"
                 setState={setPassword}
                 value={password}
-                icon={<FontAwesomeIcon icon={faLock} />}
+                icon={<FontAwesomeIcon className="register-form__input-icon" icon={faLock} />}
             />
             <NormalInput
                 labelClass="register-form__input-container register-form__input-container--repeat-password"
@@ -99,13 +95,12 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
                 inputType="password"
                 setState={setRepeatPassword}
                 value={repeatPassword}
-                icon={<FontAwesomeIcon icon={faLock} />}
+                icon={<FontAwesomeIcon className="register-form__input-icon" icon={faLock} />}
             />
 
             <RegisterButton handleRegister={handleRegister} />
-            <CancelRegisterButton handleCancelRegister={""} />
         </form>
     );
 }
 
-export default registerForm;
+export default RegisterForm;

@@ -1,0 +1,258 @@
+@media only screen and (min-width: 769px) {
+    html {
+        font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
+
+        background-color: #f47f5f;
+    }
+
+    .register-page {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .register-page__title {
+        font-size: 4cqh;
+        text-shadow: 2px 2px 4px #004856;
+
+        color: #39bcd6;
+
+        margin-bottom: 40px;
+    }
+
+    .register-page__icon {
+        filter: drop-shadow(2px 2px 4px #004856)
+    }
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        row-gap: 4cqh;
+
+        background-color: #f4967c;
+
+        padding: 10px;
+
+        border-radius: 10px;
+
+        font-size: 16px;
+    }
+
+    .register-form__input-container {
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 10px;
+
+        font-weight: bold;
+
+        color: #00333d;
+    }
+
+    .register-form__input {
+        width: 300px;
+        height: 35px;
+
+        border-radius: 10px;
+        padding-left: 30px;
+
+        color: #00333d;
+        background-color: #ffe3d4;
+    }
+
+    .register-form__input-icon {
+        position: absolute;
+        padding: 37px 0 0 10px;
+    }
+
+    .register-form__ok-button {
+        width: 150px;
+        height: 35px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: #eb5535;
+        color: #ffe3d4;
+    }
+
+    .register-form__ok-button:hover {
+        background-color: #a93920;
+        color: #ccaa98;
+    }
+
+    .register-form__cancel-register-button {
+        width: 150px;
+        height: 35px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: #39bcd6;
+        color: #00333d;
+
+        margin-top: 10px;
+    }
+
+    .register-form__cancel-register-button:hover {
+        background-color: #22889c;
+        color: #024957;
+    }
+
+    @keyframes popup {
+        from {
+            transform: scale(0)
+        }
+
+        80% {
+            transform: scale(1.1)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    .unsuccessful-register-message {
+        animation: popup 0.7s;
+
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        font-weight: bold;
+    }
+
+    .unsuccessful-register-message__text {
+        font-size: 32px;
+        text-align: center;
+
+        background-color: #00333d;
+        color: #ffe3d4;
+
+        width: 90vw;
+        height: 90vh;
+
+        padding: 20cqh 0 0 0;
+        border-radius: 10px;
+
+        position: absolute;
+    }
+
+    .unsuccessful-register-message__icon {
+        font-size: 15cqh;
+
+        position: absolute;
+
+        top: 50cqh;
+
+        color: #eb5535;
+    }
+
+    .unsuccessful-register-message__hide-button {
+        position: relative;
+
+        width: 150px;
+        height: 35px;
+
+        margin-top: 10px;
+        top: 30cqh;
+
+        border-radius: 10px;
+
+        background-color: #eb5535;
+        color: #ffe3d4;
+
+        font-weight: bold;
+    }
+
+    .unsuccessful-register-message__hide-button:hover {
+        background-color: #a93920;
+        color: #ccaa98;
+    }
+
+    .successful-register-message {
+        animation: popup 0.7s;
+
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        font-weight: bold;
+    }
+
+    .successful-register-message__text {
+        font-size: 32px;
+        text-align: center;
+
+        background-color: #00333d;
+        color: #ffe3d4;
+
+        width: 90vw;
+        height: 90vh;
+
+        padding: 20cqh 0 0 0;
+        border-radius: 10px;
+
+        position: absolute;
+    }
+
+    .successful-register-message__icon {
+        font-size: 15cqh;
+
+        position: absolute;
+
+        top: 50cqh;
+
+        color: #04774b;
+    }
+
+    .successful-register-message__hide-button {
+        position: relative;
+
+        width: 150px;
+        height: 35px;
+
+        margin-top: 10px;
+        top: 30cqh;
+
+        border-radius: 10px;
+
+        background-color: #04774b;
+        color: #ffe3d4;
+
+        font-weight: bold;
+    }
+
+    .successful-register-message__hide-button:hover {
+        background-color: #034b2f;
+        color: #ccaa98;
+    }
+}

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="dqenSdSLRRkjRAQdouFI" name="Page-1">
-        <mxGraphModel dx="8460" dy="8020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="6103" dy="6160" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -16,239 +16,239 @@
                 <mxCell id="106" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=40;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="2500" y="-290" width="1305" height="645" as="geometry"/>
                 </mxCell>
-                <mxCell id="79" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=40;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
-                    <mxGeometry x="3720" y="-2510" width="1930" height="710" as="geometry"/>
+                <mxCell id="79" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=40;fontColor=#000000;fillColor=#f0a30a;strokeColor=#BD7000;" parent="1" vertex="1">
+                    <mxGeometry x="3740" y="-2820" width="1930" height="710" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=40;fontColor=#000000;fillColor=#f0a30a;strokeColor=#BD7000;" parent="1" vertex="1">
-                    <mxGeometry x="2470" y="-2470" width="1020" height="630" as="geometry"/>
+                    <mxGeometry x="3740" y="-3560" width="1020" height="630" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="2510" y="-2360" width="240" height="480" as="geometry"/>
+                    <mxGeometry x="3780" y="-3450" width="240" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="admin" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="2540" y="-2150" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="3810" y="-3240" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="****************" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="2540" y="-2070" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="3810" y="-3160" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="USUARIO" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="2540" y="-2180" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="3810" y="-3270" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="CONTRASEÑA" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="2540" y="-2100" width="100" height="30" as="geometry"/>
+                    <mxGeometry x="3810" y="-3190" width="100" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="LOGO" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
-                    <mxGeometry x="2590" y="-2280" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="3860" y="-3370" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="9" value="ENTRAR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="2570" y="-2010" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="3840" y="-3100" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="&lt;h1 style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Componentes y comportamiento de LoginPage&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; img (logo)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; LoginForm (form):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- Si los datos enviados son correctos, entonces redirige a /myfeed &lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;del usuario&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- Si los datos enviados son incorrectos, entonces renderiza &lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;UnsuccessfulLoginMessage&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para usuario)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para contraseña)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;LoginButton (button para enviar datos del formulario&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; GoToRegisterPageButton (button que redirige a /register)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; UnsuccessfulLoginMessage (div):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (mensaje de error)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;button (oculta UnsuccessfulLoginMessage)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&#9;&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="3070" y="-2360" width="400" height="480" as="geometry"/>
+                    <mxGeometry x="4340" y="-3450" width="400" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="/login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="2510" y="-2390" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="3780" y="-3480" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="3770" y="-2395" width="240" height="480" as="geometry"/>
+                    <mxGeometry x="3790" y="-2705" width="240" height="480" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="&lt;h1 style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Componentes y comportamiento&amp;nbsp; de RegisterPage&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; h1 (título)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; RegisterForm (form):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- Si los datos enviados son correctos, entonces renderiza &lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;SuccessfulRegisterMessage y crea el usuario en backend&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- Si los datos enviados son incorrectos, entonces renderiza &lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;UnsuccessfulRegisterMessage con el respectivo mensaje de error&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para usuario)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; NormalInput (input para email)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para contraseña)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para repetir contraseña)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;RegisterButton (button para enviar datos del formulario&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;GoToLoginPageButton (button para cancelar el registro y regresar a /login)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; SuccessfulRegisterMessage (div):&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (mensaje de éxito)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;GoToLoginPageButton (button para regresar a /login)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; UnsuccessfulRegisterMessage (div):&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (mensaje de error)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;button (oculta UnsuccessfulRegisterMessage)&lt;/font&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="5180" y="-2400" width="470" height="555" as="geometry"/>
+                <mxCell id="14" value="&lt;h1 style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Componentes y comportamiento&amp;nbsp; de RegisterPage&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; h1 (título)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; RegisterForm (form):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- Si los datos enviados son correctos, entonces renderiza &lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;SuccessfulRegisterMessage y crea el usuario en backend&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- Si los datos enviados son incorrectos, entonces renderiza &lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;UnsuccessfulRegisterMessage con el respectivo mensaje de error&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para usuario)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; NormalInput (input para email)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para contraseña)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;NormalInput (input para repetir contraseña)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;RegisterButton (button para enviar datos del formulario&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt;&amp;nbsp;GoToLoginPageButton (button para cancelar el registro y regresar a /login)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; SuccessfulRegisterMessage (div):&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (mensaje de éxito)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; button (oculta SuccesfulRegisterMessage)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; UnsuccessfulRegisterMessage (div):&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (mensaje de error)&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;button (oculta UnsuccessfulRegisterMessage)&lt;/font&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="5200" y="-2710" width="470" height="555" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" value="admin" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2240" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2550" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="**************" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2120" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2430" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="**************" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2060" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2370" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="USUARIO" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2270" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2580" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="CONTRASEÑA" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2150" width="80" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2460" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="20" value="REPETIR CONTRASEÑA" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2090" width="160" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2400" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="CREAR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="3830" y="-2015" width="120" height="30" as="geometry"/>
+                <mxCell id="21" value="CREAR CUENTA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="3850" y="-2325" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="CREAR CUENTA" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="3830" y="-2285" width="120" height="15" as="geometry"/>
+                    <mxGeometry x="3850" y="-2632.5" width="120" height="15" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" value="/register" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="3770" y="-2425" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="3790" y="-2735" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4050" y="-2395" width="240" height="480" as="geometry"/>
+                    <mxGeometry x="4070" y="-2705" width="240" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="usuario" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4080" y="-2235" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4100" y="-2545" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4080" y="-2155" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4100" y="-2465" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4080" y="-2075" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4100" y="-2385" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="29" value="Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4080" y="-2265" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4100" y="-2575" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4080" y="-2185" width="80" height="30" as="geometry"/>
+                    <mxGeometry x="4100" y="-2495" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="Repetir contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4080" y="-2105" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4100" y="-2415" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="ACEPTAR" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4110" y="-2015" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4130" y="-2325" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="33" value="Registro" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4110" y="-2345" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="4130" y="-2655" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="REGISTRO COMPLETADO&lt;br&gt;&lt;br&gt;¡Bienvenido, admin!" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4070" y="-2365" width="200" height="420" as="geometry"/>
+                <mxCell id="36" value="&lt;br&gt;¡Bienvenido, admin!" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="4090" y="-2675" width="200" height="420" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="CANCELAR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="3830" y="-1975" width="120" height="30" as="geometry"/>
+                <mxCell id="37" value="INICIAR SESIÓN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="3850" y="-2285" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="OK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="4110" y="-2005" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4130" y="-2315" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="39" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4330" y="-2395" width="240" height="480" as="geometry"/>
+                    <mxGeometry x="4350" y="-2705" width="240" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" value="usuario" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4360" y="-2235" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4380" y="-2545" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4360" y="-2155" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4380" y="-2465" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="42" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4360" y="-2075" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4380" y="-2385" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="43" value="Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4360" y="-2265" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4380" y="-2575" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="44" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4360" y="-2185" width="80" height="30" as="geometry"/>
+                    <mxGeometry x="4380" y="-2495" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" value="Repetir contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4360" y="-2105" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4380" y="-2415" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" value="ACEPTAR" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4390" y="-2015" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4410" y="-2325" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="47" value="Registro" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4390" y="-2345" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="4410" y="-2655" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="48" value="YA EXISTE UN USUARIO&lt;br&gt;CON ESE NOMBRE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4350" y="-2365" width="200" height="420" as="geometry"/>
+                    <mxGeometry x="4370" y="-2675" width="200" height="420" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="OK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="4390" y="-2005" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4410" y="-2315" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4610" y="-2395" width="240" height="480" as="geometry"/>
+                    <mxGeometry x="4630" y="-2705" width="240" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="52" value="usuario" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4640" y="-2235" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4660" y="-2545" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="53" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4640" y="-2155" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4660" y="-2465" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="54" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4640" y="-2075" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4660" y="-2385" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4640" y="-2265" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4660" y="-2575" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="56" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4640" y="-2185" width="80" height="30" as="geometry"/>
+                    <mxGeometry x="4660" y="-2495" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="57" value="Repetir contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4640" y="-2105" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4660" y="-2415" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="58" value="ACEPTAR" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4670" y="-2015" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4690" y="-2325" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="Registro" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4670" y="-2345" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="4690" y="-2655" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="60" value="LA REPETICIÓN DE&lt;br&gt;CONTRASEÑA NO&lt;br&gt;COINCIDE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4630" y="-2365" width="200" height="420" as="geometry"/>
+                    <mxGeometry x="4650" y="-2675" width="200" height="420" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="OK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="4670" y="-2005" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4690" y="-2315" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="63" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="2790" y="-2360" width="240" height="480" as="geometry"/>
+                    <mxGeometry x="4060" y="-3450" width="240" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="64" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="2820" y="-2150" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4090" y="-3240" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="65" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="2820" y="-2070" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4090" y="-3160" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="2820" y="-2180" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4090" y="-3270" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="67" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="2820" y="-2100" width="100" height="30" as="geometry"/>
+                    <mxGeometry x="4090" y="-3190" width="100" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="68" value="LOGO" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="2870" y="-2280" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="4140" y="-3370" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="69" value="ENTRAR" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="2850" y="-2010" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4120" y="-3100" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="70" value="Crea una cuenta aquí" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="2855" y="-1950" width="110" height="30" as="geometry"/>
+                    <mxGeometry x="4125" y="-3040" width="110" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="71" value="/login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="2790" y="-2390" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4060" y="-3480" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="Credenciales incorrectas" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="2810" y="-2330" width="200" height="420" as="geometry"/>
+                    <mxGeometry x="4080" y="-3420" width="200" height="420" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="OK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="2850" y="-1980" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4120" y="-3070" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4890" y="-2395" width="240" height="480" as="geometry"/>
+                    <mxGeometry x="4910" y="-2705" width="240" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="81" value="usuario" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4920" y="-2235" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4940" y="-2545" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="82" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4920" y="-2155" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4940" y="-2465" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="83" value="123" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-                    <mxGeometry x="4920" y="-2075" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="4940" y="-2385" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="84" value="Usuario" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4920" y="-2265" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4940" y="-2575" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" value="Contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4920" y="-2185" width="80" height="30" as="geometry"/>
+                    <mxGeometry x="4940" y="-2495" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="Repetir contraseña" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4920" y="-2105" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4940" y="-2415" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="ACEPTAR" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4950" y="-2015" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4970" y="-2325" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="88" value="Registro" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4950" y="-2345" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="4970" y="-2655" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="89" value="HAY DATOS VACÍOS" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="4910" y="-2365" width="200" height="420" as="geometry"/>
+                    <mxGeometry x="4930" y="-2675" width="200" height="420" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" value="OK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="4950" y="-2005" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="4970" y="-2315" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="92" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="2547.5" y="-1365" width="240" height="480" as="geometry"/>
@@ -257,7 +257,7 @@
                     <mxGeometry x="2547.5" y="-1395" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="105" value="CREAR CUENTA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="2570" y="-1950" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="3840" y="-3040" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="107" value="&lt;h1 style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Componentes y comportamiento de MyFeedPage&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;- se muestran todos los posts subidos en la red social (menos los propios) ordenados cronólogicamente&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; h1 (nombre de la red social)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; PostCardContainer (main; con varios PostCard):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; PostCard (article):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; ShortProfileCard (section; apretarlo redirige a /profiles/:id):&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;img (foto de perfil del autor del post)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;h2 (nombre de usuario del autor del post)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;img (imagen del post)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (cantidad de likes)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (descripción del post)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;p (cantidad de comentarios)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;LikeButton (button para dar me gusta, aumenta la cantidad de likes de ese post)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; OpenCommentSectionButton (button que abre C)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; CommentsSection (section; los comentarios propios van arriba del todo y sin link al perfil):&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&amp;gt; Comment (div; si es un comentario no propio, apretarlo redirige a /profiles/:id):&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&amp;gt;&amp;nbsp;img (foto de perfil del autor del comentario)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&amp;gt;&amp;nbsp;h3 (nombre de usuario del autor del comentario)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&amp;gt;&amp;nbsp;p (lo escrito en el comentario)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; MyComment (div; comentarios propios con la opción de editarlos o eliminarlos):&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; img (foto de perfil propia)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; h3 (nombre propio de usuario)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; p (lo escrito)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; DeleteCommentButton (button que elimina el comentario propio)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; EditCommentButton (button que transforma el p (contenido del comentario) en un input y&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;le coloca el focus. Cuando se apreta el button de nuevo, edita el comentario.&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&amp;gt; CreateCommentForm (form):&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&amp;gt; NormalInput (input para el contenido del comentario)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;/span&gt;&amp;gt; CreateCommentButton (button para crear el comentario)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt; CloseCommentSectionButton (button que cierra la sección de comentarios)&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; Navbar (nav):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;GoToMyFeedPageButton (button que redirige a /myfeed)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;GoToCreatePostPageButton (button que redirige a /createpost)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&amp;gt;&amp;nbsp;GoToMyProfilePageButton (img que redirige a /myprofile)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="3092.5" y="-1520" width="610" height="910" as="geometry"/>
@@ -368,19 +368,19 @@
                     <mxGeometry x="2789.69" y="-3250" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="231" value="/register" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4050" y="-2425" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4070" y="-2735" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="232" value="/register" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4330" y="-2425" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4350" y="-2735" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="233" value="/register" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4610" y="-2425" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4630" y="-2735" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="234" value="/register" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="4890" y="-2425" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4910" y="-2735" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="235" value="&lt;font color=&quot;#000000&quot;&gt;TERMINADO EN REACT&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#FF9933;" parent="1" vertex="1">
-                    <mxGeometry x="2820" y="-2442.5" width="360" height="30" as="geometry"/>
+                <mxCell id="235" value="&lt;font color=&quot;#000000&quot;&gt;TERMINADO&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#FF9933;" parent="1" vertex="1">
+                    <mxGeometry x="4090" y="-3532.5" width="360" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="243" value="&lt;h1 style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;Componentes y comportamiento de MyProfilePage&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; h1 (nombre de usuario)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; p (cantidad de posts del usuario)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; LogoutButton (button que cierra la sesión y redirige a /login)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; GoToEditMyProfilePageButton (redirige a /myprofile/edit)&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; MyPostsContainer (article)&lt;/font&gt;&lt;/p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- se muestran todas las imágenes subidas por el usuario en la red social ordenadas cronólogicamente&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;- con varias img que redirigen a /myposts/:id&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt; Navbar (nav):&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;Ya vista en /myfeed&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&#9;&lt;/span&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p style=&quot;text-align: left;&quot;&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="4478.75" y="-1375" width="640" height="640" as="geometry"/>
@@ -470,7 +470,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="306" value="&lt;font color=&quot;#000000&quot;&gt;TERMINADO&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#FF9933;" parent="1" vertex="1">
-                    <mxGeometry x="4690" y="-2480" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="4710" y="-2790" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="326" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=40;fontColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="2565" y="-1015" width="205" height="35" as="geometry"/>
@@ -925,10 +925,10 @@
                     <mxGeometry x="4223.75" y="-260" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="632" value="admin@gmail.com" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2180" width="180" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2490" width="180" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="633" value="EMAIL" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="3800" y="-2210" width="60" height="30" as="geometry"/>
+                    <mxGeometry x="3820" y="-2520" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="634" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="4785.63" y="215" width="240" height="490" as="geometry"/>
@@ -959,9 +959,6 @@
                 </mxCell>
                 <mxCell id="649" value="&lt;font color=&quot;#000000&quot;&gt;TERMINADO&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#FF9933;" parent="1" vertex="1">
                     <mxGeometry x="5053.75" y="-390" width="60" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="650" value="LOGO" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
-                    <mxGeometry x="3850" y="-2381.25" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="651" value="&lt;h1&gt;HAY 9 RUTAS.&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;labelBackgroundColor=none;fontSize=20;" parent="1" vertex="1">
                     <mxGeometry x="-710" y="-2940" width="360" height="102.5" as="geometry"/>
@@ -995,7 +992,7 @@
                     <mxGeometry x="-560" y="-3880" width="620" height="410" as="geometry"/>
                 </mxCell>
                 <mxCell id="668" value="&lt;span style=&quot;font-size: 150px;&quot;&gt;&lt;b&gt;PAGES&lt;/b&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="3540" y="-3400" width="620" height="410" as="geometry"/>
+                    <mxGeometry x="3540" y="-3990" width="620" height="410" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
