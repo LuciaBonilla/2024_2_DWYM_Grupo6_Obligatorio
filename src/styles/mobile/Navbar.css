@@ -1,0 +1,36 @@
+@media only screen and (max-width: 425px) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        background-color: #004856;
+        width: 100vw;
+        height: 45px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        column-gap: 70px;
+    }
+
+    .navbar__go-to-my-feed-page-button {
+        background: none;
+        border: none;
+    }
+
+    .navbar__go-to-create-post-page-button {
+        background: none;
+        border: none;
+    }
+
+    .navbar__go-to-my-profile-page-button {
+        background: none;
+        border: none;
+    }
+
+    .navbar__icon {
+        font-size: 22px;
+        color: #ffe3d4;
+        filter: drop-shadow(4px 4px 2px #00333d)
+    }
+}

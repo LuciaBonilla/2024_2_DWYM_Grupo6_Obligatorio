@@ -65,7 +65,7 @@ export class BackendCaller {
         try {
             const response = await fetch(this.#API_URI + "/posts/feed",
                 {
-                    method: "POST",
+                    method: "GET",
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
@@ -80,6 +80,28 @@ export class BackendCaller {
             return { statusCode, data };
         } catch (error) {
             console.error("Error al obtener el feed:", error);
+        }
+    }
+
+    static async giveLike(postID, token) {
+        try {
+            const response = await fetch(this.#API_URI + "/posts/" + postID + "/like",
+                {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            );
+
+            const statusCode = response.status;
+
+            // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
+            const data = await response.json();
+
+            return { statusCode, data };
+        } catch (error) {
+            console.error("Error al dar like:", error);
         }
     }
 }

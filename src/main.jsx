@@ -6,6 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import "normalize.css";
 import "./styles/special-styles.css";
 
+// Nabar
+import "./styles/mobile/Navbar.css";
+
 // LoginPage
 import "./styles/mobile/LoginPage.css";
 import "./styles/tablet/LoginPage.css";
@@ -15,6 +18,9 @@ import "./styles/desktop/LoginPage.css";
 import "./styles/mobile/RegisterPage.css";
 import "./styles/tablet/RegisterPage.css";
 import "./styles/desktop/RegisterPage.css";
+
+// MyFeedPage
+import "./styles/mobile/MyFeedPage.css";
 
 // COMPONENTES.
 import AppRouter from "./AppRouter.jsx";
