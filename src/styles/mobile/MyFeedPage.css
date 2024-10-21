@@ -1,0 +1,220 @@
+@media only screen and (max-width: 425px) {
+    html {
+        font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
+
+        background-color: #f47f5f;
+    }
+
+    .my-feed-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .my-feed-page__social-network-title {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        margin: 0;
+
+        padding: 8px;
+
+        width: 100vw;
+
+        font-size: 4cqh;
+        text-shadow: 2px 2px 4px #004856;
+
+        color: #39bcd6;
+        background-color: #eb5535;
+
+        text-align: center;
+    }
+
+    .post-card-container {
+        margin-top: 8cqh;
+        margin-bottom: 50px;
+
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+        row-gap: 10px;
+    }
+
+    .loading-message {
+        color: #004856;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .post-card-container__no-posts-message {
+        color: #004856;
+        font-weight: bold;
+        text-align: center;
+        background-color: #f4967c;
+    }
+
+    .post-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #f5a791;
+        padding: 10px;
+        border-radius: 10px;
+        color: #004856;
+        font-size: 16px;
+    }
+
+    .short-profile-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .short-profile-card__img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .short-profile-card__username {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .post-card__uploaded-photo {
+        min-width: 200px;
+        max-width: 400px;
+        height: auto;
+        background-color: #004856;
+    }
+
+    .post-card__caption {
+        background-color: #f3b7a6;
+        margin: 0;
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .post-card__quantity-likes {
+        margin: 0;
+        padding: 5px;
+    }
+
+    .post-card__like-button {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        margin: 0;
+        position: absolute;
+        bottom: 115px;
+        right: 30px;
+        background: none;
+        border: none;
+    }
+
+    .post-card__heart-icon {
+        padding: 0;
+        margin: 0;
+        font-size: 30px;
+        color: #a62d11;
+    }
+
+    .post-card__quantity-comments {
+        margin: 0;
+        padding: 5px;
+    }
+
+    .post-card__created-at {
+        margin: 0;
+        padding: 5px;
+    }
+
+    .post-card__show-comment-section-button {
+        width: 200px;
+        height: 30px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: #39bcd6;
+        color: #00333d;
+
+        margin-top: 5px;
+        align-self: center;
+    }
+
+    .post-card__show-comment-section-button:hover {
+        background-color: #22889c;
+        color: #024957;
+    }
+
+    @keyframes popup {
+        from {
+            transform: scale(0)
+        }
+
+        80% {
+            transform: scale(1.1)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    .comment-section {
+        animation: popup 0.7s;
+
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        font-weight: bold;
+
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .comment-section__hide-button {
+        position: fixed;
+        z-index: 200;
+        top: 35px;
+        left: 25px;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        background-color: #ffe3d4;
+    }
+
+    .comment-section__hide-icon {
+        font-size: 20px;
+    }
+
+    .comment-section__title {
+        font-size: 16px;
+        text-align: center;
+
+        background-color: #00333d;
+        color: #ffe3d4;
+
+        width: 95vw;
+        height: 95vh;
+
+        padding: 25px 0 0 0;
+        border-radius: 10px;
+
+        position: absolute;
+    }
+}
