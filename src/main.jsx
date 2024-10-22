@@ -6,8 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 import "normalize.css";
 import "./styles/special-styles.css";
 
-// Nabar
+// Navbar
 import "./styles/mobile/Navbar.css";
+import "./styles/tablet/Navbar.css";
+import "./styles/desktop/Navbar.css";
 
 // LoginPage
 import "./styles/mobile/LoginPage.css";
@@ -21,6 +23,13 @@ import "./styles/desktop/RegisterPage.css";
 
 // MyFeedPage
 import "./styles/mobile/MyFeedPage.css";
+import "./styles/tablet/MyFeedPage.css";
+import "./styles/desktop/MyFeedPage.css";
+
+// CreatePostPage
+import "./styles/mobile/CreatePostPage.css";
+import "./styles/tablet/CreatePostPage.css";
+import "./styles/desktop/CreatePostPage.css";
 
 // COMPONENTES.
 import AppRouter from "./AppRouter.jsx";
