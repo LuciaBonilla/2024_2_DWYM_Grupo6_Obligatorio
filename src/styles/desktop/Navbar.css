@@ -1,0 +1,57 @@
+@media only screen and (min-width: 769px) {
+    .navbar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #004856;
+        width: 200px;
+        height: 100vh;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        row-gap: 10cqh;
+        padding-left: 20px;
+        padding-top: 90px;
+    }
+
+    .navbar__go-to-my-feed-page-button {
+        background: none;
+        border: none;
+        background-color: #0b6e81;
+        padding: 10px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .navbar__go-to-create-post-page-button {
+        background: none;
+        border: none;
+        background-color: #0b6e81;
+        padding: 10px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .navbar__go-to-my-profile-page-button {
+        background: none;
+        border: none;
+        background-color: #0b6e81;
+        padding: 10px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .navbar__icon {
+        font-size: 22px;
+        color: #ffe3d4;
+        filter: drop-shadow(4px 4px 2px #00333d)
+    }
+
+    .navbar__text {
+        color: #ffe3d4;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #00333d;
+    }
+}

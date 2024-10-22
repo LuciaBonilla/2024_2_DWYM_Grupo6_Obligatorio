@@ -1,5 +1,5 @@
 /**
- * Input normal (no de selection y no de file).
+ * Input text area.
  * @param {*} labelClass 
  * @param {*} labelContent 
  * @param {*} inputName 
@@ -10,12 +10,12 @@
  * @param {*} value
  * @estado TERMINADO.
  */
-function NormalInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {
+function TextAreaInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {
     return (
         <label className={labelClass}>
             {labelContent}
             {icon}
-            <input
+            <textarea
                 id={inputName}
                 key={inputName}
                 name={inputName}
@@ -24,9 +24,10 @@ function NormalInput({ labelClass, labelContent, inputName, inputClass, inputTyp
                 placeholder={placeholder}
                 onChange={(event) => setState(event.target.value)}
                 value={value}
-            />
+            >
+            </textarea>
         </label>
     );
 }
 
-export default NormalInput;
+export default TextAreaInput;

@@ -1,16 +1,15 @@
 /**
- * Input normal (no de selection y no de file).
+ * Input de file (no de selection y no normal).
  * @param {*} labelClass 
  * @param {*} labelContent 
  * @param {*} inputName 
- * @param {*} inputClass 
- * @param {*} inputType 
+ * @param {*} inputClass
  * @param {*} placeholder 
  * @param {*} setState
- * @param {*} value
+ * @param {*} accept
  * @estado TERMINADO.
  */
-function NormalInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {
+function FileInput({ labelClass, labelContent, inputName, inputClass, placeholder, setState, accept, icon }) {
     return (
         <label className={labelClass}>
             {labelContent}
@@ -20,13 +19,13 @@ function NormalInput({ labelClass, labelContent, inputName, inputClass, inputTyp
                 key={inputName}
                 name={inputName}
                 className={inputClass}
-                type={inputType}
+                type="file"
                 placeholder={placeholder}
-                onChange={(event) => setState(event.target.value)}
-                value={value}
+                onChange={(e) => setState(e.target.files[0])}
+                accept={accept}
             />
         </label>
     );
 }
 
-export default NormalInput;
+export default FileInput;
