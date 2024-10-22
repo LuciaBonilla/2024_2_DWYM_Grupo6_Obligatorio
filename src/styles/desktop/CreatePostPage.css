@@ -47,6 +47,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        background-color: #ffe3d4;
     }
 
     .create-post-form__input--image {
