@@ -1,4 +1,4 @@
-@media only screen and (max-width: 426px) {
+@media only screen and (min-width: 426px) and (max-width: 768px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
 
@@ -38,6 +38,10 @@
         flex-direction: column;
         padding: 0 10px;
         row-gap: 10px;
+
+        max-width: 425px;
+        min-width: 400px;
+        align-self: center;
     }
 
     .loading-message {
@@ -84,7 +88,7 @@
 
     .post-card__uploaded-photo {
         min-width: 200px;
-        max-width: 400px;
+        max-width: 750px;
         height: auto;
         background-color: #004856;
     }

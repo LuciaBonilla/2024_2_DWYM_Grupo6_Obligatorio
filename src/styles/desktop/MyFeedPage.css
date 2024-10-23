@@ -1,4 +1,4 @@
-@media only screen and (max-width: 426px) {
+@media only screen and (min-width: 769px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
 
@@ -19,7 +19,7 @@
 
         padding: 8px;
 
-        width: 100vw;
+        width: 200px;
 
         font-size: 4cqh;
         text-shadow: 2px 2px 4px #004856;
@@ -31,13 +31,18 @@
     }
 
     .post-card-container {
-        margin-top: 8cqh;
+        margin-top: 30px;
         margin-bottom: 50px;
 
         display: flex;
         flex-direction: column;
         padding: 0 10px;
         row-gap: 10px;
+
+        max-width: 50cqw;
+        min-width: 400px;
+        margin-left: 200px;
+        align-self: center;
     }
 
     .loading-message {
@@ -83,9 +88,6 @@
     }
 
     .post-card__uploaded-photo {
-        min-width: 200px;
-        max-width: 400px;
-        height: auto;
         background-color: #004856;
     }
 
@@ -191,7 +193,7 @@
         position: fixed;
         z-index: 200;
         top: 35px;
-        left: 25px;
+        left: 3cqw;
         border-radius: 50%;
         width: 32px;
         height: 32px;

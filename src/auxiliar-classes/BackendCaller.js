@@ -104,6 +104,36 @@ export class BackendCaller {
             console.error("Error al dar like:", error);
         }
     }
+
+    static async uploadPost(token, image, caption) {
+        try {
+            // Crea un objeto FormData.
+            const formData = new FormData();
+
+            // Añade la imagen y el texto del caption al FormData.
+            formData.append('image', image);  // 'image' es el campo que el servidor espera
+            formData.append('caption', caption);  // 'caption' es el campo de texto
+
+            const response = await fetch(this.#API_URI + "/posts/upload",
+                {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: formData // Establece el FormData como cuerpo de la solicitud
+                }
+            );
+
+            const statusCode = response.status;
+
+            // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
+            const data = await response.json();
+
+            return { statusCode, data };
+        } catch (error) {
+            console.error("Error al subir un post:", error);
+        }
+    }
 }
 
 export default BackendCaller;
