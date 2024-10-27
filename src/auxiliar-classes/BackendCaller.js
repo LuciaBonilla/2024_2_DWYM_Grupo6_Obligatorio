@@ -134,6 +134,26 @@ export class BackendCaller {
             console.error("Error al subir un post:", error);
         }
     }
+
+    static async getUserProfile(userId, token) {
+        try {
+            const response = await fetch(`${this.#API_URI}/user/profile/${userId}`, {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const statusCode = response.status;
+
+            const data = await response.json();
+
+            return { statusCode, data };
+        } catch (error) {
+            console.error("Error al obtener el perfil del usuario:", error);
+        }
+    }
 }
 
 export default BackendCaller;
