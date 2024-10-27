@@ -41,7 +41,7 @@ function OtherUserInfoCard({other_id: user_id}){
     return (
         <article className="other-user-info-card">
             {/* Username. */}
-            <p className="other-user-info__username">{user.id}</p>
+            <p className="other-user-info__username">{user.username}</p>
 
             {/* Email. */}
             <p className="other-user-info__email">{user.email}</p>

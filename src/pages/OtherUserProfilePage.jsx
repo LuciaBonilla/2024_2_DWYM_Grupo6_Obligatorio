@@ -1,17 +1,19 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 // COMPONENTES.
 import Navbar from "../components/shared-components/Navbar";
 import OtherUserInfoCard from '../components/OtherUserProfilePage/OtherUserInfoCard';
+import OtherUserPostsContainer from '../components/OtherUserProfilePage/OtherUserPostsContainer';
+
+// ESTILO
+import '../styles/mobile/OtherUserProfilePage.css';
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "../context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
-
-// COMPONENTES.
-import PostCard from "./PostCard";
+import BackendCaller from "../auxiliar-classes/BackendCaller";
 
 /**
  * My Feed Page.
@@ -19,12 +21,6 @@ import PostCard from "./PostCard";
  */
 function OtherUserProfilePage() {
 
-/**ARREGLAR EL FEED, COPIE DIRECTAMENTE, AJUSTAR A ESTA PÁGINA, LA IDEA ES SEPARAR LA PÁGINA EN DOS 
- * COMPONENTES, ARRIBA EL OTHER USER CARD CON FOTO PERFIL, NOMBE DE CUENTA Y MAIL, Y 
- * LUEGO OTRO COMPONENTE LLAMADO COMO IMAGES CONTAINER DENTRO DEL CUAL PONGO LAS IMAGENES LINKEANDO 
- * A LOS POSTS Y LA CUENTA DE CUANTOS POSTS. RECORDAR USEFFECT PARA LLAMAR A BACKEND EN OTHERUSERCARD
- *  Y CONSEGUIR LA INFO DEL OTRO USUARIO
-**/
     // Id del otro usuario cuyo perfil muestro
     const {id} = useParams();
 
@@ -56,7 +52,7 @@ function OtherUserProfilePage() {
         const response = await BackendCaller.getFeed(token);
 
         if (response.statusCode === 200) { // OK
-            setPosts(getMyFeed(response.data));
+            setPosts(getUserPosts(response.data));
         }
     }
 
@@ -73,6 +69,7 @@ function OtherUserProfilePage() {
         <main className="other-user-profile-page">
             <h1 className="other-user-profile-page__username-header">FILLMEUSERNAME</h1>
             <OtherUserInfoCard other_id={id}/>
+            <OtherUserPostsContainer userId={id} token={token} />
             <Navbar />
         </main>
     );
