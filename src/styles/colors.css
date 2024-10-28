@@ -1,0 +1,23 @@
+:root {
+    --background1-color: #f47f5f; /* Para fondos. */
+    --background2-color: #014b5a; /* Para fondos. */
+    --background1-lighter-color: #eca38e; /* Para fondos. */
+    --background1-lighter-lighter-color: #f7bfb0; /* Para fondos. */
+
+    --text1-color: #003540; /* Para fuentes y sombras. */
+
+    /* Paleta de la red social */
+    --primary-color: #39bcd6;
+    --primary-darker-color: #22889c;
+
+    --secondary-color: #eb5535;     /* También se puede usar para error. */
+    --secondary-darker-color: #a93920; /* También se puede usar para error. */
+
+    --white-friendly-color: #ffe3d4; /* Para fondo de inputs y para fuentes. */
+    --white-friendly-darker-color: #ccaa98; /* Para opacidad de fuentes blancas. */
+
+    --success-color: #04774b;
+    --success-darker-color: #034b2f;
+
+    --heart-color: #a61111; /* Colot del corazón de like. */
+}

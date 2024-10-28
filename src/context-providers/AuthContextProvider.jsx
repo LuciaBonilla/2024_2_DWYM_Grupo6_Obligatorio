@@ -89,7 +89,7 @@ export function AuthContextProvider({ children }) {
     }
 
     // Mientras se cargan los datos del LocalStorage, evita renderizar los hijos.
-    if (loading) {
+    if (loading === true) {
         return <div>Cargando...</div>;
     }
 

@@ -1,8 +1,11 @@
+@import "../colors.css";
+@import "../animations.css";
+
 @media only screen and (min-width: 769px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
-
-        background-color: #f47f5f;
+    
+        background-color: var(--background1-color);
     }
 
     .register-page {
@@ -17,28 +20,30 @@
     }
 
     .register-page__title {
-        font-size: 4cqh;
-        text-shadow: 2px 2px 4px #004856;
+        font-size: 32px;
+        text-shadow: 2px 2px 4px var(--background2-color);
+        text-align: center;
 
-        color: #39bcd6;
+        padding: 20px;
 
-        margin-bottom: 40px;
+        color: var(--primary-color);
     }
 
     .register-page__icon {
-        filter: drop-shadow(2px 2px 4px #004856)
+        filter: drop-shadow(2px 2px 4px var(--background2-color))
     }
 
     .register-form {
+        width: 55%;
         display: flex;
         flex-direction: column;
 
         justify-content: center;
         align-items: center;
 
-        row-gap: 4cqh;
+        row-gap: 30px;
 
-        background-color: #f4967c;
+        background-color: var(--background1-lighter-color);
 
         padding: 10px;
 
@@ -48,6 +53,8 @@
     }
 
     .register-form__input-container {
+        width: 100%;
+
         display: flex;
         flex-direction: column;
 
@@ -55,23 +62,24 @@
 
         font-weight: bold;
 
-        color: #00333d;
+        color: var(--text1-color);
     }
 
     .register-form__input {
-        width: 300px;
+        position: relative;
         height: 35px;
 
         border-radius: 10px;
         padding-left: 30px;
 
-        color: #00333d;
-        background-color: #ffe3d4;
+        background-color: var(--white-friendly-color);
+        color: var(--text1-color);
     }
 
     .register-form__input-icon {
         position: absolute;
-        padding: 37px 0 0 10px;
+        padding: 40px 0 0 10px;
+        z-index: 100;
     }
 
     .register-form__ok-button {
@@ -82,13 +90,13 @@
 
         font-weight: bold;
 
-        background-color: #eb5535;
-        color: #ffe3d4;
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
     }
 
     .register-form__ok-button:hover {
-        background-color: #a93920;
-        color: #ccaa98;
+        background-color: var(--secondary-darker-color);
+        color: var(--white-friendly-darker-color);
     }
 
     .register-form__cancel-register-button {
@@ -99,35 +107,23 @@
 
         font-weight: bold;
 
-        background-color: #39bcd6;
-        color: #00333d;
+        background-color: var(--primary-color);
+        color: var(--text1-color);
 
         margin-top: 10px;
     }
 
     .register-form__cancel-register-button:hover {
-        background-color: #22889c;
-        color: #024957;
+        background-color: var(--primary-darker-color);
+        color: var(--white-friendly-darker-color);
     }
 
-    @keyframes popup {
-        from {
-            transform: scale(0)
-        }
-
-        80% {
-            transform: scale(1.1)
-        }
-
-        to {
-            transform: scale(1)
-        }
-    }
-
-    .unsuccessful-register-message {
+    .unsuccessful-register-modal {
         animation: popup 0.7s;
 
         position: fixed;
+        z-index: 200;
+
         background: rgba(0, 0, 0, 0.5);
 
         display: flex;
@@ -142,58 +138,59 @@
         font-weight: bold;
     }
 
-    .unsuccessful-register-message__text {
+    .unsuccessful-register-modal__message {
+        position: absolute;
+
         font-size: 32px;
         text-align: center;
 
-        background-color: #00333d;
-        color: #ffe3d4;
+        background-color: var(--background2-color);
+        color: var(--white-friendly-color);
 
         width: 90vw;
         height: 90vh;
 
-        padding: 20cqh 0 0 0;
+        padding: 15% 20px 0 20px;
         border-radius: 10px;
-
-        position: absolute;
     }
 
-    .unsuccessful-register-message__icon {
-        font-size: 15cqh;
+    .unsuccessful-register-modal__icon {
+        font-size: 600%;
 
         position: absolute;
 
-        top: 50cqh;
+        bottom: 35%;
 
-        color: #eb5535;
+        color: var(--secondary-color);
     }
 
-    .unsuccessful-register-message__hide-button {
+    .unsuccessful-register-modal__close-modal-button {
         position: relative;
 
         width: 150px;
         height: 35px;
 
-        margin-top: 10px;
-        top: 30cqh;
+        top: 40%;
 
         border-radius: 10px;
 
-        background-color: #eb5535;
-        color: #ffe3d4;
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
 
         font-weight: bold;
     }
 
-    .unsuccessful-register-message__hide-button:hover {
-        background-color: #a93920;
-        color: #ccaa98;
+    .unsuccessful-register-modal__close-modal-button:hover {
+        background-color: var(--secondary-darker-color);
+        color: var(--white-friendly-darker-color);
     }
 
-    .successful-register-message {
+    .successful-register-modal {
         animation: popup 0.7s;
 
         position: fixed;
+        z-index: 200;
+
         background: rgba(0, 0, 0, 0.5);
 
         display: flex;
@@ -208,51 +205,51 @@
         font-weight: bold;
     }
 
-    .successful-register-message__text {
+    .successful-register-modal__message {
+        position: absolute;
+
         font-size: 32px;
         text-align: center;
 
-        background-color: #00333d;
-        color: #ffe3d4;
+        background-color: var(--background2-color);
+        color: var(--white-friendly-color);
 
         width: 90vw;
         height: 90vh;
 
-        padding: 20cqh 0 0 0;
+        padding: 15% 20px 0 20px;
         border-radius: 10px;
-
-        position: absolute;
     }
 
-    .successful-register-message__icon {
-        font-size: 15cqh;
+    .successful-register-modal__icon {
+        font-size: 500%;
 
         position: absolute;
 
-        top: 50cqh;
+        bottom: 30%;
 
-        color: #04774b;
+        color: var(--success-color);
     }
 
-    .successful-register-message__hide-button {
+    .successful-register-modal__close-modal-button {
         position: relative;
 
         width: 150px;
         height: 35px;
 
         margin-top: 10px;
-        top: 30cqh;
+        top: 40%;
 
         border-radius: 10px;
 
-        background-color: #04774b;
-        color: #ffe3d4;
+        background-color: var(--success-color);
+        color: var(--white-friendly-color);
 
         font-weight: bold;
     }
 
-    .successful-register-message__hide-button:hover {
-        background-color: #034b2f;
-        color: #ccaa98;
+    .successful-register-modal__close-modal-button:hover {
+        background-color: var(--success-darker-color);
+        color: var(--white-friendly-color);
     }
 }
