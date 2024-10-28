@@ -2,11 +2,11 @@ import { useState } from "react";
 
 // COMPONENTES.
 import CreatePostForm from "../components/CreatePostPage/CreatePostForm";
-import UnsuccesfulUploadPostMessage from "../components/CreatePostPage/UnsuccessfulUploadMessage";
+import OperationResultModal from "../components/shared-components/OperationResultModal";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faCloudArrowUp, faFileCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Create Post Page.
@@ -14,41 +14,50 @@ import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
  */
 function CreatePostPage() {
     // Indica si el mensaje de subida no exitosa se debe renderizar.
-    const [isUnsuccessfulUploadMessageShowing, setIsUnsuccessfulUploadMessageShowing] = useState(false);
+    const [isUnsuccessfulUploadModalShowing, setIsUnsuccessfulUploadModalShowing] = useState(false);
 
-    // Contenido de mensaje de subida no exitosa.
-    const [unsuccessfulUploadMessageContent, setUnsuccessfulUploadMessageContent] = useState("");
+    // Mensaje de modal subida no exitosa.
+    const [unsuccessfulUploadModalMessage, setUnsuccessfulUploadModalMessage] = useState("");
 
     /**
      * Muestra el mensaje de subida no exitosa.
      */
-    function handleShowUnsuccessfulUploadMessage() {
-        setIsUnsuccessfulUploadMessageShowing(true);
+    function handleShowUnsuccessfulUploadModal() {
+        setIsUnsuccessfulUploadModalShowing(true);
     }
 
     /**
      * Oculta el mensaje de subida no exitosa.
      */
-    function handleHideUnsuccessfulUploadMessage() {
-        setIsUnsuccessfulUploadMessageShowing(false);
+    function handleHideUnsuccessfulUploadModal() {
+        setIsUnsuccessfulUploadModalShowing(false);
     }
 
     return (
         <main className="create-post-page">
             {/* Título. */}
-            <h1 className="create-post-page__title"><FontAwesomeIcon className="create-post-page__icon" icon={faCloudArrowUp} /><span className="next-to-icon">CREAR POST</span></h1>
+            <h1 className="create-post-page__title">
+                <FontAwesomeIcon className="create-post-page__icon" icon={faCloudArrowUp} />
+                <span className="next-to-icon">CREAR POST</span>
+            </h1>
 
             {/* Formulario. */}
             <CreatePostForm
-                handleShowUnsuccessfulUploadMessage={handleShowUnsuccessfulUploadMessage}
-                setUnsuccessfulUploadMessageContent={setUnsuccessfulUploadMessageContent}
+                handleShowUnsuccessfulUploadModal={handleShowUnsuccessfulUploadModal}
+                setUnsuccessfulUploadModalMessage={setUnsuccessfulUploadModalMessage}
             />
 
             {/* Mensaje de subida no exitosa. */}
-            {isUnsuccessfulUploadMessageShowing &&
-                <UnsuccesfulUploadPostMessage
-                    handleHideUnsuccessfulUploadMessage={handleHideUnsuccessfulUploadMessage}
-                    unsuccessfulUploadMessageContent={unsuccessfulUploadMessageContent}
+            {isUnsuccessfulUploadModalShowing &&
+                <OperationResultModal
+                    modalClass="unsuccessful-upload-modal"
+                    messageClass="unsuccessful-upload-modal__message"
+                    message={unsuccessfulUploadModalMessage}
+                    iconClass="unsuccessful-upload-modal__icon"
+                    icon={faFileCircleXmark}
+                    buttonClass="unsuccessful-upload-modal__close-modal-button"
+                    handleHideOperationResultModal={handleHideUnsuccessfulUploadModal}
+                    buttonText="OK"
                 />}
         </main>
     );

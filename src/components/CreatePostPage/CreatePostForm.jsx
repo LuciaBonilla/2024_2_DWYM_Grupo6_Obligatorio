@@ -15,13 +15,16 @@ import BackendCaller from "../../auxiliar-classes/BackendCaller";
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../../context-providers/AuthContextProvider";
 
+// RUTAS.
+import routes from "../../constants/routes";
+
 /**
  * Formulario para subir post.
- * @param handleShowUnsuccessfulUploadMessage
- * @param setUnsuccessfulUploadMessageContent
+ * @param {*} handleShowUnsuccessfulUploadModal
+ * @param {*} setUnsuccessfulUploadModalMessage
  * @estado TERMINADO.
  */
-function CreatePostForm({ handleShowUnsuccessfulUploadMessage, setUnsuccessfulUploadMessageContent }) {
+function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUploadModalMessage }) {
     // Atributos para crear un post.
     const [image, setImage] = useState();
     const [caption, setCaption] = useState("");
@@ -38,7 +41,7 @@ function CreatePostForm({ handleShowUnsuccessfulUploadMessage, setUnsuccessfulUp
         // Evita el submit.
         event.preventDefault();
 
-        navigate("/myfeed");
+        navigate(routes.MY_FEED_ROUTE);
     }
 
     /**
@@ -50,16 +53,16 @@ function CreatePostForm({ handleShowUnsuccessfulUploadMessage, setUnsuccessfulUp
         event.preventDefault();
 
         if (image === undefined) { // Si no hay imagen.
-            setUnsuccessfulUploadMessageContent("No hay imagen");
-            handleShowUnsuccessfulUploadMessage();
+            setUnsuccessfulUploadModalMessage("No hay imagen");
+            handleShowUnsuccessfulUploadModal();
         } else {
             const response = await BackendCaller.uploadPost(token, image, caption);
 
             if (response.statusCode === 201) { // Created
-                navigate("/myprofile");
+                navigate(routes.MY_PROFILE_ROUTE);
             } else {
-                setUnsuccessfulUploadMessageContent(response.data.message);
-                handleShowUnsuccessfulUploadMessage();
+                setUnsuccessfulUploadModalMessage(response.data.message);
+                handleShowUnsuccessfulUploadModal();
             }
         }
     }

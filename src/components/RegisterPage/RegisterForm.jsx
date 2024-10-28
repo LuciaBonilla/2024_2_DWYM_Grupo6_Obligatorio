@@ -5,7 +5,6 @@ import BackendCaller from "../../auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
 import NormalInput from "../shared-components/NormalInput";
-import RegisterButton from "./RegisterButton";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,10 +12,12 @@ import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Formulario para el registro.
- * @param {*} handleShowUnsuccessfulRegisterMessage
- * @param {*} setUnsuccessfulRegisterMessageContent
+ * @param {*} handleShowUnsuccessfulRegisterModal
+ * @param {*} setUnsuccessfulRegisterModalMessage
+ * @param {*} handleShowSuccessfulRegisterModal
+ * @param {*} setSuccessfulRegisterModalMessage
  */
-function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRegisterMessageContent, handleShowSuccessfulRegisterMessage, setSuccessfulRegisterMessageContent }) {
+function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegisterModalMessage, handleShowSuccessfulRegisterModal, setSuccessfulRegisterModalMessage }) {
     // Valores de los inputs.
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -33,24 +34,24 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
 
         if (username === "" || email === "" || password === "" || repeatPassword === "") {
             // Renderiza el mensaje de registro no exitoso.
-            setUnsuccessfulRegisterMessageContent("Hay campos vacíos");
-            handleShowUnsuccessfulRegisterMessage();
+            setUnsuccessfulRegisterModalMessage("Hay campos vacíos");
+            handleShowUnsuccessfulRegisterModal();
         } else if (password !== repeatPassword) {
             // Renderiza el mensaje de registro no exitoso.
-            setUnsuccessfulRegisterMessageContent("Las contraseñas no coinciden");
-            handleShowUnsuccessfulRegisterMessage();
+            setUnsuccessfulRegisterModalMessage("Las contraseñas no coinciden");
+            handleShowUnsuccessfulRegisterModal();
         } else {
             // Resultado del register.
             const result = await BackendCaller.register(username, email, password);
 
             if (result.statusCode !== 201) { // Created.
                 // Renderiza el mensaje de registro no exitoso.
-                setUnsuccessfulRegisterMessageContent(result.data.message);
-                handleShowUnsuccessfulRegisterMessage();
+                setUnsuccessfulRegisterModalMessage(result.data.message);
+                handleShowUnsuccessfulRegisterModal();
             } else {
                 // Renderiza el mensaje de registro exitoso.
-                setSuccessfulRegisterMessageContent(`¡Bienvenido, ${username}!`);
-                handleShowSuccessfulRegisterMessage();
+                setSuccessfulRegisterModalMessage(`¡Bienvenido, ${username}!`);
+                handleShowSuccessfulRegisterModal();
             }
         }
     }
@@ -97,8 +98,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterMessage, setUnsuccessfulRe
                 value={repeatPassword}
                 icon={<FontAwesomeIcon className="register-form__input-icon" icon={faLock} />}
             />
-
-            <RegisterButton handleRegister={handleRegister} />
+            <button className="register-form__ok-button" onClick={(event) => handleRegister(event)}>CREAR CUENTA</button>
         </form>
     );
 }

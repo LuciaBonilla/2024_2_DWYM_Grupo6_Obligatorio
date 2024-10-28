@@ -2,62 +2,65 @@ import { useState, useEffect } from "react";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus, faPersonCircleXmark, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
 import RegisterForm from "../components/RegisterPage/RegisterForm";
-import GoToLoginPageButton from "../components/shared-components/GoToLoginPageButton";
-import UnsuccessfulRegisterMessage from "../components/RegisterPage/UnsuccessfulRegisterMessage";
-import SuccessfulRegisterMessage from "../components/RegisterPage/SuccesfulRegisterMessage";
+import GoToPageButton from "../components/shared-components/GoToPageButton";
+import OperationResultModal from "../components/shared-components/OperationResultModal";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../context-providers/AuthContextProvider";
+
+// RUTAS.
+import routes from "../constants/routes";
 
 /**
  * Página de registro.
  * @estado TERMINADO.
  */
 function RegisterPage() {
-    // Indica si el mensaje de registro no exitoso se debe renderizar.
-    const [isUnsuccessfulRegisterMessageShowing, setIsUnsuccessfulRegisterMessageShowing] = useState(false);
+    // Indica si el modal de registro no exitoso se debe renderizar.
+    const [isUnsuccessfulRegisterModalShowing, setIsUnsuccessfulRegisterModalShowing] = useState(false);
 
-    // Indica si el mensaje de registro exitoso se debe renderizar.
-    const [isSuccessfulRegisterMessageShowing, setIsSuccessfulRegisterMessageShowing] = useState(false);
+    // Indica si el modal de registro exitoso se debe renderizar.
+    const [isSuccessfulRegisterModalShowing, setIsSuccessfulRegisterModalShowing] = useState(false);
 
-    // Contenido de mensaje de registro no exitoso.
-    const [unsuccessfulRegisterMessageContent, setUnsuccessfulRegisterMessageContent] = useState("");
+    // Mensaje de modal de registro no exitoso.
+    const [unsuccessfulRegisterModalMessage, setUnsuccessfulRegisterModalMessage] = useState("");
 
-    // Contenido de mensaje de registro exitoso.
-    const [successfulRegisterMessageContent, setSuccessfulRegisterMessageContent] = useState("");
+    // Mensaje de modal de registro exitoso.
+    const [successfulRegisterModalMessage, setSuccessfulRegisterModalMessage] = useState("");
 
     /**
-     * Muestra el mensaje de inicio de sesión no exitoso.
+     * Muestra el modal de registro no exitoso.
      */
-    function handleShowUnsuccessfulRegisterMessage() {
-        setIsUnsuccessfulRegisterMessageShowing(true);
+    function handleShowUnsuccessfulRegisterModal() {
+        setIsUnsuccessfulRegisterModalShowing(true);
     }
 
     /**
-     * Oculta el mensaje de inicio de sesión no exitoso.
+     * Oculta el modal de registro no exitoso.
      */
-    function handleHideUnsuccessfulRegisterMessage() {
-        setIsUnsuccessfulRegisterMessageShowing(false);
+    function handleHideUnsuccessfulRegisterModal() {
+        setIsUnsuccessfulRegisterModalShowing(false);
     }
 
     /**
-     * Muestra el mensaje de inicio de sesión exitoso.
+     * Muestra el modal de registro exitoso.
      */
-    function handleShowSuccessfulRegisterMessage() {
-        setIsSuccessfulRegisterMessageShowing(true);
+    function handleShowSuccessfulRegisterModal() {
+        setIsSuccessfulRegisterModalShowing(true);
     }
 
     /**
-     * Oculta el mensaje de inicio de sesión exitoso.
+     * Oculta el modal de registro exitoso.
      */
-    function handleHideSuccessfulRegisterMessage() {
-        setIsSuccessfulRegisterMessageShowing(false);
+    function handleHideSuccessfulRegisterModal() {
+        setIsSuccessfulRegisterModalShowing(false);
     }
 
+    // Para cerrar sesión.
     const { logout } = useAuthContext();
 
     useEffect(() => {
@@ -72,31 +75,44 @@ function RegisterPage() {
 
             {/* Formulario de registro. */}
             <RegisterForm
-                handleShowUnsuccessfulRegisterMessage={handleShowUnsuccessfulRegisterMessage}
-                setUnsuccessfulRegisterMessageContent={setUnsuccessfulRegisterMessageContent}
-                handleShowSuccessfulRegisterMessage={handleShowSuccessfulRegisterMessage}
-                setSuccessfulRegisterMessageContent={setSuccessfulRegisterMessageContent}
+                handleShowUnsuccessfulRegisterModal={handleShowUnsuccessfulRegisterModal}
+                setUnsuccessfulRegisterModalMessage={setUnsuccessfulRegisterModalMessage}
+                handleShowSuccessfulRegisterModal={handleShowSuccessfulRegisterModal}
+                setSuccessfulRegisterModalMessage={setSuccessfulRegisterModalMessage}
             />
 
-            {/* Botón para ir a la page de registro. */}
-            <GoToLoginPageButton
+            {/* Botón para ir a la page de login. */}
+            <GoToPageButton
+                route={routes.LOGIN_ROUTE}
                 textContent="INICIAR SESIÓN"
                 buttonClass="register-form__cancel-register-button"
             />
 
-            {/* Mensaje en caso de login no exitoso. */}
-            {isUnsuccessfulRegisterMessageShowing &&
-                <UnsuccessfulRegisterMessage
-                    message={unsuccessfulRegisterMessageContent}
-                    handleHideUnsuccesfulRegisterMessage={handleHideUnsuccessfulRegisterMessage}
+            {/* Modal en caso de registro no exitoso. */}
+            {isUnsuccessfulRegisterModalShowing &&
+                <OperationResultModal
+                    modalClass="unsuccessful-register-modal"
+                    messageClass="unsuccessful-register-modal__message"
+                    message={unsuccessfulRegisterModalMessage}
+                    iconClass="unsuccessful-register-modal__icon"
+                    icon={faPersonCircleXmark}
+                    buttonClass="unsuccessful-register-modal__close-modal-button"
+                    handleHideOperationResultModal={handleHideUnsuccessfulRegisterModal}
+                    buttonText="OK"
                 />
             }
 
-            {/* Mensaje en caso de login exitoso. */}
-            {isSuccessfulRegisterMessageShowing &&
-                <SuccessfulRegisterMessage
-                    message={successfulRegisterMessageContent}
-                    handleHideSuccesfulRegisterMessage={handleHideSuccessfulRegisterMessage}
+            {/* Modal en caso de registro exitoso. */}
+            {isSuccessfulRegisterModalShowing &&
+                <OperationResultModal
+                    modalClass="successful-register-modal"
+                    messageClass="successful-register-modal__message"
+                    message={successfulRegisterModalMessage}
+                    iconClass="successful-register-modal__icon"
+                    icon={faCircleCheck}
+                    buttonClass="successful-register-modal__close-modal-button"
+                    handleHideOperationResultModal={handleHideSuccessfulRegisterModal}
+                    buttonText="OK"
                 />
             }
         </main>
