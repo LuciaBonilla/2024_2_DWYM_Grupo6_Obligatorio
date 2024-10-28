@@ -67,7 +67,6 @@ function OtherUserProfilePage() {
 
     return (
         <main className="other-user-profile-page">
-            <h1 className="other-user-profile-page__username-header">FILLMEUSERNAME</h1>
             <OtherUserInfoCard other_id={id}/>
             <OtherUserPostsContainer userId={id} token={token} />
             <Navbar />

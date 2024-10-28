@@ -40,17 +40,18 @@ function OtherUserInfoCard({other_id: user_id}){
 
     return (
         <article className="other-user-info-card">
-            {/* Username. */}
-            <p className="other-user-info__username">{user.username}</p>
-
-            {/* Email. */}
-            <p className="other-user-info__email">{user.email}</p>
-
-            {/* Imagen de perfil. */}
-            <img className="short-profile-card__img" src={user.profilePicture === "" ? defaultPhoto : ""} />
-
+            {/* Img de Perfil. */}
+            <img className="other-user-info__profile-img" src={user.profilePicture === "" ? defaultPhoto : user.profilePicture} alt="Perfil" />
+            
+            <div className="other-user-info__text">
+                {/* Username. */}
+                <p className="other-user-info__username">{user.username}</p>
+                {/* Email. */}
+                <p className="other-user-info__email">{user.email}</p>
+            </div>
         </article>
     );
+    
 }
 
 export default OtherUserInfoCard;

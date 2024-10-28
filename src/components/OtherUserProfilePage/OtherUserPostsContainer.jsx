@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
 import { useNavigate } from "react-router-dom";
+
+//AUXILIARES
+import BackendCaller from "../../auxiliar-classes/BackendCaller";
 
 const OtherUserPostsContainer = ({ userId, token }) => {
     const [posts, setPosts] = useState([]);

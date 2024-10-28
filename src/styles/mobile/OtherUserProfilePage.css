@@ -42,3 +42,74 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Estilo para el componente de información del otro perfil */
+
+.other-user-info-card {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.other-user-info__profile-img {
+    width: 120px; 
+    height: 120px; 
+    margin-right: 20px;
+}
+
+.other-user-info__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.other-user-info__username {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px; 
+}
+
+.other-user-info__email {
+    font-size: 24px;
+    font-style: italic;
+}
+
+/* Media Queries para Responsividad del Componente de info del otro perfil */
+@media (max-width: 600px) {
+    .other-user-info-card {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .other-user-info__profile-img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .other-user-info__text {
+        align-items: center; 
+        text-align: center; 
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .other-user-info__username {
+        font-size: 28px;
+    }
+
+    .other-user-info__email {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    .other-user-info__username {
+        font-size: 32px;
+    }
+
+    .other-user-info__email {
+        font-size: 24px;
+    }
+}
