@@ -1,8 +1,11 @@
-@media only screen and (min-width: 426px) and (max-width: 768px) {
+@import "../colors.css";
+@import "../animations.css";
+
+@media only screen and (min-width: 425px) and (max-width: 769px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
 
-        background-color: #f47f5f;
+        background-color: var(--background1-color);
     }
 
     .login-page {
@@ -14,15 +17,13 @@
 
         width: 100vw;
         height: 100vh;
-
-        font-size: 30px;
     }
 
     .login-page__logo {
-        width: auto;
-        height: 20cqh;
+        width: 50%;
+        height: auto;
 
-        background-color: #004856;
+        background-color: var(--background2-color);
 
         padding: 10px 20px 0 20px;
         border-radius: 100%;
@@ -31,114 +32,109 @@
     }
 
     .login-page__social-network-title {
-        font-size: 8cqh;
-        text-shadow: 2px 2px 4px #004856;
+        font-size: 64px;
+        text-shadow: 4px 4px 8px var(--background2-color);
 
-        color: #39bcd6;
+        color: var(--primary-color);
 
-        margin-top: 30px;
+        margin-top: 5px;
     }
 
     .login-form {
+        width: 70%;
+        height: auto;
+
         display: flex;
         flex-direction: column;
 
         justify-content: center;
         align-items: center;
 
-        row-gap: 4cqh;
+        row-gap: 40px;
 
-        background-color: #f4967c;
+        background-color: var(--background1-lighter-color);
+        color: var(--text1-color);
 
-        padding: 10px;
+        padding: 20px;
 
         border-radius: 10px;
 
-        margin-top: 60px;
+        font-size: 32px;
     }
 
     .login-form__input-container {
+        width: 100%;
+
         display: flex;
         flex-direction: column;
 
         row-gap: 10px;
 
         font-weight: bold;
-
-        color: #00333d;
     }
 
     .login-form__input {
-        width: 400px;
-        height: 60px;
+        position: relative;
+
+        width: 100%;
+        height: 50px;
 
         border-radius: 10px;
-        padding-left: 50px;
-
-        color: #00333d;
-        background-color: #ffe3d4;
+        padding-left: 46px;
+        background-color: var(--white-friendly-color);
+        color: var(--text1-color);
     }
 
     .login-form__input-icon {
         position: absolute;
-        font-size: 32px;
-        padding: 55px 0 0 10px;
+        margin: 58px 0 0 10px;
+        z-index: 100;
     }
 
     .login-form__ok-button {
         width: 300px;
-        height: 40px;
+        height: 50px;
 
         border-radius: 10px;
 
         font-weight: bold;
 
-        background-color: #eb5535;
-        color: #ffe3d4;
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
     }
 
     .login-form__ok-button:hover {
-        background-color: #a93920;
-        color: #ccaa98;
+        background-color: var(--secondary-darker-color);
+        color: var(--white-friendly-darker-color);
     }
 
     .login-page__go-to-register-page-button {
         width: 300px;
-        height: 40px;
+        height: 50px;
 
         border-radius: 10px;
 
         font-weight: bold;
 
-        background-color: #39bcd6;
-        color: #00333d;
+        background-color: var(--primary-color);
+        color: var(--text1-color);
 
         margin-top: 10px;
+
+        font-size: 32px;
     }
 
     .login-page__go-to-register-page-button:hover {
-        background-color: #22889c;
-        color: #024957;
+        background-color: var(--primary-darker-color);
+        color: var(--white-friendly-darker-color);
     }
 
-    @keyframes popup {
-        from {
-            transform: scale(0)
-        }
-
-        80% {
-            transform: scale(1.1)
-        }
-
-        to {
-            transform: scale(1)
-        }
-    }
-
-    .unsuccessful-login-message {
+    .unsuccessful-login-modal {
         animation: popup 0.7s;
 
         position: fixed;
+        z-index: 200;
+
         background: rgba(0, 0, 0, 0.5);
 
         display: flex;
@@ -151,54 +147,53 @@
         height: 100vh;
 
         font-weight: bold;
-        font-size: 30px;
     }
 
-    .unsuccessful-login-message__text {
+    .unsuccessful-login-modal__message {
+        position: absolute;
+
+        font-size: 64px;
         text-align: center;
 
-        background-color: #00333d;
-        color: #ffe3d4;
+        background-color: var(--background2-color);
+        color: var(--white-friendly-color);
 
         width: 90vw;
         height: 90vh;
 
-        padding: 20cqh 0 0 0;
+        padding: 30% 20px 0 20px;
         border-radius: 10px;
-
-        position: absolute;
     }
 
-    .unsuccessful-login-message__icon {
-        font-size: 15cqh;
+    .unsuccessful-login-modal__icon {
+        font-size: 1000%;
 
         position: absolute;
 
-        top: 50cqh;
+        bottom: 30%;
 
-        color: #eb5535;
+        color: var(--secondary-color);
     }
 
-    .unsuccessful-login-message__hide-button {
+    .unsuccessful-login-modal__close-modal-button {
         position: relative;
 
-        width: 150px;
-        height: 40px;
+        width: 300px;
+        height: 50px;
 
-        margin-top: 10px;
-        top: 30cqh;
+        top: 40%;
 
         border-radius: 10px;
 
-        background-color: #eb5535;
-        color: #ffe3d4;
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
 
         font-weight: bold;
+        font-size: 32px;
     }
 
-    .unsuccessful-login-message__hide-button:hover {
-        background-color: #a93920;
-        color: #ccaa98;
+    .unsuccessful-login-modal__close-modal-button:hover {
+        background-color: var(--secondary-darker-color);
+        color: var(--white-friendly-darker-color);
     }
 }
-
