@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 // ESTILOS.
+import "./styles/important.css"
 import "normalize.css";
 import "./styles/special-styles.css";
 

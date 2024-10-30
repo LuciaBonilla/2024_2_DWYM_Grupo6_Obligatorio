@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+// BACKEND_URI.
+import BACKEND_URI from "../../constants/BACKEND_URI";
+
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../../context-providers/AuthContextProvider";
 
@@ -51,7 +54,7 @@ function PostCardContainer() {
         setIsLoading(false);
     }, []) // Ejecuta cuando se renderiza el componente.
 
-    if (isLoading) {
+    if (isLoading === true) {
         return (<p className="loading-message">CARGANDO...</p>);
     }
 
@@ -63,7 +66,7 @@ function PostCardContainer() {
                         key={post._id}
                         id={post._id}
                         user={post.user}
-                        imageURL={post.imageUrl}
+                        imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
                         caption={post.caption}
                         comments={post.comments}
                         likes={post.likes}

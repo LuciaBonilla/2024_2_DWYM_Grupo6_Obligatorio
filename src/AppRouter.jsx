@@ -1,5 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
+// RUTAS.
+import routes from "./constants/routes";
+
 // RUTA PROTEGIDA.
 import ProtectedRoute from "./routes/ProtectedRoute";
 
@@ -24,17 +27,17 @@ function AppRouter() {
       <Routes>
         {/* Rutas públicas. */}
         <Route
-          path="/login"
+          path={routes.LOGIN_ROUTE}
           element={<LoginPage />}
         />
         <Route
-          path="/register"
+          path={routes.REGISTER_ROUTE}
           element={<RegisterPage />}
         />
-        {/* Redirige de "/" a "/login" directamente. */}
+        {/* Redirige de "/" a LOGIN_ROUTE directamente. */}
         <Route
           path="/"
-          element={<Navigate to="/login" />}
+          element={<Navigate to={routes.LOGIN_ROUTE} />}
         />
         <Route
           path="*"
@@ -43,7 +46,7 @@ function AppRouter() {
 
         {/* Rutas privadas. */}
         <Route
-          path="/myfeed"
+          path={routes.MY_FEED_ROUTE}
           element={
             <ProtectedRoute>
               <MyFeedPage />
@@ -51,7 +54,7 @@ function AppRouter() {
           }
         />
         <Route
-          path="/createpost"
+          path={routes.CREATE_POST_ROUTE}
           element={
             <ProtectedRoute>
               <CreatePostPage />
@@ -59,7 +62,7 @@ function AppRouter() {
           }
         />
         <Route
-          path="/myprofile"
+          path={routes.MY_PROFILE_ROUTE}
           element={
             <ProtectedRoute>
               <MyProfilePage />
@@ -67,7 +70,7 @@ function AppRouter() {
           }
         />
         <Route
-          path="/myprofile/edit"
+          path={routes.MY_PROFILE_EDIT_ROUTE}
           element={
             <ProtectedRoute>
               <EditMyProfilePage />
@@ -75,7 +78,7 @@ function AppRouter() {
           }
         />
         <Route
-          path="/myposts/:id"
+          path={routes.MY_POSTS_ROUTE}
           element={
             <ProtectedRoute>
               <MyPostPage />
@@ -83,7 +86,7 @@ function AppRouter() {
           }
         />
         <Route
-          path="/profiles/:id"
+          path={routes.OTHER_USER_PROFILE_ROUTE}
           element={
             <ProtectedRoute>
               <OtherUserProfilePage />
@@ -91,7 +94,7 @@ function AppRouter() {
           }
         />
         <Route
-          path="/posts/:id"
+          path={routes.OTHER_USER_POST_ROUTE}
           element={
             <ProtectedRoute>
               <OtherUserPostPage />

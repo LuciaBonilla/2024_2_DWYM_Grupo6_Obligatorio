@@ -1,8 +1,11 @@
-@media only screen and (min-width: 426px) and (max-width: 768px) {
+@import "../colors.css";
+@import "../animations.css";
+
+@media only screen and (min-width: 425px) and (max-width: 769px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
 
-        background-color: #f47f5f;
+        background-color: var(--background1-color);
     }
 
     .my-feed-page {
@@ -13,7 +16,7 @@
 
     .my-feed-page__social-network-title {
         position: fixed;
-        z-index: 10;
+        z-index: 100;
         top: 0;
         margin: 0;
 
@@ -21,50 +24,46 @@
 
         width: 100vw;
 
-        font-size: 4cqh;
-        text-shadow: 2px 2px 4px #004856;
+        font-size: 32px;
+        text-shadow: 2px 2px 4px var(--background2-color);
 
-        color: #39bcd6;
-        background-color: #eb5535;
+        color: var(--primary-color);
+        background-color: var(--secondary-color);
 
         text-align: center;
     }
 
     .post-card-container {
-        margin-top: 8cqh;
+        margin-top: 60px;
         margin-bottom: 50px;
 
         display: flex;
         flex-direction: column;
         padding: 0 10px;
         row-gap: 10px;
-
-        max-width: 425px;
-        min-width: 400px;
-        align-self: center;
     }
 
     .loading-message {
-        color: #004856;
+        color: var(--text1-color);
         font-weight: bold;
         text-align: center;
     }
 
     .post-card-container__no-posts-message {
-        color: #004856;
+        color: var(--text1-color);
         font-weight: bold;
         text-align: center;
-        background-color: #f4967c;
+        background-color: var(--background1-lighter-color);
     }
 
     .post-card {
         position: relative;
         display: flex;
         flex-direction: column;
-        background-color: #f5a791;
+        background-color: var(--background1-lighter-color);
         padding: 10px;
         border-radius: 10px;
-        color: #004856;
+        color: var(--text1-color);
         font-size: 16px;
     }
 
@@ -73,6 +72,7 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: 5px;
+        font-size: 16px;
     }
 
     .short-profile-card__img {
@@ -88,13 +88,13 @@
 
     .post-card__uploaded-photo {
         min-width: 200px;
-        max-width: 750px;
+        max-width: 800px;
         height: auto;
-        background-color: #004856;
+        background-color: var(--background2-color);
     }
 
     .post-card__caption {
-        background-color: #f3b7a6;
+        background-color: var(--background1-lighter-lighter-color);
         margin: 0;
         padding: 5px;
         border-radius: 5px;
@@ -107,11 +107,11 @@
     }
 
     .post-card__like-button {
+        position: absolute;
         width: 30px;
         height: 30px;
         padding: 5px;
         margin: 0;
-        position: absolute;
         bottom: 100px;
         right: 30px;
         background: none;
@@ -122,7 +122,7 @@
         padding: 0;
         margin: 0;
         font-size: 30px;
-        color: #a62d11;
+        color: var(--heart-color);
     }
 
     .post-card__quantity-comments {
@@ -143,30 +143,16 @@
 
         font-weight: bold;
 
-        background-color: #39bcd6;
-        color: #00333d;
+        background-color: var(--primary-color);
+        color: var(--text1-color);
 
         margin-top: 5px;
         align-self: center;
     }
 
     .post-card__show-comment-section-button:hover {
-        background-color: #22889c;
-        color: #024957;
-    }
-
-    @keyframes popup {
-        from {
-            transform: scale(0)
-        }
-
-        80% {
-            transform: scale(1.1)
-        }
-
-        to {
-            transform: scale(1)
-        }
+        background-color: var(--primary-darker-color);
+        color: var(--white-friendly-darker-color);
     }
 
     .comment-section {

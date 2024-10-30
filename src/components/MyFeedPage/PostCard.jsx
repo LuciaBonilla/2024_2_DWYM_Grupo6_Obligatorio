@@ -13,7 +13,22 @@ import CommentSection from "./CommentSection";
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../../context-providers/AuthContextProvider";
 
-function PostCard({ id, user, imageURL, caption, comments, likes, createdAt, fetchFeed }) {
+// RUTAS.
+import routes from "../../constants/routes";
+
+/**
+ * Tarjeta de post.
+ * @param {*} id
+ * @param {*} user
+ * @param {*} imageSrc
+ * @param {*} caption 
+ * @param {*} comments 
+ * @param {*} likes
+ * @param {*} createdAt
+ * @param {*} fetchFeed
+ * @estado falta la sección de comentarios.
+ */
+function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fetchFeed }) {
     // Indica si la sección de comentarios se debe mostar.
     const [isCommentSectionShowing, setIsCommentSectionShowing] = useState(false);
 
@@ -38,7 +53,7 @@ function PostCard({ id, user, imageURL, caption, comments, likes, createdAt, fet
      * Redirige a la page de un post de un usuario ajeno.
      */
     function handleGoToOtherUserPostPage() {
-        navigate("/posts/" + id);
+        navigate(routes.OTHER_USER_POST_ROUTE.replace(":id", id));
     }
 
     const { token } = useAuthContext();
@@ -60,7 +75,7 @@ function PostCard({ id, user, imageURL, caption, comments, likes, createdAt, fet
             <ShortProfileCard user={user} />
 
             {/* Imagen subida. */}
-            <img className="post-card__uploaded-photo" src={`http://localhost:3001/${imageURL.replace("\\", "/")}`} onClick={() => handleGoToOtherUserPostPage()} />
+            <img className="post-card__uploaded-photo" src={imageSrc} onClick={() => handleGoToOtherUserPostPage()} />
 
             {/* Descripción. */}
             <p className="post-card__caption">{caption}</p>
@@ -75,7 +90,7 @@ function PostCard({ id, user, imageURL, caption, comments, likes, createdAt, fet
             <p className="post-card__quantity-comments">{comments.length} Comentarios</p>
 
             {/* Fecha de publicación. */}
-            <p className="post-card__created-at">Publicado el: {new Date(createdAt).toLocaleDateString('es-ES', {
+            <p className="post-card__created-at">Publicado el: {new Date(createdAt).toLocaleDateString(document.documentElement.lang, {
                 day: '2-digit',
                 month: 'long',  // mes completo, o 'short' para abreviado
                 year: 'numeric',

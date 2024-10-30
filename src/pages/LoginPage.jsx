@@ -5,37 +5,44 @@ import logo from "../assets/logo.png";
 
 // COMPONENTES.
 import LoginForm from "../components/LoginPage/LoginForm";
-import GoToRegisterPageButton from "../components/LoginPage/GoToRegisterPageButton";
-import UnsuccessfulLoginMessage from "../components/LoginPage/UnsuccessfulLoginMessage";
+import GoToPageButton from "../components/shared-components/GoToPageButton";
+import OperationResultModal from "../components/shared-components/OperationResultModal";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../context-providers/AuthContextProvider";
+
+// RUTAS.
+import routes from "../constants/routes";
+
+// ÍCONOS.
+import { faPersonCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Página para el inicio de sesión.
  * @estado TERMINADO.
  */
 function LoginPage() {
-    // Indica si el mensaje de inicio de sesión no exitoso se debe renderizar.
-    const [isUnsuccessfulLoginMessageShowing, setIsUnsuccessfulLoginMessageShowing] = useState(false);
+    // Indica si el modal de inicio de sesión no exitoso se debe renderizar.
+    const [isUnsuccessfulLoginModalShowing, setIsUnsuccessfulLoginModalShowing] = useState(false);
 
-    // Contenido de mensaje de inicio de sesión no exitoso.
-    const [unsuccessfulLoginMessageContent, setUnsuccessfulLoginMessageContent] = useState("");
+    // Mensaje de modal de inicio de sesión no exitoso.
+    const [unsuccessfulLoginMessage, setUnsuccessfulLoginMessage] = useState("");
 
     /**
      * Muestra el mensaje de inicio de sesión no exitoso.
      */
-    function handleShowUnsuccessfulLoginMessage() {
-        setIsUnsuccessfulLoginMessageShowing(true);
+    function handleShowUnsuccessfulLoginModal() {
+        setIsUnsuccessfulLoginModalShowing(true);
     }
 
     /**
      * Oculta el mensaje de inicio de sesión no exitoso.
      */
-    function handleHideUnsuccessfulLoginMessage() {
-        setIsUnsuccessfulLoginMessageShowing(false);
+    function handleHideUnsuccessfulLoginModal() {
+        setIsUnsuccessfulLoginModalShowing(false);
     }
 
+    // Para cerrar sesión.
     const { logout } = useAuthContext();
 
     useEffect(() => {
@@ -53,18 +60,28 @@ function LoginPage() {
 
             {/* Formulario de login. */}
             <LoginForm
-                handleShowUnsuccessfulLoginMessage={handleShowUnsuccessfulLoginMessage}
-                setUnsuccessfulLoginMessageContent={setUnsuccessfulLoginMessageContent}
+                handleShowUnsuccessfulLoginModal={handleShowUnsuccessfulLoginModal}
+                setUnsuccessfulLoginMessage={setUnsuccessfulLoginMessage}
             />
 
-            {/* Botón para ir a la page de resgistro. */}
-            <GoToRegisterPageButton />
+            {/* Botón para ir a la page de registro. */}
+            <GoToPageButton
+                route={routes.REGISTER_ROUTE}
+                textContent="CREAR CUENTA"
+                buttonClass="login-page__go-to-register-page-button"
+            />
 
-            {/* Mensaje en caso de login no exitoso. */}
-            {isUnsuccessfulLoginMessageShowing &&
-                <UnsuccessfulLoginMessage
-                    message={unsuccessfulLoginMessageContent}
-                    handleHideUnsuccesfulLoginMessage={handleHideUnsuccessfulLoginMessage}
+            {/* Modal en caso de login no exitoso. */}
+            {isUnsuccessfulLoginModalShowing &&
+                <OperationResultModal
+                    modalClass="unsuccessful-login-modal"
+                    messageClass="unsuccessful-login-modal__message"
+                    message={unsuccessfulLoginMessage}
+                    iconClass="unsuccessful-login-modal__icon"
+                    icon={faPersonCircleXmark}
+                    buttonClass="unsuccessful-login-modal__close-modal-button"
+                    handleHideOperationResultModal={handleHideUnsuccessfulLoginModal}
+                    buttonText="OK"
                 />
             }
         </main>

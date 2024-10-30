@@ -8,18 +8,20 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
 import NormalInput from "../shared-components/NormalInput";
-import LoginButton from "./LoginButton";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../../context-providers/AuthContextProvider";
 
+// RUTAS.
+import routes from "../../constants/routes";
+
 /**
  * Formulario para el inicio de sesión.
- * @param {*} handleShowUnsuccessfulLoginMessage
- * @param {*} setUnsuccessfulLoginMessageContent
+ * @param {*} handleShowUnsuccessfulLoginModal
+ * @param {*} setUnsuccessfulLoginMessage
  * @estado TERMINADO.
  */
-function LoginForm({ handleShowUnsuccessfulLoginMessage, setUnsuccessfulLoginMessageContent }) {
+function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessage }) {
     // Para cambiar de ruta.
     const navigate = useNavigate();
 
@@ -43,15 +45,15 @@ function LoginForm({ handleShowUnsuccessfulLoginMessage, setUnsuccessfulLoginMes
 
         if (!result.success) {
             // Renderiza el mensaje de inicio de sesión no exitoso.
-            setUnsuccessfulLoginMessageContent(result.message);
-            handleShowUnsuccessfulLoginMessage();
+            setUnsuccessfulLoginMessage(result.message);
+            handleShowUnsuccessfulLoginModal();
         }
     }
 
     useEffect(() => {
-        // Va a "/myfeed" si está autorizado.
+        // Va a "MY_FEED_ROUTE" si está autorizado.
         if (isAuthorizated === true) {
-            navigate("/myfeed");
+            navigate(routes.MY_FEED_ROUTE);
         }
     }, [isAuthorizated])
 
@@ -77,7 +79,7 @@ function LoginForm({ handleShowUnsuccessfulLoginMessage, setUnsuccessfulLoginMes
                 value={password}
                 icon={<FontAwesomeIcon className="login-form__input-icon" icon={faLock} />}
             />
-            <LoginButton handleLogin={handleLogin} />
+            <button className="login-form__ok-button" onClick={(event) => handleLogin(event)}>INICIAR SESIÓN</button>
         </form>
     );
 }

@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseChimney, faSquarePlus, faUserLarge } from "@fortawesome/free-solid-svg-icons";
 
+// RUTAS.
+import routes from "../../constants/routes";
+
 /**
  * Navbar.
  * @estado TERMINADO.
@@ -12,15 +15,15 @@ function Navbar() {
     const navigate = useNavigate();
 
     function handleGoToMyFeedPage() {
-        navigate("/myfeed");
+        navigate(routes.MY_FEED_ROUTE);
     }
 
     function handleGoToCreatePostPage() {
-        navigate("/createpost");
+        navigate(routes.CREATE_POST_ROUTE);
     }
 
     function handleGoToMyProfilePage() {
-        navigate("/myprofile");
+        navigate(routes.MY_PROFILE_ROUTE);
     }
 
     return (
