@@ -2,7 +2,8 @@ import { createContext, useState } from "react";
 import { useAuthContext } from "../../context-providers/AuthContextProvider";
 import { useEffect } from "react";
 import '../../styles/mobile/MyProfilePage.css'
-
+import { useNavigate } from 'react-router-dom';
+import EditMyProfilePage from "../../pages/EditMyProfilePage";
 
 // CLASES AUXILIARES.
 import BackendCaller from "../../auxiliar-classes/BackendCaller";
@@ -10,10 +11,17 @@ import BackendCaller from "../../auxiliar-classes/BackendCaller";
 // COMPONENTES.
 import PostCard from "./MyPostCard";
 
+import routes from "../../constants/routes";
 
 
 function PostsContainer(){
+
+
+    const navigate = useNavigate();
+
     const {username} = useAuthContext();
+
+    const [usernameNow, setUsernameNow] = useState("");
 
     // Posts a mostrar.
     const [posts, setPosts] = useState([]);
@@ -50,10 +58,27 @@ function PostsContainer(){
     useEffect(() => {
         fetchFeed();
         setIsLoading(false);
+        fetchUserProfile();
     }, []) // Ejecuta cuando se renderiza el componente.
 
     if (isLoading) {
         return (<p className="loading-message">CARGANDO...</p>);
+    }
+
+    const GoToCloseSession = () =>{
+        navigate(routes.LOGIN_ROUTE)
+    }
+
+    const GoToEditMyProfile = () =>{
+        navigate(routes.MY_PROFILE_EDIT_ROUTE)
+    }
+    
+
+    async function fetchUserProfile() {
+        const response = await BackendCaller.getUserProfile(userID, token);
+        if (response.statusCode === 200) {  
+            setUsernameNow(response.data.user.username);
+        }
     }
 
     return (
@@ -92,10 +117,10 @@ function PostsContainer(){
 
                     <div className="buttons-profile">
                         <div className="profile-name-container">
-                            <h1 className="profile-name">{username}</h1>
+                            <h1 className="profile-name">{usernameNow}</h1>
                         </div>
-                        <button className='profile-log-out-button'>Cerrar Sesión</button>
-                        <button className='profile-log-out-button'>Editar Perfil</button>
+                        <button className='profile-log-out-button' onClick={GoToCloseSession}>Cerrar Sesión</button>
+                        <button className='profile-log-out-button' onClick={GoToEditMyProfile}>Editar Perfil</button>
                     </div>
                 </div>
             </div>
