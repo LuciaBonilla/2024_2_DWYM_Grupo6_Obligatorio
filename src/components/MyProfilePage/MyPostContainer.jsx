@@ -57,54 +57,71 @@ function PostsContainer(){
     }
 
     return (
-        <div >
-            <h1 className="my-feed-page__social-network-title">{username}</h1>
+        <div className="my-profile-page">
+            
             <div className="my-profile-container">
-                <div className="profile-photo-container">
-                    <img className='short-profile-card__img' src=".\src\assets\default_profile.png" alt="Profile"/>
-                    
+                
+                
+                <div className="profile-info-container">
                     <div className="profile-stats-container">
-                        <div className="profile-stat">
-                            <p className="stat-number">{posts.length}</p>
-                            <p className="stat-label">Posts</p>
+                        <div className="profile-photo-container">
+                            <img className='short-profile-card__img' src=".\src\assets\default_profile.png" alt="Profile"/>
+                            
                         </div>
-                        <div className="profile-stat">
-                            <p className="stat-number">100</p>
-                            <p className="stat-label">Followers</p>
+                        <div className="information-container">
+                            
+                            
+                            <div className="profile-information">
+                                <div className="profile-stat">
+                                    <p className="stat-number">{posts.length}</p>
+                                    <p className="stat-label">Posts</p>
+                                </div>
+                                <div className="profile-stat">
+                                    <p className="stat-number">100</p>
+                                    <p className="stat-label">Followers</p>
+                                </div>
+                                <div className="profile-stat">
+                                    <p className="stat-number">100</p>
+                                    <p className="stat-label">Following</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="profile-stat">
-                            <p className="stat-number">100</p>
-                            <p className="stat-label">Following</p>
+                        
+                        
+                    </div>
+
+                    <div className="buttons-profile">
+                        <div className="profile-name-container">
+                            <h1 className="profile-name">{username}</h1>
                         </div>
+                        <button className='profile-log-out-button'>Cerrar Sesión</button>
+                        <button className='profile-log-out-button'>Editar Perfil</button>
                     </div>
                 </div>
-                <div className="buttons-profile">
-                    <button className='profile-log-out-button'>Cerrar Sesión</button>
-                    <button className='profile-log-out-button'>Editar Perfil</button>
-                </div>
-
-                <article className="instagram-profile">
-                    {posts.length > 0 ? (
-                        posts.map((post) => (
-                            <PostCard
-                                key={post._id}
-                                id={post._id}
-                                user={post.user}
-                                imageURL={post.imageUrl}
-                                caption={post.caption}
-                                comments={post.comments}
-                                likes={post.likes}
-                                createdAt={post.createdAt}
-                                fetchFeed={fetchFeed}
-                            />
-                        ))
-                    ) : (
-                        <p className="post-card-container__no-posts-message">NO HAY POSTS</p>
-                    )}
-                </article>
             </div>
+
+            <article className="instagram-profile">
+                {posts.length > 0 ? (
+                    posts.map((post) => (
+                        <PostCard
+                            key={post._id}
+                            id={post._id}
+                            user={post.user}
+                            imageURL={post.imageUrl}
+                            caption={post.caption}
+                            comments={post.comments}
+                            likes={post.likes}
+                            createdAt={post.createdAt}
+                            fetchFeed={fetchFeed}
+                        />
+                    ))
+                ) : (
+                    <p className="post-card-container__no-posts-message">NO HAY POSTS</p>
+                )}
+            </article>
         </div>
     );
+
 }
 
 export default PostsContainer;

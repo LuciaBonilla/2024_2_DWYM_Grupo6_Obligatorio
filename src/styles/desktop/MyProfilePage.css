@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 769px) {
+    
+    .my-profile-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .my-profile-container {
+        display: flex;
+        max-width: 800px; 
+        width: 100%;
+        padding: 20px;
+        justify-content: center; 
+        gap: 20px; 
+    }
+
+    .profile-photo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .short-profile-card__img {
+        width: 17vb;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .profile-info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .profile-stats-container {
+        display: flex;
+        gap: 5vb; 
+        align-items: center;
+    }
+
+    .profile-stat {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-weight: bold;
+        font-size:3.5vb; 
+        margin-bottom: 0;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: #777;
+        margin-top: 0;
+    }
+
+    .buttons-profile {
+        display: flex;
+        gap: 10px; 
+    }
+
+    .profile-log-out-button {
+        padding: 10px 20px; 
+        font-size: 16px; 
+        font-weight: bold;
+        border-radius: 8px;
+        background-color: #39bcd6;
+        color: #00333d;
+        cursor: pointer;
+        height: auto; 
+    }
+
+    .instagram-profile {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px; 
+        max-width: 600px; 
+        justify-content: center; 
+        margin-left: 20%;
+    }
+
+    .instagram-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+    .profile-name {
+        font-size: 3vb; 
+        font-weight: bold;
+    }
+    .profile-name-container{
+        text-align: left;
+
+    }
+
+    .profile-information {
+        display: flex;
+        gap: 1vb;
+        justify-content: center; 
+    }
+
+    .profile-name-container{
+        margin-right: 10vb;
+        margin-left: 10vb;
+    }
+
+    .profile-information{
+        gap:4vb
+    }
+
+    .my-profile-page {
+        transform: scale(1.1); 
+        transform-origin: top left; /
+    }
+}

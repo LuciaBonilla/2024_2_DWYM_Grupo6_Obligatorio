@@ -1,74 +1,93 @@
-.short-profile-card__img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-top: 60px;
-}
 
-.profile-log-out-button {
-    width: 120px;
-    height: 60px;
+@media only screen and (max-width: 769px) {
+     
+    .short-profile-card__img {
+        width: 17vb;
+        height: auto;
+        border-radius: 50%;
+    }
 
-    border-radius: 10px;
+    .profile-log-out-button {
+        width: 120px;
+        height: 60px;
 
-    font-weight: bold;
+        border-radius: 10px;
 
-    background-color: #39bcd6;
-    color: #00333d;
+        font-weight: bold;
 
-    margin-top: 5px;
-    align-self: center;
-    margin-left: 10px;
-}
+        background-color: #39bcd6;
+        color: #00333d;
 
-.instagram-profile {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 10px; 
-    margin-top: 10px;
-}
+        align-self: center;
+    }
 
-.instagram-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1; 
-    object-fit: cover; 
-}
+    .instagram-profile {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+    }
 
-.profile-photo-container {
-    display: flex; 
-    align-items: center; 
-    margin-top: 10px;
-}
+    .instagram-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1; 
+        object-fit: cover; 
+    }
 
-.profile-stats-container {
-    display: flex;
-    margin-left: 20px;
-    margin-top: 50px;
-}
+    .profile-photo-container {
+        display: flex; 
+        align-items: center; 
+        margin-top: 10px;
 
-.profile-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    margin-left: 20px; 
-    gap: 4px; 
-}
+    }
 
-.stat-number {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 0; 
-}
+    .profile-stats-container {
+        display: flex;
+        margin-left: 20px;
+    }
 
-.stat-label {
-    font-size: 14px;
-    color: #777; 
-    margin-top: 0; 
-}
+    .profile-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        margin-left: 20px; 
+        gap: 4px; 
+        margin-top: 5vh;
 
-.my-profile-container{
-    margin-left:5px;
-    margin-right:5px;
+    }
+
+    .stat-number {
+        font-weight: bold;
+        font-size: 3.5vb;
+        margin-bottom: 0; 
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: #777; 
+        margin-top: 0; 
+    }
+
+    .my-profile-container{
+        margin-left:5px;
+        margin-right:5px;
+        
+    }
+
+    .profile-information {
+        display: flex;
+    }
+
+    .profile-name-container {
+        font-size: 2vb;
+        margin-left: 20px;
+        width: 10vb;
+        text-align: center;
+    }
+
+    .profile-name {
+        font-size: 3vb;
+        font-weight: bold;
+        padding-bottom: 4px;
+    }
     
 }
