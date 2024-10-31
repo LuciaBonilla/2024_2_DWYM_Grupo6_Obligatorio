@@ -32,6 +32,11 @@ import "./styles/mobile/CreatePostPage.css";
 import "./styles/tablet/CreatePostPage.css";
 import "./styles/desktop/CreatePostPage.css";
 
+// OtherUserProfilePage
+import "./styles/mobile/OtherUserProfilePage.css";
+import "./styles/tablet/OtherUserProfilePage.css";
+import "./styles/desktop/OtherUserProfilePage.css";
+
 // COMPONENTES.
 import AppRouter from "./AppRouter.jsx";
 
