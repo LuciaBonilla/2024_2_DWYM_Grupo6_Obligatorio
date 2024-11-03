@@ -34,7 +34,7 @@
     .navbar__icon {
         font-size: 22px;
         color: var(--white-friendly-color);
-        filter: drop-shadow(4px 4px 2px var(--text1-color))
+        filter: drop-shadow(4px 4px 2px var(--shadow-color))
     }
 
     .navbar__text {

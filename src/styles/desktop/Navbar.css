@@ -49,12 +49,12 @@
     .navbar__icon {
         font-size: 22px;
         color: var(--white-friendly-color);
-        filter: drop-shadow(4px 4px 2px var(--text1-color))
+        filter: drop-shadow(4px 4px 2px var(--shadow-color))
     }
 
     .navbar__text {
         color: var(--white-friendly-color);
         font-weight: bold;
-        text-shadow: 2px 2px 2px var(--text1-color);
+        text-shadow: 2px 2px 2px var(--shadow-color);
     }
 }
