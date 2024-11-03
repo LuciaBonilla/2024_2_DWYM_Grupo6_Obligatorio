@@ -25,7 +25,7 @@ function OtherUserInfoCard({other_id: user_id}){
         const response = await BackendCaller.getUserProfile(user_id, token);
 
         if (response.statusCode === 200) { // OK
-            setUser(response.data);
+            setUser(response.data.user);
         }
     }
 

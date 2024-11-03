@@ -10,7 +10,7 @@
  * @param {*} value
  * @estado TERMINADO.
  */
-function TextAreaInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {
+function TextAreaInput({ labelClass, labelContent, inputName, inputClass, placeholder, setState, value, icon }) {
     return (
         <label className={labelClass}>
             {labelContent}
@@ -20,7 +20,6 @@ function TextAreaInput({ labelClass, labelContent, inputName, inputClass, inputT
                 key={inputName}
                 name={inputName}
                 className={inputClass}
-                type={inputType}
                 placeholder={placeholder}
                 onChange={(event) => setState(event.target.value)}
                 value={value}

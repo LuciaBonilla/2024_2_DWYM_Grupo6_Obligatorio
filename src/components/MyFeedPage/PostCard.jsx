@@ -1,17 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-// CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
-
 // COMPONENTES.
 import ShortProfileCard from "./ShortProfileCard";
 import GiveLikeButton from "./GiveLikeButton";
-import OpenCommentSectionButton from "./OpenCommentSectionButton";
 import CommentSection from "./CommentSection";
-
-// PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
 
 // RUTAS.
 import routes from "../../constants/routes";
@@ -22,13 +15,13 @@ import routes from "../../constants/routes";
  * @param {*} user
  * @param {*} imageSrc
  * @param {*} caption 
- * @param {*} comments 
+ * @param {*} commentsIDs
  * @param {*} likes
  * @param {*} createdAt
  * @param {*} fetchFeed
- * @estado falta la sección de comentarios.
+ * @estado TERMINADO.
  */
-function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fetchFeed }) {
+function PostCard({ id, user, imageSrc, caption, commentsIDs, likes, createdAt, fetchFeed }) {
     // Indica si la sección de comentarios se debe mostar.
     const [isCommentSectionShowing, setIsCommentSectionShowing] = useState(false);
 
@@ -56,19 +49,6 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
         navigate(routes.OTHER_USER_POST_ROUTE.replace(":id", id));
     }
 
-    const { token } = useAuthContext();
-
-    /**
-     * Da un like al post.
-     */
-    async function handleGiveLike() {
-        const response = await BackendCaller.giveLike(id, token);
-        if (response.statusCode === 200) {  // OK
-            // Actualiza la info.
-            fetchFeed();
-        }
-    }
-
     return (
         <article className="post-card">
             {/* Tarjeta que identifica al usuario autor del post. */}
@@ -84,10 +64,14 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
             <p className="post-card__quantity-likes">{likes.length} Likes</p>
 
             {/* Botón para dar like al post. */}
-            <GiveLikeButton handleGiveLike={handleGiveLike} likes={likes} />
+            <GiveLikeButton
+                postID={id}
+                likes={likes}
+                fetchFeed={fetchFeed}
+            />
 
             {/* Cantidad de comentarios. */}
-            <p className="post-card__quantity-comments">{comments.length} Comentarios</p>
+            <p className="post-card__quantity-comments">{commentsIDs.length} Comentarios</p>
 
             {/* Fecha de publicación. */}
             <p className="post-card__created-at">Publicado el: {new Date(createdAt).toLocaleDateString(document.documentElement.lang, {
@@ -100,10 +84,16 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
             </p>
 
             {/* Botón para abrir la sección de comentarios. */}
-            <OpenCommentSectionButton handleShowCommentSection={handleShowCommentSection} />
+            <button className="post-card__show-comment-section-button" onClick={() => handleShowCommentSection()}>VER COMENTARIOS</button>
 
             {/* Sección de comentarios. */}
-            {isCommentSectionShowing && <CommentSection comments={comments} handleHideCommentSection={handleHideCommentSection} fetchFeed={fetchFeed} />}
+            {isCommentSectionShowing &&
+                <CommentSection
+                    postID={id}
+                    commentsIDs={commentsIDs}
+                    handleHideCommentSection={handleHideCommentSection}
+                    fetchFeed={fetchFeed}
+                />}
         </article>
     );
 }

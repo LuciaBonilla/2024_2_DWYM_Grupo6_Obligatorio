@@ -1,23 +1,35 @@
 :root {
-    --background1-color: #f47f5f; /* Para fondos. */
-    --background2-color: #014b5a; /* Para fondos. */
-    --background1-lighter-color: #eca38e; /* Para fondos. */
-    --background1-lighter-lighter-color: #f7bfb0; /* Para fondos. */
+    /* Para fondos. */
+    --background1-color: #E68643;
+    --background2-color: #15565e;
+    --background1-lighter-color: #FAA661;
+    --background1-lighter-lighter-color: #FAB77F;
 
-    --text1-color: #003540; /* Para fuentes y sombras. */
+    /* Para fuentes. */
+    --text1-color: #154745; 
+
+    /* Para sombras. */
+    --shadow-color: #154745; 
 
     /* Paleta de la red social */
-    --primary-color: #39bcd6;
-    --primary-darker-color: #22889c;
+    --primary-color: #3DD6BA;
+    --primary-darker-color: #33B0A3;
 
-    --secondary-color: #eb5535;     /* También se puede usar para error. */
-    --secondary-darker-color: #a93920; /* También se puede usar para error. */
+    --secondary-color: #D6683E;
+    --secondary-darker-color: #BD4628;
 
-    --white-friendly-color: #ffe3d4; /* Para fondo de inputs y para fuentes. */
-    --white-friendly-darker-color: #ccaa98; /* Para opacidad de fuentes blancas. */
+    /* Para fondo de inputs y para fuentes. */
+    --white-friendly-color: #fcdace;
 
-    --success-color: #04774b;
-    --success-darker-color: #034b2f;
+    /* Para opacidad de fuentes blancas. */
+    --white-friendly-darker-color: #c0a398; 
 
-    --heart-color: #a61111; /* Colot del corazón de like. */
+    --success-color: #96D558;
+    --success-darker-color: #7DA644;
+
+    --error-color: #E2363F;
+    --error-darker-color: #AD2A40;
+
+    --warning-color: #EDB95E;
+    --warning-darker-color: #D49B55;
 }
