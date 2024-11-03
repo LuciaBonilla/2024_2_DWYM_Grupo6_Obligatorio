@@ -10,13 +10,11 @@ const AuthContext = createContext();
 /**
  * Provee del contexto de autenticación.
  * @param {*} children
- * @estado falta funciones para actualizar el perfil de usuario.
+ * @estado TERMINADO.
  */
 export function AuthContextProvider({ children }) {
     // Atributos del contexto de autenticación.
     const [userID, setUserID] = useState();
-    const [username, setUsername] = useState();
-    const [email, setEmail] = useState();
     const [token, setToken] = useState();
     const [isAuthorizated, setIsAuthorizated] = useState(false);
 
@@ -27,8 +25,6 @@ export function AuthContextProvider({ children }) {
     useEffect(() => {
         const context = LocalStorageManager.loadAuthContextFromStorage();
         setUserID(context.userID);
-        setUsername(context.username);
-        setEmail(context.email);
         setToken(context.token);
         setIsAuthorizated(context.isAuthorizated);
 
@@ -39,9 +35,9 @@ export function AuthContextProvider({ children }) {
     // Actualiza el LocalStorage cada vez que cambien los valores del contexto de autenticación.
     useEffect(() => {
         if (!loading) {
-            LocalStorageManager.saveAuthContextToStorage(userID, username, email, token, isAuthorizated);
+            LocalStorageManager.saveAuthContextToStorage(userID, token, isAuthorizated);
         }
-    }, [userID, username, email, token, isAuthorizated]);
+    }, [userID, token, isAuthorizated]);
 
     /**
      * Inicia sesión.
@@ -57,16 +53,12 @@ export function AuthContextProvider({ children }) {
         switch (response.statusCode) {
             case 200: // OK.
                 setUserID(response.data._id);
-                setUsername(response.data.username);
-                setEmail(response.data.email);
                 setToken(response.data.token);
                 setIsAuthorizated(true);
                 result = { success: true };
                 break
             case 401 || 500: // Unauthorized o Internal Server Error.
                 setUserID();
-                setUsername();
-                setEmail();
                 setToken();
                 setIsAuthorizated(false);
                 result = { success: false, message: response.data.message };
@@ -82,19 +74,17 @@ export function AuthContextProvider({ children }) {
      */
     async function logout() {
         setUserID();
-        setUsername();
-        setEmail();
         setToken();
         setIsAuthorizated(false);
     }
 
     // Mientras se cargan los datos del LocalStorage, evita renderizar los hijos.
-    if (loading === true) {
+    if (loading) {
         return <div>Cargando...</div>;
     }
 
     return (
-        <AuthContext.Provider value={{ userID, username, email, token, isAuthorizated, login, logout }}>
+        <AuthContext.Provider value={{ userID, token, isAuthorizated, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
