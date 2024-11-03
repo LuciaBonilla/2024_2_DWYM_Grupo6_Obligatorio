@@ -1,0 +1,170 @@
+@import "../colors.css";
+@import "../animations.css";
+
+@media only screen and (min-width: 769px) {
+    html {
+        font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
+        background-color: var(--background1-color);
+    }
+
+    .my-profile-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .my-profile-page__social-network-title {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        margin: 0;
+        left: 0;
+
+        padding: 8px;
+
+        width: 220px;
+
+        font-size: 32px;
+        text-shadow: 2px 2px 4px var(--background2-color);
+
+        color: var(--primary-color);
+        background-color: var(--secondary-color);
+
+        text-align: center;
+    }
+
+    .my-profile-card {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0 0 0;
+        align-items: center;
+        justify-content: flex-start;
+        color: var(--text1-color);
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    .my-profile-card__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        row-gap: 0;
+        background-color: var(--background1-lighter-color);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .my-profile-card__img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .my-profile-card__username {
+        background-color: var(--background1-lighter-lighter-color);
+        text-align: center;
+        font-size: 32px;
+        width: 80%;
+        margin: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    .my-profile-card__email {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .my-profile-card__posts-quantity {
+        padding: 0;
+        margin: 5px;
+    }
+
+    .my-profile-card__created-at {
+        margin: 5px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .my-profile-card__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 10px;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    .my-profile-card__logout-button {
+        width: 150px;
+        height: 35px;
+        font-size: 16px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
+    }
+
+    .my-profile-card__logout-button:hover {
+        background-color: var(--secondary-darker-color);
+        color: var(--white-friendly-darker-color);
+    }
+
+    .my-profile-card__edit-my-profile-button {
+        width: 150px;
+        height: 35px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: var(--primary-color);
+        color: var(--text1-color);
+    }
+
+    .my-profile-card__edit-my-profile-button:hover {
+        background-color: var(--primary-darker-color);
+        color: var(--white-friendly-darker-color);
+    }
+
+    .my-images-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Espacio entre imágenes */
+        margin: 10px 10px 70px 250px;
+        padding: 10px;
+        width: calc(100% - 250px);
+    }
+
+    .image-card {
+        flex: 1 1 250px;
+        /* Expande y contrae con un tamaño base de 200px */
+        max-width: 350px;
+        min-width: 250px;
+        /* Tamaño máximo para la imagen */
+        max-height: 250px;
+        /* Ajuste máximo de altura */
+        object-fit: cover;
+        transition: transform 0.3s;
+        border-radius: 10px;
+        background-color: var(--background1-lighter-lighter-color);
+    }
+
+    .image-card:hover {
+        transform: scale(1.05);
+    }
+
+    .my-images-container__no-images-message {
+        color: var(--text1-color);
+        font-weight: bold;
+        text-align: center;
+        background-color: var(--background1-lighter-color);
+    }
+}

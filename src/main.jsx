@@ -42,6 +42,11 @@ import "./styles/mobile/OtherUserProfilePage.css";
 import "./styles/tablet/OtherUserProfilePage.css";
 import "./styles/desktop/OtherUserProfilePage.css";
 
+// MyProfilePage
+import "./styles/mobile/MyProfilePage.css";
+import "./styles/tablet/MyProfilePage.css";
+import "./styles/desktop/MyProfilePage.css";
+
 // COMPONENTES.
 import AppRouter from "./AppRouter.jsx";
 
