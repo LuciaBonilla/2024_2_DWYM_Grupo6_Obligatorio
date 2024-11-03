@@ -74,7 +74,6 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
                 labelContent="IMAGEN"
                 inputName="create-post-image"
                 inputClass="create-post-form__input create-post-form__input--image"
-                inputType="file"
                 setState={setImage}
                 accept="image/*"
                 icon={<FontAwesomeIcon className="create-post-form__input-icon" icon={faImage} />}
@@ -84,7 +83,6 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
                 labelContent="DESCRIPCIÓN"
                 inputName="create-post-caption"
                 inputClass="create-post-form__input create-post-form__input--caption"
-                inputType="caption"
                 setState={setCaption}
                 value={caption}
                 icon={<FontAwesomeIcon className="create-post-form__input-icon" icon={faPenToSquare} />}
