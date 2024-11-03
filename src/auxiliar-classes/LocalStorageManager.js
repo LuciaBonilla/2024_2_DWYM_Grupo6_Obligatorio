@@ -6,15 +6,11 @@ class LocalStorageManager {
     /**
      * Guarda el contexto de autenticación en el LocalStorage.
      * @param {*} userID 
-     * @param {*} username 
-     * @param {*} email 
      * @param {*} token 
      * @param {*} isAuthorizated 
      */
-    static saveAuthContextToStorage(userID, username, email, token, isAuthorizated) {
+    static saveAuthContextToStorage(userID, token, isAuthorizated) {
         localStorage.setItem("userID", userID);
-        localStorage.setItem("username", username);
-        localStorage.setItem("email", email);
         localStorage.setItem("token", token);
         localStorage.setItem("isAuthorizated", isAuthorizated);
     }
@@ -26,8 +22,6 @@ class LocalStorageManager {
     static loadAuthContextFromStorage() {
         return {
             userID: localStorage.getItem("userID"),
-            username: localStorage.getItem("username"),
-            email: localStorage.getItem("email"),
             token: localStorage.getItem("token"),
             isAuthorizated: (localStorage.getItem("isAuthorizated") === "true" ? true : false)
         }
