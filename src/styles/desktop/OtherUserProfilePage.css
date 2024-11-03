@@ -1,9 +1,8 @@
-@media (max-width: 425px) {
-
+@media (min-width: 769px) {
     /* Estilos para el contenedor de imágenes de los posts */
     .posts-container__images {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 16px;
         padding: 16px;
         justify-content: center;
@@ -13,7 +12,7 @@
         display: block;
         border-radius: 8px;
         overflow: hidden;
-        flex: 1 1 100%; 
+        flex: 1 1 calc(33.33% - 16px); 
         box-sizing: border-box;
     }
 
@@ -66,19 +65,7 @@
         font-style: italic;
     }
 
-    .other-user-info-card {
-        flex-direction: column;
-        align-items: center; 
-    }
-
-    .other-user-info__profile-img {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .other-user-info__text {
-        align-items: center; 
-        text-align: center; 
+    .other-user-profile-content{
+        margin-left: 220px;
     }
 }
-
