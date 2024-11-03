@@ -40,6 +40,10 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
             // Renderiza el mensaje de registro no exitoso.
             setUnsuccessfulRegisterModalMessage("Las contraseñas no coinciden");
             handleShowUnsuccessfulRegisterModal();
+        } else if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+            // Renderiza el mensaje de registro no exitoso.
+            setUnsuccessfulRegisterModalMessage("No es un email");
+            handleShowUnsuccessfulRegisterModal();
         } else {
             // Resultado del register.
             const result = await BackendCaller.register(username, email, password);

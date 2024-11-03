@@ -32,6 +32,11 @@ import "./styles/mobile/CreatePostPage.css";
 import "./styles/tablet/CreatePostPage.css";
 import "./styles/desktop/CreatePostPage.css";
 
+// EditMyProfilePage
+import "./styles/mobile/EditMyProfilePage.css";
+import "./styles/tablet/EditMyProfilePage.css";
+import "./styles/desktop/EditMyProfilePage.css";
+
 // OtherUserProfilePage
 import "./styles/mobile/OtherUserProfilePage.css";
 import "./styles/tablet/OtherUserProfilePage.css";

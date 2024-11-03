@@ -147,14 +147,49 @@ export class BackendCaller {
     /**
      * Crear un comentario en un post.
      * @param {*} postID 
---32     * @param {*} token
-     * @estado EN PROCESO (EN BACKEND ESTÁ INCOMPLETO).
+     * @param {*} token
+     * @estado LISTO.
      */
-    static async createComment(postID, token) {
+    static async createComment(content, postID, token) {
         try {
             const response = await fetch(this.#API_URI + "/posts/" + postID + "/comments",
                 {
                     method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(
+                        {
+                            content: content
+                        }
+                    )
+                }
+            );
+
+            const statusCode = response.status;
+
+            // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
+            const data = await response.json();
+
+            return { statusCode, data };
+        } catch (error) {
+            console.error("Error al crear comentario:", error);
+        }
+    }
+
+    /**
+     * Eliminar un comentario en un post.
+     * @param {*} postID 
+     * @param {*} commentID
+     * @param {*} token
+     * @estado LISTO.
+     */
+    static async deleteComment(postID, commentID, token) {
+        try {
+            const response = await fetch(this.#API_URI + "/posts/" + postID + "/comments/" + commentID,
+                {
+                    method: "DELETE",
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
@@ -168,7 +203,35 @@ export class BackendCaller {
 
             return { statusCode, data };
         } catch (error) {
-            console.error("Error al crear comentario:", error);
+            console.error("Error al eliminar comentario:", error);
+        }
+    }
+
+    /**
+     * Obtener un comentario específico.
+     * @param {*} commentID
+     * @param {*} token
+     * @estado LISTO.
+     */
+    static async getComment(commentID, token) {
+        try {
+            const response = await fetch(this.#API_URI + "/posts/comments/" + commentID,
+                {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            );
+
+            const statusCode = response.status;
+
+            // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
+            const data = await response.json();
+
+            return { statusCode, data };
+        } catch (error) {
+            console.error("Error al obtener comentario:", error);
         }
     }
 
@@ -200,17 +263,45 @@ export class BackendCaller {
         }
     }
 
+    /**
+     * Quitar el like de un post.
+     * @param {*} postID 
+     * @param {*} token 
+     * @estado LISTO.
+     */
+    static async deleteLike(postID, token) {
+        try {
+            const response = await fetch(this.#API_URI + "/posts/" + postID + "/like",
+                {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            );
+
+            const statusCode = response.status;
+
+            // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
+            const data = await response.json();
+
+            return { statusCode, data };
+        } catch (error) {
+            console.error("Error al quitar like:", error);
+        }
+    }
+
     // USER ROUTES
 
     /**
      * Obtener el perfil de un usuario dado su ID.
-     * @param {*} profileID 
+     * @param {*} userID 
      * @param {*} token
      * @estado LISTO.
      */
-    static async getUserProfile(profileID, token) {
+    static async getUserProfile(userID, token) {
         try {
-            const response = await fetch(this.#API_URI + "/user/profile/" + profileID,
+            const response = await fetch(this.#API_URI + "/user/profile/" + userID,
                 {
                     method: "GET",
                     headers: {
@@ -237,7 +328,7 @@ export class BackendCaller {
      */
     static async getAllUsers(token) {
         try {
-            const response = await fetch(this.#API_URI + "/all",
+            const response = await fetch(this.#API_URI + "/user/all",
                 {
                     method: "GET",
                     headers: {
@@ -265,7 +356,7 @@ export class BackendCaller {
      */
     static async addFriend(friendID, token) {
         try {
-            const response = await fetch(this.#API_URI + "/add-friend/" + friendID,
+            const response = await fetch(this.#API_URI + "/user/add-friend/" + friendID,
                 {
                     method: "POST",
                     headers: {
@@ -286,28 +377,55 @@ export class BackendCaller {
     }
 
     /**
+     * Eliminar un amigo.
+     * @param {*} friendID 
+     * @param {*} token
+     * @estado LISTO.
+     */
+    static async removeFriend(friendID, token) {
+        try {
+            const response = await fetch(this.#API_URI + "/user/remove-friend/" + friendID,
+                {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            );
+
+            const statusCode = response.status;
+
+            // El resultado no es JSON sino el resultado de tomar JSON como entrada y analizarlo para producir un objeto JavaScript.
+            const data = await response.json();
+
+            return { statusCode, data };
+        } catch (error) {
+            console.error("Error al remover amigo:", error);
+        }
+    }
+
+    /**
      * Actualizar el perfil del usuario autenticado.
      * @param {*} token 
-     * @param {*} newUsername 
-     * @param {*} newProfilePicture
-     * @estado EN PROCESO (EN BACKEND ESTÁ INCOMPLETO).
+     * @param {*} newUsername
+     * @param {*} newProfilePicture en base 64.
+     * @estado LISTO.
      */
     static async editProfile(token, newUsername, newProfilePicture) {
         try {
-            // Crea un objeto FormData.
-            const formData = new FormData();
-
-            // Añade la imagen y el texto al FormData.
-            formData.append("username", newUsername);
-            formData.append("profilePicture", newProfilePicture);
-
             const response = await fetch(this.#API_URI + "/user/profile/edit",
                 {
                     method: "PUT",
                     headers: {
-                        "Authorization": `Bearer ${token}`
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
                     },
-                    body: formData // Establece el FormData como cuerpo de la solicitud
+                    body: JSON.stringify(
+                        {
+                            username: newUsername,
+                            profilePicture: newProfilePicture
+                        }
+                    )
                 }
             );
 

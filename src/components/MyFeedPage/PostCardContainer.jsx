@@ -31,10 +31,10 @@ function PostCardContainer() {
      * @param posts
      */
     function getMyFeed(posts) {
-        // Filtra los posts para eliminar los del usuario actual
+        // Filtra los posts para eliminar los del usuario actual.
         const feed = posts.filter((post) => post.user._id !== userID);
 
-        // Ordena los posts por fecha de forma descendente (más recientes primero)
+        // Ordena los posts por fecha de forma descendente (más recientes primero).
         return feed.sort((post1, post2) => new Date(post2.createdAt) - new Date(post1.createdAt));
     }
 
@@ -54,7 +54,7 @@ function PostCardContainer() {
         setIsLoading(false);
     }, []) // Ejecuta cuando se renderiza el componente.
 
-    if (isLoading === true) {
+    if (isLoading) {
         return (<p className="loading-message">CARGANDO...</p>);
     }
 
@@ -68,7 +68,7 @@ function PostCardContainer() {
                         user={post.user}
                         imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
                         caption={post.caption}
-                        comments={post.comments}
+                        commentsIDs={post.comments}
                         likes={post.likes}
                         createdAt={post.createdAt}
                         fetchFeed={fetchFeed}

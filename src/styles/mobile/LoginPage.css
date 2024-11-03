@@ -23,7 +23,7 @@
         width: 50%;
         height: auto;
 
-        background-color: var(--background2-color);
+        background-color: var(--secondary-color);
 
         padding: 10px 20px 0 20px;
         border-radius: 100%;
@@ -33,7 +33,7 @@
 
     .login-page__social-network-title {
         font-size: 32px;
-        text-shadow: 2px 2px 4px var(--background2-color);
+        text-shadow: 2px 2px 4px var(--shadow-color);
 
         color: var(--primary-color);
 
@@ -99,12 +99,12 @@
 
         font-weight: bold;
 
-        background-color: var(--secondary-color);
-        color: var(--white-friendly-color);
+        background-color: var(--primary-color);
+        color: var(--text1-color);
     }
 
     .login-form__ok-button:hover {
-        background-color: var(--secondary-darker-color);
+        background-color: var(--primary-darker-color);
         color: var(--white-friendly-darker-color);
     }
 
@@ -117,14 +117,14 @@
 
         font-weight: bold;
 
-        background-color: var(--primary-color);
-        color: var(--text1-color);
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
 
         margin-top: 10px;
     }
 
     .login-page__go-to-register-page-button:hover {
-        background-color: var(--primary-darker-color);
+        background-color: var(--secondary-darker-color);
         color: var(--white-friendly-darker-color);
     }
 
@@ -171,7 +171,7 @@
 
         bottom: 30%;
 
-        color: var(--secondary-color);
+        color: var(--error-color);
     }
 
     .unsuccessful-login-modal__close-modal-button {
@@ -184,7 +184,7 @@
 
         border-radius: 10px;
 
-        background-color: var(--secondary-color);
+        background-color: var(--error-color);
         color: var(--white-friendly-color);
 
         font-weight: bold;
@@ -192,7 +192,7 @@
     }
 
     .unsuccessful-login-modal__close-modal-button:hover {
-        background-color: var(--secondary-darker-color);
+        background-color: var(--error-darker-color);
         color: var(--white-friendly-darker-color);
     }
 }
