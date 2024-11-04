@@ -73,8 +73,12 @@
         border-radius: 10px;
         color: var(--text1-color);
         font-size: 16px;
+
         min-width: 400px;
         max-width: 600px;
+        min-height: 50vh;
+        max-height: 95vh;
+        height: auto;
     }
 
     .short-profile-card {
@@ -98,10 +102,12 @@
     }
 
     .post-card__uploaded-photo {
-        min-width: 100px;
-        max-width: 1000px;
-        height: auto;
-        background-color: var(--background2-color);
+        min-width: 200px;
+        max-width: 600px;
+        max-height: 60vh;
+        height: 10%;
+        object-fit: contain;
+        background-color: var(--background1-lighter-lighter-color);
     }
 
     .post-card__caption {
