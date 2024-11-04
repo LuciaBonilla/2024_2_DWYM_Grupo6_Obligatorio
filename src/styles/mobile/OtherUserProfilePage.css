@@ -1,84 +1,116 @@
-@media (max-width: 425px) {
+@import "../colors.css";
+@import "../animations.css";
 
-    /* Estilos para el contenedor de imágenes de los posts */
-    .posts-container__images {
+@media only screen and (max-width: 425px) {
+    html {
+        font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
+        background-color: var(--background1-color);
+    }
+
+    .other-user-profile-page {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        padding: 16px;
-        justify-content: center;
+        align-items: center;
     }
 
-    .posts-container__image-link {
-        display: block;
-        border-radius: 8px;
-        overflow: hidden;
-        flex: 1 1 100%; 
-        box-sizing: border-box;
+    .other-user-profile-page__social-network-title {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        margin: 0;
+
+        padding: 8px;
+
+        width: 100vw;
+
+        font-size: 32px;
+        text-shadow: 2px 2px 4px var(--background2-color);
+
+        color: var(--primary-color);
+        background-color: var(--secondary-color);
+
+        text-align: center;
     }
 
-    .posts-container__post-image {
+    .other-user-profile-card {
+        display: flex;
+        flex-direction: column;
+        margin: 70px 0 0 0;
+        align-items: center;
+        justify-content: flex-start;
+        color: var(--text1-color);
+        background-color: var(--background1-lighter-color);
         width: 100%;
-        height: auto;
-        max-height: 150px;
+        padding: 10px;
+    }
+
+    .other-user-profile-card__img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .other-user-profile-card__username {
+        background-color: var(--background1-lighter-lighter-color);
+        text-align: center;
+        font-size: 32px;
+        width: 80%;
+        margin: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    .other-user-profile-card__email {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .other-user-profile-card__posts-quantity {
+        padding: 0;
+        margin: 5px;
+    }
+
+    .other-user-profile-card__created-at {
+        margin: 5px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .other-user-images-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        /* Espacio entre imágenes */
+        justify-content: center;
+        margin: 10px 10px 70px 10px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .image-card {
+        flex: 1 1 200px;
+        /* Expande y contrae con un tamaño base de 200px */
+        min-width: 200px;
+        max-width: 300px;
+        /* Tamaño máximo para la imagen */
+        width: 100%;
+        max-height: 170px;
+        /* Ajuste máximo de altura */
         object-fit: cover;
         transition: transform 0.3s;
+        border-radius: 10px;
+        background-color: var(--background1-lighter-lighter-color);
     }
 
-    .posts-container__post-image:hover {
+    .image-card:hover {
         transform: scale(1.05);
     }
 
-    .posts-container__no-posts {
-        text-align: center; 
-        width: 100%; 
-        margin-top: 16px; 
-    }
-
-    /* Estilo para el componente de información del otro perfil */
-
-    .other-user-info-card {
-        display: flex;
-        align-items: center;
-        margin: 10px;
-        flex-wrap: wrap;
-    }
-
-    .other-user-info__profile-img {
-        width: 120px; 
-        height: 120px; 
-        margin-right: 20px;
-    }
-
-    .other-user-info__text {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .other-user-info__username {
-        font-size: 32px;
+    .other-user-images-container__no-images-message {
+        color: var(--text1-color);
         font-weight: bold;
-        margin-bottom: 5px; 
-    }
-
-    .other-user-info__email {
-        font-size: 24px;
-        font-style: italic;
-    }
-
-    .other-user-info-card {
-        flex-direction: column;
-        align-items: center; 
-    }
-
-    .other-user-info__profile-img {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .other-user-info__text {
-        align-items: center; 
-        text-align: center; 
+        text-align: center;
+        background-color: var(--background1-lighter-color);
     }
 }
-

@@ -5,13 +5,21 @@
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
 
-        background-color: #f47f5f;
+        background-color: var(--background1-color);
     }
 
     .my-feed-page {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        /* Imagen de fondo con repetición y tamaño pequeño */
+        background: linear-gradient(rgba(230, 135, 67, 0.833), rgba(230, 135, 67, 0.853)),
+            url("../../assets/logo-unicolor.png");
+        background-repeat: repeat;
+        background-size: 10%;
+        /* Ajusta el tamaño de la imagen para crear espacio */
+        background-position: right center;
     }
 
     .my-feed-page__social-network-title {
@@ -40,7 +48,7 @@
         flex-direction: column;
         padding: 20px 10px;
         row-gap: 10px;
-        margin: 20px 10% 20px 30%;
+        margin: 20px calc(50%) 20px calc(50% + 250px);
     }
 
     .loading-message {
@@ -65,6 +73,8 @@
         border-radius: 10px;
         color: var(--text1-color);
         font-size: 16px;
+        min-width: 400px;
+        max-width: 600px;
     }
 
     .short-profile-card {
@@ -225,7 +235,7 @@
         overflow-y: scroll;
     }
 
-    .comment-section__no-comments-message{
+    .comment-section__no-comments-message {
         color: var(--text1-color);
         font-weight: bold;
         text-align: center;
@@ -245,8 +255,7 @@
         padding: 3px;
     }
 
-    .my-comment__created-at {
-    }
+    .my-comment__created-at {}
 
     .my-comment__delete-button {
         background-color: var(--primary-color);
@@ -269,13 +278,12 @@
         color: var(--text1-color);
     }
 
-    .other-user-comment__content{
+    .other-user-comment__content {
         background-color: var(--primary-color);
         padding: 3px;
     }
 
-    .other-user-comment__created-at {
-    }
+    .other-user-comment__created-at {}
 
     .comment-section-form {
         width: 90vw;
