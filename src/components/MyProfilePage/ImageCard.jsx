@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 // RUTAS.
 import routes from "../../constants/routes";
 
-function ImageCard({ postID, imageURL }) {
+function ImageCard({ postID, postCaption, imageURL }) {
     const navigate = useNavigate();
 
     function handleGoToMyPostPage() {
@@ -11,7 +11,12 @@ function ImageCard({ postID, imageURL }) {
     }
 
     return (
-        <img className="image-card" src={imageURL} onClick={() => handleGoToMyPostPage()} />
+        <img
+            className="image-card"
+            src={imageURL} onClick={() => handleGoToMyPostPage()}
+            alt={postCaption}
+            title={postCaption}
+        />
     );
 }
 

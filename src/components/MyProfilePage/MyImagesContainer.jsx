@@ -25,6 +25,7 @@ function MyImagesContainer({ posts }) {
                     <ImageCard
                         key={post._id}
                         postID={post._id}
+                        postCaption={post.caption}
                         imageURL={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
                     />
                 ))
