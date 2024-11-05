@@ -27,8 +27,12 @@ function ShortProfileCard({ user }) {
      * Redirige a un perfil de usuario. En algunos casos puede ser al perfil propio de un usuario.
      */
     function handleGoToUserProfile() {
-        if (user._id !== userID) {
-            navigate(routes.OTHER_USER_PROFILE_ROUTE.replace(":id", user._id));
+        if ((user._id !== userID) && (user.id !== userID)) {
+            if (user._id) {
+                navigate(routes.OTHER_USER_PROFILE_ROUTE.replace(":id", user._id));
+            } else {
+                navigate(routes.OTHER_USER_PROFILE_ROUTE.replace(":id", user.id));
+            }
         } else {
             navigate(routes.MY_PROFILE_ROUTE);
         }
@@ -37,7 +41,7 @@ function ShortProfileCard({ user }) {
     return (
         <div className="short-profile-card" onClick={() => handleGoToUserProfile()}>
             <img className="short-profile-card__img" src={user.profilePicture === "" ? defaultPhoto : Base64Converter.checkBase64Image(user.profilePicture)} />
-            <h2 className="short-profile-card__username">{user._id === userID ? "TÚ" : user.username}</h2>
+            <h2 className="short-profile-card__username">{user._id === userID || user.id === userID ? "TÚ" : user.username}</h2>
         </div>
     );
 }

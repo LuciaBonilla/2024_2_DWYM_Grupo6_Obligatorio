@@ -54,30 +54,30 @@ function PostCardContainer() {
         setIsLoading(false);
     }, []) // Ejecuta cuando se renderiza el componente.
 
-    if (isLoading) {
-        return (<p className="loading-message">CARGANDO...</p>);
-    }
-
     return (
-        <article className="post-card-container">
-            {posts.length > 0 ? (
-                posts.map((post) => (
-                    <PostCard
-                        key={post._id}
-                        id={post._id}
-                        user={post.user}
-                        imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
-                        caption={post.caption}
-                        commentsIDs={post.comments}
-                        likes={post.likes}
-                        createdAt={post.createdAt}
-                        fetchFeed={fetchFeed}
-                    />
-                ))
-            ) : (
-                <p className="post-card-container__no-posts-message">NO HAY POSTS</p>
-            )}
-        </article>
+        <>
+            {
+                !isLoading ? <article className="post-card-container">
+                    {posts.length > 0 ? (
+                        posts.map((post) => (
+                            <PostCard
+                                key={post._id}
+                                id={post._id}
+                                user={post.user}
+                                imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
+                                caption={post.caption}
+                                commentsIDs={post.comments}
+                                likes={post.likes}
+                                createdAt={post.createdAt}
+                                fetchFeed={fetchFeed}
+                            />
+                        ))
+                    ) : (
+                        <p className="post-card-container__no-posts-message">NO HAY POSTS</p>
+                    )}
+                </article> : (<p className="loading-message">CARGANDO...</p>)}
+        </>
+
     );
 }
 

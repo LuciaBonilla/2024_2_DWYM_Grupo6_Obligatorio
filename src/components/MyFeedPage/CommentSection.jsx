@@ -30,6 +30,9 @@ function CommentSection({ postID, commentsIDs, handleHideCommentSection, fetchFe
     // Necesario para obtener comentarios y filtrar los comentarios propios de los ajenos.
     const { userID, token } = useAuthContext();
 
+    // Útil para subir comentarios propios.
+    const [myProfilePicture, setMyProfilePicture] = useState("");
+
     // Comentarios propios y ajenos.
     const [myComments, setMyComments] = useState([]);
     const [otherComments, setOtherComments] = useState([]);
@@ -47,8 +50,13 @@ function CommentSection({ postID, commentsIDs, handleHideCommentSection, fetchFe
      * Obtiene los comentarios.
      * @param {*} newComment 
      */
-    async function fetchCommentsData(newComment = null) {
+    async function fetchCommentsData(newComment = null, commentToDeleteID = null) {
         await fetchFeed();
+
+        // Elimina un comentario propio.
+        if (commentToDeleteID) { // Esto se necesita porque al eliminar un comentario le cuesta rerenderizar los comentarios si no se cierra la sección de comentarios.
+            commentsIDs = await commentsIDs.filter((commentID) => commentID !== commentToDeleteID);
+        }
 
         // Crea un array de promesas con las llamadas a la API.
         const commentsPromises = commentsIDs.map(async commentID => {
@@ -57,22 +65,31 @@ function CommentSection({ postID, commentsIDs, handleHideCommentSection, fetchFe
         });
 
         // Espera que todas las promesas se resuelvan.
-        const commentsData = await Promise.all(commentsPromises);
+        let commentsData = await Promise.all(commentsPromises);
 
         // Si hay un nuevo comentario, lo agrega a la lista.
-        if (newComment) {
+        if (newComment) { // Esto se necesita porque al agregar un nuevo comentario le cuesta rerenderizar los comentarios si no se cierra la sección de comentarios.
             commentsData.push({
                 ...newComment,
-                user: {_id: newComment.user}
+                user: { id: newComment.user, profilePicture: myProfilePicture }
             });
         }
 
         // Actualiza el estado con los datos obtenidos.
-        setMyComments(sortCommentsByDate(commentsData.filter((comment) => comment.user._id === userID)));
-        setOtherComments(sortCommentsByDate(commentsData.filter((comment) => comment.user._id !== userID)));
+        setMyComments(sortCommentsByDate(commentsData.filter((comment) => comment.user.id === userID)));
+        setOtherComments(sortCommentsByDate(commentsData.filter((comment) => comment.user.id !== userID)));
     }
 
     useEffect(() => {
+        async function fetchMyProfilePicture() {
+            const response = await BackendCaller.getUserProfile(userID, token);
+
+            if (response.statusCode === 200) {
+                setMyProfilePicture(response.data.user.profilePicture);
+            }
+        }
+
+        fetchMyProfilePicture();
         fetchCommentsData();
         setLoading(false);
     }, []);
@@ -89,37 +106,42 @@ function CommentSection({ postID, commentsIDs, handleHideCommentSection, fetchFe
             {/* Título. */}
             <h3 className="comment-section__title">COMENTARIOS</h3>
 
-            <section className="comment_section__container">
-                {/* Mis comentarios. */}
-                {myComments.length > 0 ? (
-                    myComments.map((comment) =>
-                        <MyComment
-                            key={comment._id}
-                            data={comment}
-                            fetchFeed={fetchFeed}
-                        />
-                    )
-                ) : (
-                    <p className="comment-section__no-comments-message">No has comentado</p>
-                )}
+            {commentsIDs ?
+                <>
+                    <section className="comment_section__container">
+                        {/* Mis comentarios. */}
+                        {myComments.length > 0 ? (
+                            myComments.map((comment) =>
+                                <MyComment
+                                    key={comment._id}
+                                    postID={postID} // Necesario para borrar comentario.
+                                    data={comment}
+                                    fetchCommentsData={fetchCommentsData} // Necesario para borrar comentario.
+                                />
+                            )
+                        ) : (
+                            <p className="comment-section__no-comments-message">No has comentado</p>
+                        )}
 
-                {/* Otros comentarios. */}
-                {otherComments.length > 0 ? (
-                    otherComments.map((comment) =>
-                        <OtherUserComment
-                            key={comment._id}
-                            data={comment}
-                        />
-                    )
-                ) : (
-                    <p className="comment-section__no-comments-message">Otros no han comentado</p>
-                )}
-            </section>
+                        {/* Otros comentarios. */}
+                        {otherComments.length > 0 ? (
+                            otherComments.map((comment) =>
+                                <OtherUserComment
+                                    key={comment._id}
+                                    data={comment}
+                                />
+                            )
+                        ) : (
+                            <p className="comment-section__no-comments-message">Otros no han comentado</p>
+                        )}
+                    </section>
+                </> : null
+            }
 
             {/* Formulario. */}
             <CommentSectionForm
-                postID={postID}
-                fetchCommentsData={fetchCommentsData}
+                postID={postID} // Necesario para crear comentario.
+                fetchCommentsData={fetchCommentsData} // Necesario para crear comentario.
             />
         </section>
     );
