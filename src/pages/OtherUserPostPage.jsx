@@ -1,6 +1,80 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+// BACKEND_URI.
+import BACKEND_URI from "../constants/BACKEND_URI";
+
+// PROVEEDOR DE CONTEXTO.
+import { useAuthContext } from "../context-providers/AuthContextProvider";
+
+// CLASES AUXILIARES.
+import BackendCaller from "../auxiliar-classes/BackendCaller";
+
+// COMPONENTES.
+import PostCard from "../components/MyFeedPage/PostCard";
+import Navbar from "../components/shared-components/Navbar";
+
+/**
+ * Página para ver un post específico.
+ */
 function OtherUserPostPage() {
+    const [post, setPost] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    const { token } = useAuthContext();
+    const { id: postId } = useParams();
+
+    /**
+     * Obtiene el post específico por ID.
+     */
+    async function fetchPost() {
+        const response = await BackendCaller.getFeed(token);
+
+        if (response.statusCode === 200) {
+            // Filtrar el post específico por su ID.
+            const specificPost = response.data.find(post => post._id === postId);
+            if (specificPost) {
+                setPost(specificPost);
+            } else {
+                console.error("Post no encontrado");
+            }
+        } else {
+            console.error("Error al cargar el post");
+        }
+        setIsLoading(false);
+    }
+
+    useEffect(() => {
+        if (postId) {
+            fetchPost();
+        }
+    }, [postId, token]);
+
     return (
-        <h1>Other User Post Page</h1>
+        <main className="my-feed-page">
+            <h1 className="my-profile-page__social-network-title">PhantyNet</h1>
+            {!isLoading ? (
+                post ? (
+                    <article className="post-card-container">
+                        <PostCard
+                            id={post._id}
+                            user={post.user}
+                            imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
+                            caption={post.caption}
+                            commentsIDs={post.comments || []} 
+                            likes={post.likes || []} 
+                            createdAt={post.createdAt}
+                            fetchFeed={fetchPost} 
+                        />
+                    </article>
+                ) : (
+                    <p className="post-card-container__no-posts-message">Post no encontrado</p>
+                )
+            ) : (
+                <p className="loading-message">Cargando...</p>
+            )}
+            <Navbar />
+        </main>
     );
 }
 
