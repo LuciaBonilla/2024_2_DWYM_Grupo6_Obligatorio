@@ -1,28 +1,27 @@
-@import "../colors.css";
-@import "../animations.css";
+@import "../../colors.css";
+@import "../../animations.css";
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 425px) and (max-width: 769px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
         background-color: var(--background1-color);
     }
 
-    .my-profile-page {
+    .profile-page {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .my-profile-page__social-network-title {
+    .profile-page__social-network-title {
         position: fixed;
         z-index: 100;
         top: 0;
         margin: 0;
-        left: 0;
 
         padding: 8px;
 
-        width: 220px;
+        width: 100vw;
 
         font-size: 32px;
         text-shadow: 2px 2px 4px var(--background2-color);
@@ -33,62 +32,60 @@
         text-align: center;
     }
 
-    .my-profile-card {
+    .profile-card {
         display: flex;
         flex-direction: column;
-        margin: 30px 0 0 0;
+        margin: 70px 0 0 0;
         align-items: center;
         justify-content: flex-start;
         color: var(--text1-color);
-        margin-left: 250px;
-        width: calc(100% - 250px);
     }
 
-    .my-profile-card__info {
+    .profile-card__info {
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         row-gap: 0;
         background-color: var(--background1-lighter-color);
-        padding: 20px;
-        border-radius: 10px;
+        padding: 10px;
     }
 
-    .my-profile-card__img {
+    .profile-card__img {
         width: 150px;
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
     }
 
-    .my-profile-card__username {
+    .profile-card__username {
         background-color: var(--background1-lighter-lighter-color);
         text-align: center;
         font-size: 32px;
-        width: 80%;
+        width: 300px;
         margin: 10px;
         border-radius: 10px;
         font-weight: bold;
     }
 
-    .my-profile-card__email {
+    .profile-card__email {
         padding: 5px;
         margin: 5px;
     }
 
-    .my-profile-card__posts-quantity {
+    .profile-card__posts-quantity {
         padding: 0;
         margin: 5px;
     }
 
-    .my-profile-card__created-at {
+    .profile-card__created-at {
         margin: 5px;
         padding: 0;
         text-align: center;
     }
 
-    .my-profile-card__buttons {
+    .profile-card__buttons {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -98,7 +95,7 @@
         row-gap: 10px;
     }
 
-    .my-profile-card__logout-button {
+    .profile-card__logout-button {
         width: 150px;
         height: 35px;
         font-size: 16px;
@@ -111,12 +108,12 @@
         color: var(--white-friendly-color);
     }
 
-    .my-profile-card__logout-button:hover {
+    .profile-card__logout-button:hover {
         background-color: var(--secondary-darker-color);
         color: var(--white-friendly-darker-color);
     }
 
-    .my-profile-card__edit-my-profile-button {
+    .profile-card__edit-profile-button {
         width: 150px;
         height: 35px;
 
@@ -128,28 +125,29 @@
         color: var(--text1-color);
     }
 
-    .my-profile-card__edit-my-profile-button:hover {
+    .profile-card__edit-profile-button:hover {
         background-color: var(--primary-darker-color);
         color: var(--white-friendly-darker-color);
     }
 
-    .my-images-container {
+    .images-container {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         /* Espacio entre imágenes */
-        margin: 10px 10px 70px 250px;
+        margin: 10px 10px 70px 10px;
+        width: 100%;
         padding: 10px;
-        width: calc(100% - 250px);
     }
 
     .image-card {
-        flex: 1 1 250px;
+        flex: 1 1 200px;
         /* Expande y contrae con un tamaño base de 200px */
-        max-width: 350px;
-        min-width: 250px;
+        min-width: 200px;
+        max-width: 300px;
         /* Tamaño máximo para la imagen */
-        max-height: 250px;
+        width: 100%;
+        max-height: 150px;
         /* Ajuste máximo de altura */
         object-fit: cover;
         transition: transform 0.3s;
@@ -161,7 +159,7 @@
         transform: scale(1.05);
     }
 
-    .my-images-container__no-images-message {
+    .images-container__no-images-message {
         color: var(--text1-color);
         font-weight: bold;
         text-align: center;

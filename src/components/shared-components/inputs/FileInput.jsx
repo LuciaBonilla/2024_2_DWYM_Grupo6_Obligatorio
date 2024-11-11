@@ -1,32 +1,32 @@
 /**
- * Input text area.
+ * Input de file (no de selection y no normal).
  * @param {*} labelClass 
  * @param {*} labelContent 
  * @param {*} inputName 
- * @param {*} inputClass 
- * @param {*} inputType 
+ * @param {*} inputClass
  * @param {*} placeholder 
  * @param {*} setState
- * @param {*} value
+ * @param {*} accept
+ * @param {*} icon
  * @estado TERMINADO.
  */
-function TextAreaInput({ labelClass, labelContent, inputName, inputClass, placeholder, setState, value, icon }) {
+function FileInput({ labelClass, labelContent, inputName, inputClass, placeholder, setState, accept, icon }) {
     return (
         <label className={labelClass}>
             {labelContent}
             {icon}
-            <textarea
+            <input
                 id={inputName}
                 key={inputName}
                 name={inputName}
                 className={inputClass}
+                type="file"
                 placeholder={placeholder}
-                onChange={(event) => setState(event.target.value)}
-                value={value}
-            >
-            </textarea>
+                onChange={(e) => setState(e.target.files[0])}
+                accept={accept}
+            />
         </label>
     );
 }
 
-export default TextAreaInput;
+export default FileInput;

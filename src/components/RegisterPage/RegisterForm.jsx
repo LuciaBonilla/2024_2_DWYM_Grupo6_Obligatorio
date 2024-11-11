@@ -4,7 +4,7 @@ import { useState } from "react";
 import BackendCaller from "../../auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import NormalInput from "../shared-components/NormalInput";
+import NormalInput from "../shared-components/inputs/NormalInput";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +16,7 @@ import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
  * @param {*} setUnsuccessfulRegisterModalMessage
  * @param {*} handleShowSuccessfulRegisterModal
  * @param {*} setSuccessfulRegisterModalMessage
+ * @estado TERMINADO.
  */
 function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegisterModalMessage, handleShowSuccessfulRegisterModal, setSuccessfulRegisterModalMessage }) {
     // Valores de los inputs.

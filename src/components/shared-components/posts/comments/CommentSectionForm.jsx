@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
 // COMPONENTES.
-import NormalInput from "../shared-components/NormalInput";
+import NormalInput from "../../inputs/NormalInput";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
+import BackendCaller from "../../../../auxiliar-classes/BackendCaller";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "../../../../context-providers/AuthContextProvider";
 
 /**
  * Formulario para crear comentario.
@@ -35,8 +35,7 @@ function CommentSectionForm({ postID, fetchCommentsData }) {
         if (response.statusCode === 201) {
             const newComment = response.data;
 
-            // Actualiza los comentarios locales.
-            await fetchCommentsData(newComment);
+            await fetchCommentsData(newComment, null); // Obtén los comentarios actualizados
             setContent(""); // Limpia el campo de texto.
         }
     }

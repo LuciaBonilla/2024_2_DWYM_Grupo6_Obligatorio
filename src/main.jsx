@@ -22,11 +22,6 @@ import "./styles/mobile/RegisterPage.css";
 import "./styles/tablet/RegisterPage.css";
 import "./styles/desktop/RegisterPage.css";
 
-// MyFeedPage
-import "./styles/mobile/MyFeedPage.css";
-import "./styles/tablet/MyFeedPage.css";
-import "./styles/desktop/MyFeedPage.css";
-
 // CreatePostPage
 import "./styles/mobile/CreatePostPage.css";
 import "./styles/tablet/CreatePostPage.css";
@@ -37,15 +32,18 @@ import "./styles/mobile/EditMyProfilePage.css";
 import "./styles/tablet/EditMyProfilePage.css";
 import "./styles/desktop/EditMyProfilePage.css";
 
-// OtherUserProfilePage
-import "./styles/mobile/OtherUserProfilePage.css";
-import "./styles/tablet/OtherUserProfilePage.css";
-import "./styles/desktop/OtherUserProfilePage.css";
+// SharedStyles
 
-// MyProfilePage
-import "./styles/mobile/MyProfilePage.css";
-import "./styles/tablet/MyProfilePage.css";
-import "./styles/desktop/MyProfilePage.css";
+// PostPage (para MyPostPage, MyFeedPage y OtherUserPostPage)
+import "./styles/mobile/shared-styles/PostPage.css";
+import "./styles/tablet/shared-styles/PostPage.css";
+import "./styles/desktop/shared-styles/PostPage.css";
+
+// ProfilePage (para MyProfilePage y OtherUserProfilePage)
+import "./styles/mobile/shared-styles/ProfilePage.css";
+import "./styles/tablet/shared-styles/ProfilePage.css";
+import "./styles/desktop/shared-styles/ProfilePage.css";
+
 
 // COMPONENTES.
 import AppRouter from "./AppRouter.jsx";

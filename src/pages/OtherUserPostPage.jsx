@@ -11,8 +11,8 @@ import { useAuthContext } from "../context-providers/AuthContextProvider";
 import BackendCaller from "../auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import PostCard from "../components/MyFeedPage/PostCard";
-import Navbar from "../components/shared-components/Navbar";
+import PostCard from "../components/shared-components/posts/PostCard";
+import Navbar from "../components/shared-components/others/Navbar";
 
 /**
  * Página para ver un post específico.
@@ -51,8 +51,8 @@ function OtherUserPostPage() {
     }, [postId, token]);
 
     return (
-        <main className="my-feed-page">
-            <h1 className="my-profile-page__social-network-title">PhantyNet</h1>
+        <main className="post-page">
+            <h1 className="post-page__social-network-title">PhantyNet</h1>
             {!isLoading ? (
                 post ? (
                     <article className="post-card-container">
@@ -61,8 +61,8 @@ function OtherUserPostPage() {
                             user={post.user}
                             imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
                             caption={post.caption}
-                            commentsIDs={post.comments || []} 
-                            likes={post.likes || []} 
+                            comments={post.comments} 
+                            likes={post.likes} 
                             createdAt={post.createdAt}
                             fetchFeed={fetchPost} 
                         />

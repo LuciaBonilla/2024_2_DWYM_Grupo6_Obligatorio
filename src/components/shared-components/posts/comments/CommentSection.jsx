@@ -10,10 +10,10 @@ import MyComment from "./MyComment";
 import CommentSectionForm from "./CommentSectionForm";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "../../../../context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
+import BackendCaller from "../../../../auxiliar-classes/BackendCaller";
 
 /**
  * Sección de comentarios.
@@ -23,15 +23,12 @@ import BackendCaller from "../../auxiliar-classes/BackendCaller";
  * @param {*} handleHideCommentSection
  * @param {*} fetchFeed
  */
-function CommentSection({ postID, commentsIDs, handleHideCommentSection, fetchFeed }) {
+function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed }) {
     // Para controlar carga.
     const [loading, setLoading] = useState(true);
 
     // Necesario para obtener comentarios y filtrar los comentarios propios de los ajenos.
-    const { userID, token } = useAuthContext();
-
-    // Útil para subir comentarios propios.
-    const [myProfilePicture, setMyProfilePicture] = useState("");
+    const { userID } = useAuthContext();
 
     // Comentarios propios y ajenos.
     const [myComments, setMyComments] = useState([]);
@@ -51,45 +48,30 @@ function CommentSection({ postID, commentsIDs, handleHideCommentSection, fetchFe
      * @param {*} newComment 
      */
     async function fetchCommentsData(newComment = null, commentToDeleteID = null) {
+        // Actualiza el feed de los posts.
         await fetchFeed();
 
-        // Elimina un comentario propio.
-        if (commentToDeleteID) { // Esto se necesita porque al eliminar un comentario le cuesta rerenderizar los comentarios si no se cierra la sección de comentarios.
-            commentsIDs = await commentsIDs.filter((commentID) => commentID !== commentToDeleteID);
-        }
-
-        // Crea un array de promesas con las llamadas a la API.
-        const commentsPromises = commentsIDs.map(async commentID => {
-            const commentResponse = await BackendCaller.getComment(commentID, token);
-            return commentResponse.data;
-        });
-
-        // Espera que todas las promesas se resuelvan.
-        let commentsData = await Promise.all(commentsPromises);
-
-        // Si hay un nuevo comentario, lo agrega a la lista.
-        if (newComment) { // Esto se necesita porque al agregar un nuevo comentario le cuesta rerenderizar los comentarios si no se cierra la sección de comentarios.
-            commentsData.push({
-                ...newComment,
-                user: { id: newComment.user, profilePicture: myProfilePicture }
-            });
-        }
-
         // Actualiza el estado con los datos obtenidos.
-        setMyComments(sortCommentsByDate(commentsData.filter((comment) => comment.user.id === userID)));
-        setOtherComments(sortCommentsByDate(commentsData.filter((comment) => comment.user.id !== userID)));
+        setMyComments(sortCommentsByDate(comments.filter((comment) => comment.user._id === userID)));
+
+        setOtherComments(sortCommentsByDate(comments.filter((comment) => comment.user._id !== userID)));
+
+        // Agrega el nuevo comentario si existe.
+        if (newComment) {
+            setMyComments((prevComments) =>
+                sortCommentsByDate([...prevComments, newComment])
+            );
+        }
+
+        // Elimina el comentario si se proporciona un ID para borrar.
+        if (commentToDeleteID) {
+            setMyComments((prevComments) =>
+                prevComments.filter((myComment) => myComment._id !== commentToDeleteID)
+            );
+        }
     }
 
     useEffect(() => {
-        async function fetchMyProfilePicture() {
-            const response = await BackendCaller.getUserProfile(userID, token);
-
-            if (response.statusCode === 200) {
-                setMyProfilePicture(response.data.user.profilePicture);
-            }
-        }
-
-        fetchMyProfilePicture();
         fetchCommentsData();
         setLoading(false);
     }, []);
@@ -106,7 +88,7 @@ function CommentSection({ postID, commentsIDs, handleHideCommentSection, fetchFe
             {/* Título. */}
             <h3 className="comment-section__title">COMENTARIOS</h3>
 
-            {commentsIDs ?
+            {comments ?
                 <>
                     <section className="comment_section__container">
                         {/* Mis comentarios. */}

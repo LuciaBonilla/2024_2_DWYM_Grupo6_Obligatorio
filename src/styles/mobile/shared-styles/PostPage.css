@@ -1,28 +1,20 @@
-@import "../colors.css";
-@import "../animations.css";
+@import "../../colors.css";
+@import "../../animations.css";
 
-@media only screen and (min-width: 425px) and (max-width: 769px) {
+@media only screen and (max-width: 425px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
 
         background-color: var(--background1-color);
     }
 
-    .my-feed-page {
+    .post-page {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
-        /* Imagen de fondo con repetición y tamaño pequeño */
-        background: linear-gradient(rgba(230, 135, 67, 0.833), rgba(230, 135, 67, 0.853)),
-            url("../../assets/logo-unicolor.png");
-        background-repeat: repeat;
-        background-size: 10%;
-        /* Ajusta el tamaño de la imagen para crear espacio */
-        background-position: right center;
     }
 
-    .my-feed-page__social-network-title {
+    .post-page__social-network-title {
         position: fixed;
         z-index: 100;
         top: 0;
@@ -52,6 +44,7 @@
     }
 
     .loading-message {
+        background-color: ar(--background1-lighter-color);
         color: var(--text1-color);
         font-weight: bold;
         text-align: center;
@@ -73,12 +66,6 @@
         border-radius: 10px;
         color: var(--text1-color);
         font-size: 16px;
-
-        min-width: 400px;
-        max-width: 600px;
-        min-height: 30vh;
-        max-height: 95vh;
-        height: auto;
     }
 
     .short-profile-card {
@@ -103,15 +90,8 @@
 
     .post-card__uploaded-photo {
         min-width: 200px;
-        max-width: 800px;
+        max-width: 400px;
         height: auto;
-        background-color: var(--background2-color);
-
-        min-width: 200px;
-        max-width: 600px;
-        max-height: 60vh;
-        height: 10%;
-        object-fit: contain;
         background-color: var(--background1-lighter-lighter-color);
     }
 
@@ -204,8 +184,8 @@
     .comment-section__hide-button {
         position: fixed;
         z-index: 200;
-        top: 7vh;
-        left: 50px;
+        top: 35px;
+        left: 25px;
         border-radius: 50%;
         width: 32px;
         height: 32px;
@@ -222,14 +202,14 @@
     }
 
     .comment-section__title {
-        font-size: 32px;
+        font-size: 16px;
         text-align: center;
 
         background-color: var(--background2-color);
         color: var(--white-friendly-color);
 
-        width: 90vw;
-        height: 90vh;
+        width: 95vw;
+        height: 95vh;
 
         padding: 25px 0 0 0;
         border-radius: 10px;
@@ -240,8 +220,8 @@
     .comment_section__container {
         z-index: 2000;
         max-height: 80vh;
-        margin: 150px 5px;
-        max-width: 90vw;
+        max-width: 95vw;
+        margin: 75px 5px;
         overflow-y: scroll;
     }
 
@@ -299,9 +279,9 @@
         width: 90vw;
         z-index: 3000;
         position: fixed;
-        bottom: 60px;
+        bottom: 30px;
         background-color: var(--background2-color);
-        padding: 10px;
+        padding: 5px;
     }
 
     .comment-section-form__input-container {

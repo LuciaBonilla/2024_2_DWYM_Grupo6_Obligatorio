@@ -1,34 +1,36 @@
-@import "../colors.css";
-@import "../animations.css";
+@import "../../colors.css";
+@import "../../animations.css";
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 425px) and (max-width: 769px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
 
         background-color: var(--background1-color);
     }
 
-    .my-feed-page {
+    .post-page {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         /* Imagen de fondo con repetición y tamaño pequeño */
         background: linear-gradient(rgba(230, 135, 67, 0.833), rgba(230, 135, 67, 0.853)),
-            url("../../assets/logo-unicolor.png");
+            url("../../../assets/logo-unicolor.png");
         background-repeat: repeat;
         background-size: 10%;
         /* Ajusta el tamaño de la imagen para crear espacio */
         background-position: right center;
     }
 
-    .my-feed-page__social-network-title {
+    .post-page__social-network-title {
         position: fixed;
         z-index: 100;
         top: 0;
         margin: 0;
 
         padding: 8px;
+
+        width: 100vw;
 
         font-size: 32px;
         text-shadow: 2px 2px 4px var(--background2-color);
@@ -37,18 +39,16 @@
         background-color: var(--secondary-color);
 
         text-align: center;
-
-        width: 220px;
     }
 
     .post-card-container {
+        margin-top: 60px;
+        margin-bottom: 50px;
+
         display: flex;
-        align-self: center;
-        width: 60%;
         flex-direction: column;
-        padding: 20px 10px;
+        padding: 0 10px;
         row-gap: 10px;
-        margin: 20px calc(50%) 20px calc(50% + 250px);
     }
 
     .loading-message {
@@ -76,7 +76,7 @@
 
         min-width: 400px;
         max-width: 600px;
-        min-height: 50vh;
+        min-height: 30vh;
         max-height: 95vh;
         height: auto;
     }
@@ -102,6 +102,11 @@
     }
 
     .post-card__uploaded-photo {
+        min-width: 200px;
+        max-width: 800px;
+        height: auto;
+        background-color: var(--background2-color);
+
         min-width: 200px;
         max-width: 600px;
         max-height: 60vh;
@@ -200,7 +205,7 @@
         position: fixed;
         z-index: 200;
         top: 7vh;
-        left: 6vw;
+        left: 50px;
         border-radius: 50%;
         width: 32px;
         height: 32px;
@@ -234,10 +239,9 @@
 
     .comment_section__container {
         z-index: 2000;
-        max-height: 90vh;
-        margin: 110px 5px;
+        max-height: 80vh;
+        margin: 150px 5px;
         max-width: 90vw;
-        min-width: 85vw;
         overflow-y: scroll;
     }
 
@@ -297,7 +301,7 @@
         position: fixed;
         bottom: 60px;
         background-color: var(--background2-color);
-        padding: 20px 40px;
+        padding: 10px;
     }
 
     .comment-section-form__input-container {

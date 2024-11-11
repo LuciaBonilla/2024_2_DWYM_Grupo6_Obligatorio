@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 // COMPONENTES.
-import Navbar from "../components/shared-components/Navbar";
-import OtherUserInfoCard from '../components/OtherUserProfilePage/OtherUserInfoCard';
-import OtherUserImagesContainer from '../components/OtherUserProfilePage/OtherUserImagesContainer';
+import Navbar from "../components/shared-components/others/Navbar";
+import ProfileCard from "../components/shared-components/profiles/ProfileCard";
+import ImagesContainer from "../components/shared-components/profiles/ImagesContainer";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from '../auxiliar-classes/BackendCaller';
+import BackendCaller from "../auxiliar-classes/BackendCaller";
 
 /**
  * Other User Profile Page.
@@ -38,20 +38,22 @@ function OtherUserProfilePage() {
     }, []); // Ejecuta cuando se renderiza el componente.
 
     return (
-        <main className="other-user-profile-page">
-            <h1 className="other-user-profile-page__social-network-title">PhantyNet</h1>
+        <main className="profile-page">
+            <h1 className="profile-page__social-network-title">PhantyNet</h1>
             {userInfo ? (
                 <>
-                    <OtherUserInfoCard
+                    <ProfileCard
                         user={userInfo.user}
                         postsQuantity={userInfo.posts.length}
                     />
-                    <OtherUserImagesContainer
+
+                    <ImagesContainer
+                        userAuthorPostsID={userInfo.id}
                         posts={userInfo.posts}
                     />
                 </>
             ) : (
-                <p>CARGANDO...</p>
+                <p>CARGANDO..</p>
             )}
             <Navbar />
         </main>

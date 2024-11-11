@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseChimney, faSquarePlus, faUserLarge } from "@fortawesome/free-solid-svg-icons";
 
 // RUTAS.
-import routes from "../../constants/routes";
+import routes from "../../../constants/routes";
 
 /**
  * Navbar.

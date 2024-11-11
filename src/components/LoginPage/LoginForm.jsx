@@ -7,7 +7,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import NormalInput from "../shared-components/NormalInput";
+import NormalInput from "../shared-components/inputs/NormalInput";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../../context-providers/AuthContextProvider";

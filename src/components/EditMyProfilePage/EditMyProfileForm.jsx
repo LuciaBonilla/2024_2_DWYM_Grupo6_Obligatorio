@@ -12,10 +12,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCircleXmark, faImagePortrait } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import NormalInput from "../shared-components/NormalInput";
-import FileInput from "../shared-components/FileInput";
-import TextAreaInput from "../shared-components/TextAreaInput";
-import OperationResultModal from "../shared-components/OperationResultModal";
+import NormalInput from "../shared-components/inputs/NormalInput";
+import FileInput from "../shared-components/inputs/FileInput";
+import OperationResultModal from "../shared-components/others/OperationResultModal";
 
 /**
  * Formulario para editar perfil.
