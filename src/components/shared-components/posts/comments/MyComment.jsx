@@ -19,6 +19,7 @@ function MyComment({ postID, data, fetchCommentsData }) {
 
     /**
      * Elimina un comentario propio.
+     * @estado TERMINADO.
      */
     async function handleDeleteComment() {
         const response = await BackendCaller.deleteComment(postID, data._id, token);

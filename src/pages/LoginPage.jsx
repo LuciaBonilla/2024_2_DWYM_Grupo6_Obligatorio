@@ -30,6 +30,7 @@ function LoginPage() {
 
     /**
      * Muestra el mensaje de inicio de sesión no exitoso.
+     * @estado TERMINADO.
      */
     function handleShowUnsuccessfulLoginModal() {
         setIsUnsuccessfulLoginModalShowing(true);
@@ -37,6 +38,7 @@ function LoginPage() {
 
     /**
      * Oculta el mensaje de inicio de sesión no exitoso.
+     * @estado TERMINADO.
      */
     function handleHideUnsuccessfulLoginModal() {
         setIsUnsuccessfulLoginModalShowing(false);

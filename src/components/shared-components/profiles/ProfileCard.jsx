@@ -5,7 +5,7 @@ import defaultPhoto from "../../../assets/default_profile.png";
 import Base64Converter from "../../../auxiliar-classes/Base64Converter";
 
 /**
- * Tarjeta de perfil propio.
+ * Tarjeta detallada de perfil.
  * @param {*} user
  * @param {*} postsQuantity 
  * @param {*} children

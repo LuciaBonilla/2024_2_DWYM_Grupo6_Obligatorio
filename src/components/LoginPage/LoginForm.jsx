@@ -35,6 +35,7 @@ function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessa
     /**
      * Maneja el inicio de sesión de un usuario.
      * @param {*} event 
+     * @estado TERMINADO.
      */
     async function handleLogin(event) {
         // Para evitar el submit.

@@ -33,6 +33,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Muestra el modal de edición no exitosa.
+     * @estado TERMINADO.
      */
     function handleShowUnsuccessfulEditModal() {
         setIsShowingUnsuccessfulEditModal(true);
@@ -40,6 +41,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Oculta el modal de edición no exitosa.
+     * @estado TERMINADO.
      */
     function handleHideUnsuccessfulEditModal() {
         setUnsuccessfulEditMessage();
@@ -54,7 +56,8 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Edita el perfil del usuario autenticado (edita el atributo elegido).
-     * @param {*} event 
+     * @param {*} event
+     * @estado TERMINADO. 
      */
     async function handleEditMyProfile(event) {
         // Para evitar submit.
@@ -87,6 +90,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
     /**
      * Cancela la edición del perfil.
      * @param {*} event 
+     * @estado TERMINADO.
      */
     function handleCancelEditMyProfile(event) {
         event.preventDefault();

@@ -8,6 +8,7 @@
  * @param {*} placeholder 
  * @param {*} setState
  * @param {*} value
+ * @param {*} icon
  * @estado TERMINADO.
  */
 function NormalInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {

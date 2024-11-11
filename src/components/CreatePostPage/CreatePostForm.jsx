@@ -36,6 +36,7 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
     /**
      * Cancela subir un post.
      * @param {*} event 
+     * @estado TERMINADO.
      */
     function handleCancelUpload(event) {
         // Evita el submit.
@@ -47,6 +48,7 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
     /**
      * Sube un post.
      * @param event 
+     * @estado TERMINADO.
      */
     async function handleUploadPost(event) {
         // Evita el submit.

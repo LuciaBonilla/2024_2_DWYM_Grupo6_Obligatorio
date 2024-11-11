@@ -44,6 +44,7 @@ export function AuthContextProvider({ children }) {
      * @param {*} email 
      * @param {*} password 
      * @returns Resultado de la operación.
+     * @estado TERMINADO.
      */
     async function login(email, password) {
         // Intenta iniciar sesión por backend.
@@ -71,6 +72,7 @@ export function AuthContextProvider({ children }) {
 
     /**
      * Cierra sesión.
+     * @estado TERMINADO.
      */
     async function logout() {
         setUserID();

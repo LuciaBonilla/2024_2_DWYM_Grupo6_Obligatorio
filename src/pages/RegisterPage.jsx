@@ -34,6 +34,7 @@ function RegisterPage() {
 
     /**
      * Muestra el modal de registro no exitoso.
+     * @estado TERMINADO.
      */
     function handleShowUnsuccessfulRegisterModal() {
         setIsUnsuccessfulRegisterModalShowing(true);
@@ -41,6 +42,7 @@ function RegisterPage() {
 
     /**
      * Oculta el modal de registro no exitoso.
+     * @estado TERMINADO.
      */
     function handleHideUnsuccessfulRegisterModal() {
         setIsUnsuccessfulRegisterModalShowing(false);
@@ -48,6 +50,7 @@ function RegisterPage() {
 
     /**
      * Muestra el modal de registro exitoso.
+     * @estado TERMINADO.
      */
     function handleShowSuccessfulRegisterModal() {
         setIsSuccessfulRegisterModalShowing(true);
@@ -55,6 +58,7 @@ function RegisterPage() {
 
     /**
      * Oculta el modal de registro exitoso.
+     * @estado TERMINADO.
      */
     function handleHideSuccessfulRegisterModal() {
         setIsSuccessfulRegisterModalShowing(false);

@@ -12,9 +12,6 @@ import CommentSectionForm from "./CommentSectionForm";
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../../../../context-providers/AuthContextProvider";
 
-// CLASES AUXILIARES.
-import BackendCaller from "../../../../auxiliar-classes/BackendCaller";
-
 /**
  * Sección de comentarios.
  * Los comentarios propios van arriba del todo y los de otros usuarios abajo.
@@ -22,6 +19,7 @@ import BackendCaller from "../../../../auxiliar-classes/BackendCaller";
  * @param {*} commentsIDs
  * @param {*} handleHideCommentSection
  * @param {*} fetchFeed
+ * @estado TERMINADO.
  */
 function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed }) {
     // Para controlar carga.
@@ -45,7 +43,8 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
 
     /**
      * Obtiene los comentarios.
-     * @param {*} newComment 
+     * @param {*} newComment
+     * @param {*} commentToDeleteID
      */
     async function fetchCommentsData(newComment = null, commentToDeleteID = null) {
         // Actualiza el feed de los posts.

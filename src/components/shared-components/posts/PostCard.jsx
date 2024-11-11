@@ -27,6 +27,7 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Muestra la sección de comentarios.
+     * @estado TERMINADO.
      */
     function handleShowCommentSection() {
         setIsCommentSectionShowing(true);
@@ -34,6 +35,7 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Oculta la sección de comentarios.
+     * @estado TERMINADO.
      */
     function handleHideCommentSection() {
         setIsCommentSectionShowing(false);
@@ -44,6 +46,7 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Redirige a la page de un post de un usuario ajeno.
+     * @estado TERMINADO.
      */
     function handleGoToOtherUserPostPage() {
         navigate(routes.OTHER_USER_POST_ROUTE.replace(":id", id));

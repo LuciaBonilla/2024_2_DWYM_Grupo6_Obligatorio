@@ -28,6 +28,7 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
     /**
      * Ordena los posts en orden cronológico.
      * @param posts
+     * @estado TERMINADO.
      */
     function sortPosts(posts) {
         // Ordena los posts por fecha de forma descendente (más recientes primero).
@@ -36,6 +37,7 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
 
     /**
      * Redirige al post de otro usuario al clickear sobre la imagen.
+     * @estado TERMINADO.
      */
     function handleGoToOtherUserPostPage(postID) {
         navigate(routes.OTHER_USER_POST_ROUTE.replace(':id', postID));
@@ -43,6 +45,7 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
 
     /**
      * Redirige al post propio del usuario al clickear sobre la imagen.
+     * @estado TERMINADO.
      */
     function handleGoToMyPostPage(postID) {
         navigate(routes.MY_POSTS_ROUTE.replace(":id", postID));

@@ -17,7 +17,7 @@ import { useAuthContext } from "../../../../context-providers/AuthContextProvide
  * Formulario para crear comentario.
  * @param {*} postID
  * @param {*} fetchCommentsData
- * @returns 
+ * @estado TERMINADO.
  */
 function CommentSectionForm({ postID, fetchCommentsData }) {
     const [content, setContent] = useState("");
@@ -27,6 +27,7 @@ function CommentSectionForm({ postID, fetchCommentsData }) {
     /**
      * Crea un comentario.
      * @param {*} event 
+     * @estado TERMINADO.
      */
     async function handleCreateComment(event) {
         event.preventDefault();

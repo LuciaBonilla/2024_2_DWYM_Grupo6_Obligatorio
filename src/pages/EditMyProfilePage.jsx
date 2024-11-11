@@ -30,6 +30,7 @@ function EditMyProfilePage() {
     /**
      * Muestra el formulario de editar perfil.
      * @param {*} attributeToEdit Atributo del perfil a editar.
+     * @estado TERMINADO.
      */
     function handleShowEditMyProfileForm(attributeToEdit) {
         setAttributeToEdit(attributeToEdit);
@@ -38,6 +39,7 @@ function EditMyProfilePage() {
 
     /**
      * Oculta el formulario de editar perfil.
+     * @estado TERMINADO.
      */
     function handleHideEditMyProfileForm() {
         setAttributeToEdit();
@@ -52,6 +54,7 @@ function EditMyProfilePage() {
 
     /**
      * Obtiene la información de usuario.
+     * @estado TERMINADO.
      */
     async function fetchMyUser() {
         const response = await BackendCaller.getUserProfile(userID, token);

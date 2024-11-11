@@ -1,5 +1,9 @@
 import BACKEND_URI from "../constants/BACKEND_URI";
 
+/**
+ * Realiza llamadas a la API.
+ * @estado LISTO.
+ */
 export class BackendCaller {
     /**
      * Identificador de la API.

@@ -26,6 +26,7 @@ function MyPostPage() {
 
     /**
      * Obtiene el post específico por ID.
+     * @estado TERMINADO.
      */
     async function fetchPost() {
         const response = await BackendCaller.getFeed(token);

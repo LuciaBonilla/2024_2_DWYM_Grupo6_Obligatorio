@@ -1,11 +1,16 @@
 import defaultPhoto from "../assets/default_profile.png";
 
+/**
+ * Retorna imágenes en base64 y checkea si un string es una imagen en base64.
+ * @estado TERMINADO.
+ */
 export class Base64Converter {
     /**
      * Verifica que la imagen en base 64 es correcta y la retorna.
      * Ej. imagen de punto rojo en base64: "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
      * @param {*} base64String 
      * @returns la imagen en base 64 si está bien, en caso contrario, retorna la foto por defecto.
+     * @estado TERMINADO.
      */
     static checkBase64Image(base64String) {
         // Verifica si la cadena es vacía o indefinida.
@@ -33,6 +38,7 @@ export class Base64Converter {
      * @param {*} maxHeight 
      * @param {*} initialQuality 
      * @param {*} targetBase64SizeKB 
+     * @estado TERMINADO.
      */
     static async imageToBase64(file, maxWidth = 800, maxHeight = 800, initialQuality = 0.7, targetBase64SizeKB = 95) {
         return new Promise((resolve, reject) => {

@@ -21,6 +21,7 @@ function CreatePostPage() {
 
     /**
      * Muestra el mensaje de subida no exitosa.
+     * @estado TERMINADO.
      */
     function handleShowUnsuccessfulUploadModal() {
         setIsUnsuccessfulUploadModalShowing(true);
@@ -28,6 +29,7 @@ function CreatePostPage() {
 
     /**
      * Oculta el mensaje de subida no exitosa.
+     * @estado TERMINADO.
      */
     function handleHideUnsuccessfulUploadModal() {
         setIsUnsuccessfulUploadModalShowing(false);

@@ -28,6 +28,7 @@ function GiveLikeButton({ postID, likes, fetchFeed }) {
 
     /**
      * Da un like al post.
+     * @estado TERMINADO.
      */
     async function handleGiveLike() {
         const response = await BackendCaller.giveLike(postID, token);
@@ -40,6 +41,7 @@ function GiveLikeButton({ postID, likes, fetchFeed }) {
 
     /**
      * Quita el like a un post.
+     * @estado TERMINADO.
      */
     async function handleDeleteLike() {
         const response = await BackendCaller.deleteLike(postID, token);

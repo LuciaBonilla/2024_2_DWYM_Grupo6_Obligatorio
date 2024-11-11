@@ -28,6 +28,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
     /**
      * Maneja el registro de un usuario.
      * @param {*} event 
+     * @estado TERMINADO.
      */
     async function handleRegister(event) {
         // Para evitar el submit.
