@@ -1,11 +1,11 @@
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
+import BackendCaller from "../../../../auxiliar-classes/BackendCaller";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "../../../../context-providers/AuthContextProvider";
 
 // COMPONENTES.
-import ShortProfileCard from "./ShortProfileCard";
+import ShortProfileCard from "../../profiles/ShortProfileCard";
 
 /**
  * Mi comentario.
@@ -23,7 +23,7 @@ function MyComment({ postID, data, fetchCommentsData }) {
     async function handleDeleteComment() {
         const response = await BackendCaller.deleteComment(postID, data._id, token);
         if (response.statusCode === 200) {
-            fetchCommentsData(null, data._id);
+            await fetchCommentsData(null, data._id);
         }
     }
 

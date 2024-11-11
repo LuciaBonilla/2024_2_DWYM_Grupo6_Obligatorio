@@ -2,12 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 // COMPONENTES.
-import ShortProfileCard from "./ShortProfileCard";
+import ShortProfileCard from "../profiles/ShortProfileCard";
 import GiveLikeButton from "./GiveLikeButton";
-import CommentSection from "./CommentSection";
+import CommentSection from "./comments/CommentSection";
 
 // RUTAS.
-import routes from "../../constants/routes";
+import routes from "../../../constants/routes";
 
 /**
  * Tarjeta de post.
@@ -21,7 +21,7 @@ import routes from "../../constants/routes";
  * @param {*} fetchFeed
  * @estado TERMINADO.
  */
-function PostCard({ id, user, imageSrc, caption, commentsIDs, likes, createdAt, fetchFeed }) {
+function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fetchFeed }) {
     // Indica si la sección de comentarios se debe mostar.
     const [isCommentSectionShowing, setIsCommentSectionShowing] = useState(false);
 
@@ -71,7 +71,7 @@ function PostCard({ id, user, imageSrc, caption, commentsIDs, likes, createdAt, 
             />
 
             {/* Cantidad de comentarios. */}
-            <p className="post-card__quantity-comments">{commentsIDs.length} Comentarios</p>
+            <p className="post-card__quantity-comments">{comments.length} Comentarios</p>
 
             {/* Fecha de publicación. */}
             <p className="post-card__created-at">Publicado el: {new Date(createdAt).toLocaleDateString(document.documentElement.lang, {
@@ -90,7 +90,7 @@ function PostCard({ id, user, imageSrc, caption, commentsIDs, likes, createdAt, 
             {isCommentSectionShowing &&
                 <CommentSection
                     postID={id}
-                    commentsIDs={commentsIDs}
+                    comments={comments}
                     handleHideCommentSection={handleHideCommentSection}
                     fetchFeed={fetchFeed}
                 />}

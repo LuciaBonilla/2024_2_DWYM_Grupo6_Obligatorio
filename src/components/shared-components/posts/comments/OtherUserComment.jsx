@@ -1,5 +1,5 @@
 // COMPONENTES.
-import ShortProfileCard from "./ShortProfileCard";
+import ShortProfileCard from "../../profiles/ShortProfileCard";
 
 /**
  * El comentario de otro usuario.

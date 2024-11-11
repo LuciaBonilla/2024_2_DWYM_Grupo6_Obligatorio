@@ -6,10 +6,10 @@ import { faHeart as GivedLike } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as NoneLike } from "@fortawesome/free-regular-svg-icons";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "../../../context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
+import BackendCaller from "../../../auxiliar-classes/BackendCaller";
 
 /**
  * Botón para dar like a un post.

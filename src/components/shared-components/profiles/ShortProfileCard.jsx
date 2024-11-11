@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
 // IMAGES.
-import defaultPhoto from "../../assets/default_profile.png";
+import defaultPhoto from "../../../assets/default_profile.png";
 
 // RUTAS.
-import routes from "../../constants/routes";
+import routes from "../../../constants/routes";
 
 // CLASES AUXILIARES.
-import Base64Converter from "../../auxiliar-classes/Base64Converter";
+import Base64Converter from "../../../auxiliar-classes/Base64Converter";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "../../../context-providers/AuthContextProvider";
 
 /**
  * Tarjeta corta identificadora de usuario.
@@ -27,12 +27,8 @@ function ShortProfileCard({ user }) {
      * Redirige a un perfil de usuario. En algunos casos puede ser al perfil propio de un usuario.
      */
     function handleGoToUserProfile() {
-        if ((user._id !== userID) && (user.id !== userID)) {
-            if (user._id) {
-                navigate(routes.OTHER_USER_PROFILE_ROUTE.replace(":id", user._id));
-            } else {
-                navigate(routes.OTHER_USER_PROFILE_ROUTE.replace(":id", user.id));
-            }
+        if (user._id !== userID) {
+            navigate(routes.OTHER_USER_PROFILE_ROUTE.replace(":id", user._id));
         } else {
             navigate(routes.MY_PROFILE_ROUTE);
         }

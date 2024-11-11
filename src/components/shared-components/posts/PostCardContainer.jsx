@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 // BACKEND_URI.
-import BACKEND_URI from "../../constants/BACKEND_URI";
+import BACKEND_URI from "../../../constants/BACKEND_URI";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "../../../context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
+import BackendCaller from "../../../auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
 import PostCard from "./PostCard";
@@ -57,25 +57,29 @@ function PostCardContainer() {
     return (
         <>
             {
-                !isLoading ? <article className="post-card-container">
-                    {posts.length > 0 ? (
-                        posts.map((post) => (
-                            <PostCard
-                                key={post._id}
-                                id={post._id}
-                                user={post.user}
-                                imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
-                                caption={post.caption}
-                                commentsIDs={post.comments}
-                                likes={post.likes}
-                                createdAt={post.createdAt}
-                                fetchFeed={fetchFeed}
-                            />
-                        ))
-                    ) : (
-                        <p className="post-card-container__no-posts-message">NO HAY POSTS</p>
-                    )}
-                </article> : (<p className="loading-message">CARGANDO...</p>)}
+                !isLoading ? (
+                    <article className="post-card-container">
+                        {posts.length > 0 ? (
+                            posts.map((post) => (
+                                <PostCard
+                                    key={post._id}
+                                    id={post._id}
+                                    user={post.user}
+                                    imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
+                                    caption={post.caption}
+                                    comments={post.comments}
+                                    likes={post.likes}
+                                    createdAt={post.createdAt}
+                                    fetchFeed={fetchFeed}
+                                />
+                            ))
+                        ) : (
+                            <p className="post-card-container__no-posts-message">NO HAY POSTS</p>
+                        )}
+                    </article>
+                ) : (
+                    <p className="loading-message">CARGANDO...</p>
+                )}
         </>
 
     );

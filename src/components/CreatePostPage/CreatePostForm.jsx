@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // COMPONENTES.
-import FileInput from "../shared-components/FileInput";
-import TextAreaInput from "../shared-components/TextAreaInput";
+import FileInput from "../shared-components/inputs/FileInput";
+import TextAreaInput from "../shared-components/inputs/TextAreaInput";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
