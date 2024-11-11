@@ -6,8 +6,8 @@ import { faUserPlus, faPersonCircleXmark, faCircleCheck } from "@fortawesome/fre
 
 // COMPONENTES.
 import RegisterForm from "../components/RegisterPage/RegisterForm";
-import GoToPageButton from "../components/shared-components/GoToPageButton";
-import OperationResultModal from "../components/shared-components/OperationResultModal";
+import GoToPageButton from "../components/shared-components/others/GoToPageButton";
+import OperationResultModal from "../components/shared-components/others/OperationResultModal";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../context-providers/AuthContextProvider";

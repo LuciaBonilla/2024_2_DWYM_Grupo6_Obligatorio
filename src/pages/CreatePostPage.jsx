@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // COMPONENTES.
 import CreatePostForm from "../components/CreatePostPage/CreatePostForm";
-import OperationResultModal from "../components/shared-components/OperationResultModal";
+import OperationResultModal from "../components/shared-components/others/OperationResultModal";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

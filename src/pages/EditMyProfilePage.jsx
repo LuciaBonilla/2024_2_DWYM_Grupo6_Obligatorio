@@ -44,16 +44,11 @@ function EditMyProfilePage() {
         setIsShowingEditMyProfileForm(false);
     }
 
-    // Atributos que se pueden editar del perfil.
-    const [username, setUsername] = useState();
-    const [profilePicture, setProfilePicture] = useState();
+    // Perfil.
+    const [user, setUser] = useState();
 
     // Necesarios para obtener y editar el perfil.
     const { userID, token } = useAuthContext();
-
-    // Controla la carga del perfil.
-    const [loading, setLoading] = useState(true);
-    const [errorLoading, setErrorLoading] = useState();
 
     /**
      * Obtiene la información de usuario.
@@ -63,58 +58,52 @@ function EditMyProfilePage() {
 
         if (response.statusCode == 200) {
             const user = response.data.user;
-            setUsername(user.username);
-            setProfilePicture(user.profilePicture);
+            setUser(user);
         } else {
-            setUsername();
-            setProfilePicture();
-            setErrorLoading(response.data.message);
+            setUser();
         }
     }
 
     useEffect(() => {
         fetchMyUser();
-        setLoading(false);
     }, []);
-
-    if (loading) {
-        return (<div>CARGANDO...</div>);
-    }
-
-    if (errorLoading) {
-        return (<div>{errorLoading}</div>);
-    }
 
     return (
         <main className="edit-my-profile-page">
-            {/* Título. */}
-            <h1 className="edit-my-profile-page__title">
-                <FontAwesomeIcon className="edit-my-profile-page__icon" icon={faUserPen} />
-                <span className="next-to-icon">EDITAR PERFIL</span>
-            </h1>
+            {user ? (
+                <>
+                    {/* Título. */}
+                    <h1 className="edit-my-profile-page__title">
+                        <FontAwesomeIcon className="edit-my-profile-page__icon" icon={faUserPen} />
+                        <span className="next-to-icon">EDITAR PERFIL</span>
+                    </h1>
 
-            {/* Tarjeta de usuario. */}
-            <MyProfileCard
-                username={username}
-                profilePicture={profilePicture}
-            />
+                    {/* Tarjeta de usuario. */}
+                    <MyProfileCard
+                        username={user.username}
+                        profilePicture={user.profilePicture}
+                    />
 
-            {/* Menú para seleccionar atributo a editar. */}
-            <AttributeToEditMenu handleShowEditMyProfileForm={handleShowEditMyProfileForm} />
+                    {/* Menú para seleccionar atributo a editar. */}
+                    <AttributeToEditMenu handleShowEditMyProfileForm={handleShowEditMyProfileForm} />
 
-            {/* Formulario para editar perfil. */}
-            {isShowingEditMyProfileForm &&
-                <EditMyProfileForm
-                    userData={
-                        {
-                            username: username,
-                            profilePicture: profilePicture
-                        }
-                    }
-                    handleHideEditMyProfileForm={handleHideEditMyProfileForm}
-                    attributeToEdit={attributeToEdit}
-                    fetchMyUser={fetchMyUser}
-                />}
+                    {/* Formulario para editar perfil. */}
+                    {isShowingEditMyProfileForm &&
+                        <EditMyProfileForm
+                            userData={
+                                {
+                                    username: user.username,
+                                    profilePicture: user.profilePicture
+                                }
+                            }
+                            handleHideEditMyProfileForm={handleHideEditMyProfileForm}
+                            attributeToEdit={attributeToEdit}
+                            fetchMyUser={fetchMyUser}
+                        />}
+                </>
+            ) : (
+                <p className="loading-message">CARGANDO...</p>
+            )}
         </main>
     );
 }

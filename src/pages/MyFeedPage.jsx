@@ -1,6 +1,6 @@
 // COMPONENTES.
-import Navbar from "../components/shared-components/Navbar";
-import PostCardContainer from "../components/MyFeedPage/PostCardContainer";
+import Navbar from "../components/shared-components/others/Navbar";
+import PostCardContainer from "../components/shared-components/posts/PostCardContainer";
 
 /**
  * My Feed Page.
@@ -8,8 +8,8 @@ import PostCardContainer from "../components/MyFeedPage/PostCardContainer";
  */
 function MyFeedPage() {
     return (
-        <main className="my-feed-page">
-            <h1 className="my-feed-page__social-network-title">PhantyNet</h1>
+        <main className="post-page">
+            <h1 className="post-page__social-network-title">PhantyNet</h1>
             <PostCardContainer />
             <Navbar />
         </main>
