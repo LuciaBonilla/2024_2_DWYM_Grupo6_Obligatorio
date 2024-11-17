@@ -12,12 +12,12 @@ import { useAuthContext } from "../../../context-providers/AuthContextProvider";
 import BackendCaller from "../../../auxiliar-classes/BackendCaller";
 
 /**
- * Botón para dar like a un post.
+ * Botón para dar o quitar like a un post.
  * @param handleGiveLike
  * @param likes
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
-function GiveLikeButton({ postID, likes, fetchFeed }) {
+function LikeButton({ postID, likes, fetchFeed }) {
     const { userID, token } = useAuthContext();
 
     // Indica si se dio like al post.
@@ -28,7 +28,7 @@ function GiveLikeButton({ postID, likes, fetchFeed }) {
 
     /**
      * Da un like al post.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function handleGiveLike() {
         const response = await BackendCaller.giveLike(postID, token);
@@ -41,7 +41,7 @@ function GiveLikeButton({ postID, likes, fetchFeed }) {
 
     /**
      * Quita el like a un post.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function handleDeleteLike() {
         const response = await BackendCaller.deleteLike(postID, token);
@@ -67,4 +67,4 @@ function GiveLikeButton({ postID, likes, fetchFeed }) {
     );
 }
 
-export default GiveLikeButton;
+export default LikeButton;

@@ -8,7 +8,7 @@
  * @param {*} setState
  * @param {*} accept
  * @param {*} icon
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function FileInput({ labelClass, labelContent, inputName, inputClass, placeholder, setState, accept, icon }) {
     return (

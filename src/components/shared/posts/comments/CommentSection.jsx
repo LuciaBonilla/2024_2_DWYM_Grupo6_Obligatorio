@@ -19,7 +19,7 @@ import { useAuthContext } from "../../../../context-providers/AuthContextProvide
  * @param {*} commentsIDs
  * @param {*} handleHideCommentSection
  * @param {*} fetchFeed
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed }) {
     // Para controlar carga.
@@ -35,6 +35,7 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
     /**
      * Ordena los comentarios de forma cronológica y los retorna.
      * @param {*} comments
+     * @estado función terminada.
      */
     function sortCommentsByDate(comments) {
         // Ordena los comentarios por fecha de forma descendente (más recientes primero).
@@ -43,8 +44,14 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
 
     /**
      * Obtiene los comentarios.
+     * Problema: Agregar comentarios o eliminarlos no se renderizará si se hace un fetch.
+     * El estado actual de los comentarios aparecerá si se cierra y abre la sección de comentarios.
+     * Solución: Para poner el estado de los comentarios en tiempo real sin cerrar la sección de comentarios,
+     * se actualiza de forma local (dentro del componente).
+     * 
      * @param {*} newComment
      * @param {*} commentToDeleteID
+     * @estado función terminada.
      */
     async function fetchCommentsData(newComment = null, commentToDeleteID = null) {
         // Actualiza el feed de los posts.
@@ -52,7 +59,6 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
 
         // Actualiza el estado con los datos obtenidos.
         setMyComments(sortCommentsByDate(comments.filter((comment) => comment.user._id === userID)));
-
         setOtherComments(sortCommentsByDate(comments.filter((comment) => comment.user._id !== userID)));
 
         // Agrega el nuevo comentario si existe.

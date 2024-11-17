@@ -10,7 +10,7 @@ const AuthContext = createContext();
 /**
  * Provee del contexto de autenticación.
  * @param {*} children
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 export function AuthContextProvider({ children }) {
     // Atributos del contexto de autenticación.
@@ -44,7 +44,7 @@ export function AuthContextProvider({ children }) {
      * @param {*} email 
      * @param {*} password 
      * @returns Resultado de la operación.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function login(email, password) {
         // Intenta iniciar sesión por backend.
@@ -72,7 +72,7 @@ export function AuthContextProvider({ children }) {
 
     /**
      * Cierra sesión.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function logout() {
         setUserID();
@@ -80,15 +80,18 @@ export function AuthContextProvider({ children }) {
         setIsAuthorizated(false);
     }
 
-    // Mientras se cargan los datos del LocalStorage, evita renderizar los hijos.
-    if (loading) {
-        return <div>Cargando...</div>;
-    }
-
     return (
-        <AuthContext.Provider value={{ userID, token, isAuthorizated, login, logout }}>
-            {children}
-        </AuthContext.Provider>
+        <>
+            {
+                loading ? (
+                    // Mientras se cargan los datos del LocalStorage, evita renderizar los hijos.
+                    <div className="loading-message">Cargando...</div>
+                ) : (
+                    <AuthContext.Provider value={{ userID, token, isAuthorizated, login, logout }}>
+                        {children}
+                    </AuthContext.Provider>)
+            }
+        </>
     );
 }
 

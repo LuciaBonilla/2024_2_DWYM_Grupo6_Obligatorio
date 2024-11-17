@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 /**
- * Modal de resultado de operación.
+ * Modal para mostrar resultado de operación.
  * @param {*} modalClass
  * @param {*} messageClass
  * @param {*} message
@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  * @param {*} buttonClass
  * @param {*} handleHideOperationResultMessage
  * @param {*} buttonText
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function OperationResultModal({ modalClass, messageClass, message, iconClass, icon, buttonClass, handleHideOperationResultModal, buttonText }) {
     return (

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // COMPONENTES.
-import FileInput from "../shared-components/inputs/FileInput";
-import TextAreaInput from "../shared-components/inputs/TextAreaInput";
+import FileInput from "../shared/inputs/FileInput";
+import TextAreaInput from "../shared/inputs/TextAreaInput";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +22,7 @@ import routes from "../../constants/routes";
  * Formulario para subir post.
  * @param {*} handleShowUnsuccessfulUploadModal
  * @param {*} setUnsuccessfulUploadModalMessage
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUploadModalMessage }) {
     // Atributos para crear un post.
@@ -36,7 +36,7 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
     /**
      * Cancela subir un post.
      * @param {*} event 
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleCancelUpload(event) {
         // Evita el submit.
@@ -48,7 +48,7 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
     /**
      * Sube un post.
      * @param event 
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function handleUploadPost(event) {
         // Evita el submit.

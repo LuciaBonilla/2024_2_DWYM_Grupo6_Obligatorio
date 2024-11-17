@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
  * @param {*} route
  * @param {*} textContent
  * @param {*} buttonClass
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function GoToPageButton({ route, textContent, buttonClass }) {
     const navigate = useNavigate();

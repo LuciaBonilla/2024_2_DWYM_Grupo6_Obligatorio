@@ -35,14 +35,14 @@ import "./styles/desktop/EditMyProfilePage.css";
 // SharedStyles
 
 // PostPage (para MyPostPage, MyFeedPage y OtherUserPostPage)
-import "./styles/mobile/shared-styles/PostPage.css";
-import "./styles/tablet/shared-styles/PostPage.css";
-import "./styles/desktop/shared-styles/PostPage.css";
+import "./styles/mobile/shared/PostPage.css";
+import "./styles/tablet/shared/PostPage.css";
+import "./styles/desktop/shared/PostPage.css";
 
 // ProfilePage (para MyProfilePage y OtherUserProfilePage)
-import "./styles/mobile/shared-styles/ProfilePage.css";
-import "./styles/tablet/shared-styles/ProfilePage.css";
-import "./styles/desktop/shared-styles/ProfilePage.css";
+import "./styles/mobile/shared/ProfilePage.css";
+import "./styles/tablet/shared/ProfilePage.css";
+import "./styles/desktop/shared/ProfilePage.css";
 
 
 // COMPONENTES.

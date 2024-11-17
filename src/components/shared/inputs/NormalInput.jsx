@@ -9,7 +9,7 @@
  * @param {*} setState
  * @param {*} value
  * @param {*} icon
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function NormalInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {
     return (

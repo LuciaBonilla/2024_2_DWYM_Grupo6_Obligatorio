@@ -11,7 +11,7 @@ import ShortProfileCard from "../../profiles/ShortProfileCard";
  * Mi comentario.
  * @param {*} data
  * @param {*} fetchFeed
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function MyComment({ postID, data, fetchCommentsData }) {
     // Necesario para eliminar comentario.
@@ -19,7 +19,7 @@ function MyComment({ postID, data, fetchCommentsData }) {
 
     /**
      * Elimina un comentario propio.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function handleDeleteComment() {
         const response = await BackendCaller.deleteComment(postID, data._id, token);

@@ -9,7 +9,7 @@ import Base64Converter from "../../../auxiliar-classes/Base64Converter";
  * @param {*} user
  * @param {*} postsQuantity 
  * @param {*} children
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function ProfileCard({ user, postsQuantity, children }) {
     return (

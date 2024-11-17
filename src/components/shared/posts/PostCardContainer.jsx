@@ -14,7 +14,7 @@ import PostCard from "./PostCard";
 
 /**
  * Contenedor de los posts.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function PostCardContainer() {
     // Posts a mostrar.
@@ -29,7 +29,7 @@ function PostCardContainer() {
     /**
      * Dados los posts obtenidos, quita los posts propios del usuario y los restantes los ordena cronológicamente.
      * @param posts
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function getMyFeed(posts) {
         // Filtra los posts para eliminar los del usuario actual.
@@ -41,7 +41,7 @@ function PostCardContainer() {
 
     /**
      * Obtiene el feed del usuario.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function fetchFeed() {
         const response = await BackendCaller.getFeed(token);

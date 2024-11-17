@@ -18,7 +18,7 @@ import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Page de editar perfil.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function EditMyProfilePage() {
     // Indica si el formulario de editar perfil se debe mostrar.
@@ -30,7 +30,7 @@ function EditMyProfilePage() {
     /**
      * Muestra el formulario de editar perfil.
      * @param {*} attributeToEdit Atributo del perfil a editar.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleShowEditMyProfileForm(attributeToEdit) {
         setAttributeToEdit(attributeToEdit);
@@ -39,7 +39,7 @@ function EditMyProfilePage() {
 
     /**
      * Oculta el formulario de editar perfil.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleHideEditMyProfileForm() {
         setAttributeToEdit();
@@ -54,7 +54,7 @@ function EditMyProfilePage() {
 
     /**
      * Obtiene la información de usuario.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function fetchMyUser() {
         const response = await BackendCaller.getUserProfile(userID, token);
