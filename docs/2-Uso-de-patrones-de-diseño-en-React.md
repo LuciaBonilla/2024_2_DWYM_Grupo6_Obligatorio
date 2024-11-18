@@ -20,7 +20,7 @@ La jerarquía del Atomic Design es:
 
 En el código fuente de la aplicación se observa que aplicamos Atomic Design al crear los templates e ir a los más profundo hasta la creación de los átomos.
 
-Aclaración: al decir páginas o pages nos referimos a los templates.
+Aclaración: para facilitar la compresión, no distinguimos plantillas de páginas.
 
 ### ¿Por qué usamos Atomic Design?
 
@@ -64,4 +64,4 @@ Ejemplo de caso de uso en el código: [MyProfilePage](../src/pages/MyProfilePage
 
 Un componente controlado es aquel cuyo estado es gestionado completamente por React. Esto significa que el valor del elemento del formulario (como un input o textarea) se guarda en el estado del componente en lugar de ser gestionado por el DOM directamente.
 
-Ejemplo de caso de uso en el código: en todos los componentes de formulario básicamente.
+Ejemplo de caso de uso en el código: en todos los componentes de formulario.
