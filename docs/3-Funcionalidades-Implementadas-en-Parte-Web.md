@@ -16,7 +16,7 @@
 
 - El feed está ordenado cronológicamente por fecha de subida.
 
-- Funcionalidad de dar y quitar “me gusta” en las publicaciones.
+- Funcionalidad de dar y quitar "me gusta" en las publicaciones.
 
 - Los usuarios pueden comentar en cualquier publicación y puedan borrar sus comentarios.
 
@@ -28,8 +28,10 @@
 
 - Cada usuario puede editar su perfil, incluyendo su nombre de usuario y foto de perfil. Se manejan las siguientes excepciones: campos vacíos o nombre de usuario ya usado.
 
-- Todos los perfiles muestran nombre de usuario, email, la fecha en que se creó el perfil, cantidad de posts y las imágenes subidas. Apretar una imagen subida lleva al post específico de esa imagen, lo cual permite ver los comentarios y número de likes, comentar y dar o quitar like.
+- Todos los perfiles muestran nombre de usuario, email, la fecha en que se creó el perfil, cantidad de posts y las imágenes subidas. Apretar una imagen subida lleva al post específico de esa imagen, lo cual permite ver los comentarios y cantidad de likes, comentar y dar o quitar "me gusta".
 
 - Todas las excepciones se indican con un modal para avisar al usuario.
 
 - Protección de la subida de imágenes y la edición de perfil mediante validación de autenticación, es decir, por medio del uso de un token.
+
+- Se puede cerrar sesión desde perfil o yendo a cualquiera de las rutas no protegidas.
