@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // COMPONENTES.
 import CreatePostForm from "../components/CreatePostPage/CreatePostForm";
-import OperationResultModal from "../components/shared-components/others/OperationResultModal";
+import OperationResultModal from "../components/shared/others/OperationResultModal";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,7 @@ import { faCloudArrowUp, faFileCircleXmark } from "@fortawesome/free-solid-svg-i
 
 /**
  * Create Post Page.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function CreatePostPage() {
     // Indica si el mensaje de subida no exitosa se debe renderizar.
@@ -21,7 +21,7 @@ function CreatePostPage() {
 
     /**
      * Muestra el mensaje de subida no exitosa.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleShowUnsuccessfulUploadModal() {
         setIsUnsuccessfulUploadModalShowing(true);
@@ -29,7 +29,7 @@ function CreatePostPage() {
 
     /**
      * Oculta el mensaje de subida no exitosa.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleHideUnsuccessfulUploadModal() {
         setIsUnsuccessfulUploadModalShowing(false);

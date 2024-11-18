@@ -15,7 +15,7 @@ import { useAuthContext } from "../../../context-providers/AuthContextProvider";
 /**
  * Tarjeta corta identificadora de usuario.
  * @param user
- * @estado TERMINADO.
+ * @estado componente terminadi.
  */
 function ShortProfileCard({ user }) {
     const { userID } = useAuthContext();
@@ -25,7 +25,7 @@ function ShortProfileCard({ user }) {
 
     /**
      * Redirige a un perfil de usuario. En algunos casos puede ser al perfil propio de un usuario.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleGoToUserProfile() {
         if (user._id !== userID) {

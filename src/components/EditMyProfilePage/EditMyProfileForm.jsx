@@ -12,9 +12,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCircleXmark, faImagePortrait } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import NormalInput from "../shared-components/inputs/NormalInput";
-import FileInput from "../shared-components/inputs/FileInput";
-import OperationResultModal from "../shared-components/others/OperationResultModal";
+import NormalInput from "../shared/inputs/NormalInput";
+import FileInput from "../shared/inputs/FileInput";
+import OperationResultModal from "../shared/others/OperationResultModal";
 
 /**
  * Formulario para editar perfil.
@@ -22,7 +22,7 @@ import OperationResultModal from "../shared-components/others/OperationResultMod
  * @param {*} handleHideEditMyProfileForm
  * @param {*} attributeToEdit
  * @param {*} fetchMyUser
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToEdit, fetchMyUser }) {
     // Indica si el modal de edición no exitosa se debe mostrar.
@@ -33,7 +33,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Muestra el modal de edición no exitosa.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleShowUnsuccessfulEditModal() {
         setIsShowingUnsuccessfulEditModal(true);
@@ -41,7 +41,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Oculta el modal de edición no exitosa.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleHideUnsuccessfulEditModal() {
         setUnsuccessfulEditMessage();
@@ -57,7 +57,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
     /**
      * Edita el perfil del usuario autenticado (edita el atributo elegido).
      * @param {*} event
-     * @estado TERMINADO. 
+     * @estado función terminada. 
      */
     async function handleEditMyProfile(event) {
         // Para evitar submit.
@@ -90,7 +90,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
     /**
      * Cancela la edición del perfil.
      * @param {*} event 
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleCancelEditMyProfile(event) {
         event.preventDefault();

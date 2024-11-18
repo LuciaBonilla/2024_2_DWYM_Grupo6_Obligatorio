@@ -1,8 +1,8 @@
 import BACKEND_URI from "../constants/BACKEND_URI";
 
 /**
- * Realiza llamadas a la API.
- * @estado LISTO.
+ * Realiza llamadas a la API y retorna los resultados desde el backend de fake_instagram.
+ * @estado clase terminada.
  */
 export class BackendCaller {
     /**
@@ -17,7 +17,7 @@ export class BackendCaller {
      * @param {*} username 
      * @param {*} email 
      * @param {*} password
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async register(username, email, password) {
         try {
@@ -52,7 +52,7 @@ export class BackendCaller {
      * Inicia sesión con credenciales de usuario.
      * @param {*} email 
      * @param {*} password 
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async login(email, password) {
         try {
@@ -89,7 +89,7 @@ export class BackendCaller {
      * @param {*} token 
      * @param {*} image 
      * @param {*} caption 
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async uploadPost(token, image, caption) {
         try {
@@ -122,9 +122,9 @@ export class BackendCaller {
     }
 
     /**
-     * Obtener el feed de publicaciones.
+     * Obtener el feed de publicaciones (todas las publicaciones de la aplicación incluyendo sus comentarios, likes, etc.).
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async getFeed(token) {
         try {
@@ -152,7 +152,7 @@ export class BackendCaller {
      * Crear un comentario en un post.
      * @param {*} postID 
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async createComment(content, postID, token) {
         try {
@@ -187,7 +187,7 @@ export class BackendCaller {
      * @param {*} postID 
      * @param {*} commentID
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async deleteComment(postID, commentID, token) {
         try {
@@ -215,7 +215,7 @@ export class BackendCaller {
      * Obtener un comentario específico.
      * @param {*} commentID
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async getComment(commentID, token) {
         try {
@@ -243,7 +243,7 @@ export class BackendCaller {
      * Dar like a un post.
      * @param {*} postID 
      * @param {*} token 
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async giveLike(postID, token) {
         try {
@@ -271,7 +271,7 @@ export class BackendCaller {
      * Quitar el like de un post.
      * @param {*} postID 
      * @param {*} token 
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async deleteLike(postID, token) {
         try {
@@ -301,7 +301,7 @@ export class BackendCaller {
      * Obtener el perfil de un usuario dado su ID.
      * @param {*} userID 
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async getUserProfile(userID, token) {
         try {
@@ -328,7 +328,7 @@ export class BackendCaller {
     /**
      * Obtener todos los usuarios.
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async getAllUsers(token) {
         try {
@@ -356,7 +356,7 @@ export class BackendCaller {
      * Agregar un amigo.
      * @param {*} friendID 
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async addFriend(friendID, token) {
         try {
@@ -384,7 +384,7 @@ export class BackendCaller {
      * Eliminar un amigo.
      * @param {*} friendID 
      * @param {*} token
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async removeFriend(friendID, token) {
         try {
@@ -413,7 +413,7 @@ export class BackendCaller {
      * @param {*} token 
      * @param {*} newUsername
      * @param {*} newProfilePicture en base 64.
-     * @estado LISTO.
+     * @estado método terminado.
      */
     static async editProfile(token, newUsername, newProfilePicture) {
         try {

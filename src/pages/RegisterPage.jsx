@@ -6,8 +6,8 @@ import { faUserPlus, faPersonCircleXmark, faCircleCheck } from "@fortawesome/fre
 
 // COMPONENTES.
 import RegisterForm from "../components/RegisterPage/RegisterForm";
-import GoToPageButton from "../components/shared-components/others/GoToPageButton";
-import OperationResultModal from "../components/shared-components/others/OperationResultModal";
+import GoToPageButton from "../components/shared/others/GoToPageButton";
+import OperationResultModal from "../components/shared/others/OperationResultModal";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../context-providers/AuthContextProvider";
@@ -17,7 +17,7 @@ import routes from "../constants/routes";
 
 /**
  * Página de registro.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function RegisterPage() {
     // Indica si el modal de registro no exitoso se debe renderizar.
@@ -34,7 +34,7 @@ function RegisterPage() {
 
     /**
      * Muestra el modal de registro no exitoso.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleShowUnsuccessfulRegisterModal() {
         setIsUnsuccessfulRegisterModalShowing(true);
@@ -42,7 +42,7 @@ function RegisterPage() {
 
     /**
      * Oculta el modal de registro no exitoso.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleHideUnsuccessfulRegisterModal() {
         setIsUnsuccessfulRegisterModalShowing(false);
@@ -50,7 +50,7 @@ function RegisterPage() {
 
     /**
      * Muestra el modal de registro exitoso.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleShowSuccessfulRegisterModal() {
         setIsSuccessfulRegisterModalShowing(true);
@@ -58,7 +58,7 @@ function RegisterPage() {
 
     /**
      * Oculta el modal de registro exitoso.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleHideSuccessfulRegisterModal() {
         setIsSuccessfulRegisterModalShowing(false);

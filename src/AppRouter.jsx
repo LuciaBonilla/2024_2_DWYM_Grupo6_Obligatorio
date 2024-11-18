@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import routes from "./constants/routes";
 
 // RUTA PROTEGIDA.
-import ProtectedRoute from "./routes/ProtectedRoute";
+import ProtectedRoute from "./routes-protection/ProtectedRoute";
 
 // 9 PAGES.
 import LoginPage from "./pages/LoginPage";

@@ -1,7 +1,7 @@
 /**
  * Menú para seleccionar un atributo de perfil a editar.
  * @param {*} handleShowEditMyProfileForm
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function AttributeToEditMenu({ handleShowEditMyProfileForm }) {
     return (

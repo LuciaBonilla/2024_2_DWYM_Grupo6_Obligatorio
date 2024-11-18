@@ -4,7 +4,7 @@ import ShortProfileCard from "../../profiles/ShortProfileCard";
 /**
  * El comentario de otro usuario.
  * @param {*} data 
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function OtherUserComment({ data }) {
     return (

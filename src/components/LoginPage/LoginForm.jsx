@@ -7,7 +7,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import NormalInput from "../shared-components/inputs/NormalInput";
+import NormalInput from "../shared/inputs/NormalInput";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../../context-providers/AuthContextProvider";
@@ -19,7 +19,7 @@ import routes from "../../constants/routes";
  * Formulario para el inicio de sesión.
  * @param {*} handleShowUnsuccessfulLoginModal
  * @param {*} setUnsuccessfulLoginMessage
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessage }) {
     // Para cambiar de ruta.
@@ -35,7 +35,7 @@ function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessa
     /**
      * Maneja el inicio de sesión de un usuario.
      * @param {*} event 
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function handleLogin(event) {
         // Para evitar el submit.

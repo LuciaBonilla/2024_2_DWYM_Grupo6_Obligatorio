@@ -1,6 +1,6 @@
 /**
  * Permite guardar y cargar el contexto de autenticación en el LocalStorage.
- * @estado TERMINADO.
+ * @estado clase terminada.
  */
 class LocalStorageManager {
     /**
@@ -8,7 +8,7 @@ class LocalStorageManager {
      * @param {*} userID 
      * @param {*} token 
      * @param {*} isAuthorizated
-     * @estado TERMINADO.
+     * @estado método terminado.
      */
     static saveAuthContextToStorage(userID, token, isAuthorizated) {
         localStorage.setItem("userID", userID);
@@ -19,7 +19,7 @@ class LocalStorageManager {
     /**
      * Recarga el contexto de autenticación desde el LocalStorage a un objeto plano.
      * @returns Objeto plano con todo el contexto de autenticación.
-     * @estado TERMINADO.
+     * @estado método terminado.
      */
     static loadAuthContextFromStorage() {
         return {

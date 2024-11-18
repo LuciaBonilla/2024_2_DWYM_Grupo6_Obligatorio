@@ -4,7 +4,7 @@ import { useState } from "react";
 import BackendCaller from "../../auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import NormalInput from "../shared-components/inputs/NormalInput";
+import NormalInput from "../shared/inputs/NormalInput";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,7 @@ import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
  * @param {*} setUnsuccessfulRegisterModalMessage
  * @param {*} handleShowSuccessfulRegisterModal
  * @param {*} setSuccessfulRegisterModalMessage
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegisterModalMessage, handleShowSuccessfulRegisterModal, setSuccessfulRegisterModalMessage }) {
     // Valores de los inputs.
@@ -28,7 +28,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
     /**
      * Maneja el registro de un usuario.
      * @param {*} event 
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function handleRegister(event) {
         // Para evitar el submit.

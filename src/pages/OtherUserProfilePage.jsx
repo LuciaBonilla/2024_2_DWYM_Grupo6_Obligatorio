@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 // COMPONENTES.
-import Navbar from "../components/shared-components/others/Navbar";
-import ProfileCard from "../components/shared-components/profiles/ProfileCard";
-import ImagesContainer from "../components/shared-components/profiles/ImagesContainer";
+import Navbar from "../components/shared/others/Navbar";
+import ProfileCard from "../components/shared/profiles/ProfileCard";
+import ImagesContainer from "../components/shared/profiles/ImagesContainer";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../context-providers/AuthContextProvider";
@@ -14,7 +14,7 @@ import BackendCaller from "../auxiliar-classes/BackendCaller";
 
 /**
  * Other User Profile Page.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function OtherUserProfilePage() {
     // Id del otro usuario cuyo perfil muestro.

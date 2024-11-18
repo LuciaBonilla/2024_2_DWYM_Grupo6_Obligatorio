@@ -1,10 +1,10 @@
 // COMPONENTES.
-import Navbar from "../components/shared-components/others/Navbar";
-import PostCardContainer from "../components/shared-components/posts/PostCardContainer";
+import Navbar from "../components/shared/others/Navbar";
+import PostCardContainer from "../components/shared/posts/PostCardContainer";
 
 /**
  * My Feed Page.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function MyFeedPage() {
     return (

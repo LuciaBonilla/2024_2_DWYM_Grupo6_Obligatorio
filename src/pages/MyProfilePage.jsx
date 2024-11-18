@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 // COMPONENTES.
-import ImagesContainer from "../components/shared-components/profiles/ImagesContainer";
-import GoToPageButton from "../components/shared-components/others/GoToPageButton";
-import ProfileCard from "../components/shared-components/profiles/ProfileCard";
-import Navbar from "../components/shared-components/others/Navbar";
+import ImagesContainer from "../components/shared/profiles/ImagesContainer";
+import GoToPageButton from "../components/shared/others/GoToPageButton";
+import ProfileCard from "../components/shared/profiles/ProfileCard";
+import Navbar from "../components/shared/others/Navbar";
 
 // CLASES AUXILIARES.
 import BackendCaller from "../auxiliar-classes/BackendCaller";
@@ -17,7 +17,7 @@ import routes from "../constants/routes";
 
 /**
  * Página de mi perfil.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function MyProfilePage() {
     // Perfil y posts.

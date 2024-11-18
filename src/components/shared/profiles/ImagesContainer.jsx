@@ -14,7 +14,7 @@ import routes from "../../../constants/routes";
  * Contenedor de imágenes subidas por un usuario que llevan a los posts.
  * @param {*} userAuthorPostsID id del usuario autor de los posts.
  * @param {*} posts
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function ImagesContainer({ userAuthorPostsID, posts }) {
     const [postsSorted, setPostsSorted] = useState(sortPosts(posts));
@@ -28,7 +28,7 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
     /**
      * Ordena los posts en orden cronológico.
      * @param posts
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function sortPosts(posts) {
         // Ordena los posts por fecha de forma descendente (más recientes primero).
@@ -37,7 +37,7 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
 
     /**
      * Redirige al post de otro usuario al clickear sobre la imagen.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleGoToOtherUserPostPage(postID) {
         navigate(routes.OTHER_USER_POST_ROUTE.replace(':id', postID));
@@ -45,7 +45,7 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
 
     /**
      * Redirige al post propio del usuario al clickear sobre la imagen.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleGoToMyPostPage(postID) {
         navigate(routes.MY_POSTS_ROUTE.replace(":id", postID));

@@ -9,7 +9,7 @@
  * @param {*} setState
  * @param {*} value
  * @param {*} icon
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function TextAreaInput({ labelClass, labelContent, inputName, inputClass, placeholder, setState, value, icon }) {
     return (

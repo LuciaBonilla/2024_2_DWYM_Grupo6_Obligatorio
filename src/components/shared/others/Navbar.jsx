@@ -9,7 +9,7 @@ import routes from "../../../constants/routes";
 
 /**
  * Navbar.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function Navbar() {
     const navigate = useNavigate();

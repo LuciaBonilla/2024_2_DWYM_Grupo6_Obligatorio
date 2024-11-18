@@ -8,7 +8,7 @@ import Base64Converter from "../../auxiliar-classes/Base64Converter";
  * Tarjeta de perfil al editar perfil.
  * @param {*} username 
  * @param {*} profilePicture 
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function MyProfileCard({ username, profilePicture }) {
     return (

@@ -11,11 +11,12 @@ import { useAuthContext } from "../context-providers/AuthContextProvider";
 import BackendCaller from "../auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import PostCard from "../components/shared-components/posts/PostCard";
-import Navbar from "../components/shared-components/others/Navbar";
+import PostCard from "../components/shared/posts/PostCard";
+import Navbar from "../components/shared/others/Navbar";
 
 /**
  * Página para ver un post específico.
+ * @estado componente terminado.
  */
 function OtherUserPostPage() {
     const [post, setPost] = useState(null);
@@ -26,7 +27,7 @@ function OtherUserPostPage() {
 
     /**
      * Obtiene el post específico por ID.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     async function fetchPost() {
         const response = await BackendCaller.getFeed(token);

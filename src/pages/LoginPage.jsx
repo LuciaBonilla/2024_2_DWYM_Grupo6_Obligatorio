@@ -5,8 +5,8 @@ import logo from "../assets/logo.png";
 
 // COMPONENTES.
 import LoginForm from "../components/LoginPage/LoginForm";
-import GoToPageButton from "../components/shared-components/others/GoToPageButton";
-import OperationResultModal from "../components/shared-components/others/OperationResultModal";
+import GoToPageButton from "../components/shared/others/GoToPageButton";
+import OperationResultModal from "../components/shared/others/OperationResultModal";
 
 // PROVEEDOR DE CONTEXTO.
 import { useAuthContext } from "../context-providers/AuthContextProvider";
@@ -19,7 +19,7 @@ import { faPersonCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Página para el inicio de sesión.
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function LoginPage() {
     // Indica si el modal de inicio de sesión no exitoso se debe renderizar.
@@ -30,7 +30,7 @@ function LoginPage() {
 
     /**
      * Muestra el mensaje de inicio de sesión no exitoso.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleShowUnsuccessfulLoginModal() {
         setIsUnsuccessfulLoginModalShowing(true);
@@ -38,7 +38,7 @@ function LoginPage() {
 
     /**
      * Oculta el mensaje de inicio de sesión no exitoso.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleHideUnsuccessfulLoginModal() {
         setIsUnsuccessfulLoginModalShowing(false);

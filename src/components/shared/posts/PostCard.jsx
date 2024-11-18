@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // COMPONENTES.
 import ShortProfileCard from "../profiles/ShortProfileCard";
-import GiveLikeButton from "./GiveLikeButton";
+import LikeButton from "./LikeButton";
 import CommentSection from "./comments/CommentSection";
 
 // RUTAS.
@@ -19,7 +19,7 @@ import routes from "../../../constants/routes";
  * @param {*} likes
  * @param {*} createdAt
  * @param {*} fetchFeed
- * @estado TERMINADO.
+ * @estado componente terminado.
  */
 function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fetchFeed }) {
     // Indica si la sección de comentarios se debe mostar.
@@ -27,7 +27,7 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Muestra la sección de comentarios.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleShowCommentSection() {
         setIsCommentSectionShowing(true);
@@ -35,7 +35,7 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Oculta la sección de comentarios.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleHideCommentSection() {
         setIsCommentSectionShowing(false);
@@ -46,7 +46,7 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Redirige a la page de un post de un usuario ajeno.
-     * @estado TERMINADO.
+     * @estado función terminada.
      */
     function handleGoToOtherUserPostPage() {
         navigate(routes.OTHER_USER_POST_ROUTE.replace(":id", id));
@@ -67,7 +67,7 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
             <p className="post-card__quantity-likes">{likes.length} Likes</p>
 
             {/* Botón para dar like al post. */}
-            <GiveLikeButton
+            <LikeButton
                 postID={id}
                 likes={likes}
                 fetchFeed={fetchFeed}
