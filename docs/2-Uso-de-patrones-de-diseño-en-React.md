@@ -1,10 +1,10 @@
-# Uso de patrones de diseño en React
+# Uso de patrones de diseño en React :scroll:
 
 Nuestra aplicación utiliza varios patrones de diseño en React, los cuales son:
 
 ## Atomic Design
 
-Uno de los patrones de diseño importantes que utilizamos en esta aplicación fue Atomic Design. La idea principal de este patrón es organizar los componentes de una interfaz de usuario en una jerarquía que va desde elementos básicos (átomos) hasta interfaces completas (páginas), aplicando conceptos de la química para definir su estructura.
+Uno de los patrones de diseño más importantes que utilizamos. La idea principal de este patrón es organizar los componentes de una interfaz de usuario en una jerarquía que va desde elementos básicos (átomos) hasta interfaces completas (páginas), aplicando conceptos de la química para definir su estructura.
 
 La jerarquía del Atomic Design es:
 
@@ -20,7 +20,9 @@ La jerarquía del Atomic Design es:
 
 En el código fuente de la aplicación se observa que aplicamos Atomic Design al crear los templates e ir a los más profundo hasta la creación de los átomos.
 
-#### ¿Por qué usamos Atomic Design?
+Aclaración: al decir páginas o pages nos referimos a los templates.
+
+### ¿Por qué usamos Atomic Design?
 
 - Modularidad: Nos facilitó la creación de componentes reutilizables.
 
@@ -30,35 +32,36 @@ En el código fuente de la aplicación se observa que aplicamos Atomic Design al
 
 - Consistencia: Fomentó la coherencia visual y de comportamiento en toda la aplicación.
 
-## Composición de Componentes (Component Composition)
+## Composición de componentes
 
-La composición permite combinar componentes simples para crear otros más complejos.
+La composición permite combinar componentes simples para crear otros más complejos, lo cual permite separar las responsabilidades.
 
-Ejemplo de uso en el código: todo el código básicamente.
+Ejemplo de uso en el código: en todo el código se usa.
 
-##  Patrón de Contenedor y Presentación (Container and Presentational Components)
+##  Patrón de contenedor y presentación
 
 Este patrón separa los componentes en:
 
-- Contenedores (Containers): Manejan la lógica y el estado.
+- Contenedores: Manejan la lógica y el estado.
 
-- Presentacionales (Presentational): Se enfocan en la UI y reciben datos a través de props.
+- Presentacionales: Se enfocan en la UI y reciben datos a través de props.
 
 Ejemplo de caso de uso en el código: [PostCardContainer](../src/components/shared/posts/PostCardContainer.jsx) y [PostCard](../src/components/shared/posts/PostCard.jsx).
 
-## Patrón de Contexto (Context Pattern)
+## Patrón de contexto
 
 El Context API permite compartir datos globales entre componentes sin necesidad de pasar props manualmente.
 
 Ejemplo de caso de uso en el código: [AuthContextProvider](../src/context-providers/AuthContextProvider.jsx).
 
-## Patrón de Estado Elevado (Lifting State Up)
+## Patrón de estado elevado
 
-Consiste en mover el estado al componente padre más cercano para que pueda ser compartido entre componentes hermanos.
+Consiste en mover el estado al componente padre más cercano para que pueda ser compartido entre componentes hermanos, lo cual permite sincronizar el estado entre hermanos.
 
 Ejemplo de caso de uso en el código: [MyProfilePage](../src/pages/MyProfilePage.jsx) al pasar parte de un estado a sus dos hijos (ProfileCard e ImagesContainer).
 
-## Componentes Controlados
+## Componentes controlados
+
 Un componente controlado es aquel cuyo estado es gestionado completamente por React. Esto significa que el valor del elemento del formulario (como un input o textarea) se guarda en el estado del componente en lugar de ser gestionado por el DOM directamente.
 
 Ejemplo de caso de uso en el código: en todos los componentes de formulario básicamente.

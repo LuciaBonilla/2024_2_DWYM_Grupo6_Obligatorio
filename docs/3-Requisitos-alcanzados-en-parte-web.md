@@ -1,7 +1,5 @@
 # Requisitos alcanzados en parte web
 
-Requisitos:
-
 1. Autenticación y Autorización :white_check_mark:
 
 - Utilizar JWT para la autenticación de usuarios.
