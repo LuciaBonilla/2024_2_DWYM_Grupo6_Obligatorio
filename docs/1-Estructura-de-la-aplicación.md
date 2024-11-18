@@ -10,6 +10,8 @@ La estructura de la aplicación implica explicar la navegación, el wireframe y 
 
 - Las rutas, su descripción y su flujo de navegación se muestran en este [diagrama](diagrams/routes.png). :pencil2:
 
+- A pesar de que `/posts/:id` y `/myposts/:id` parecen rutas inútiles, ya que renderizan lo mismo, se hizo la distinción pensando en el futuro si se agregaba la opción de eliminar un post propio.
+
 - Todas las rutas protegidas sólo son accesibles si el usuario se autenticó, en caso contrario, intentar acceder a ellas siempre redirigirá a `/login`. Esto garantiza la seguridad de la aplicación.
 
 - Si el usuario está autenticado y va a una ruta no protegida, entonces se quitará la sesión y el usuario deberá acceder de nuevo para acceder a las rutas protegidas. Esto es una decisión arbitraria que creemos que garantiza coherencia en la experiencia de usuario.
