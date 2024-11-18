@@ -1,10 +1,10 @@
-# Uso de patrones de diseño en React :scroll:
+# Uso de Patrones de Diseño en React :scroll:
 
 Nuestra aplicación utiliza varios patrones de diseño en React, los cuales son:
 
 ## Atomic Design
 
-Uno de los patrones de diseño más importantes que utilizamos. La idea principal de este patrón es organizar los componentes de una interfaz de usuario en una jerarquía que va desde elementos básicos (átomos) hasta interfaces completas (páginas), aplicando conceptos de la química para definir su estructura.
+Este es uno de los patrones de diseño más importantes que utilizamos. La idea principal de este patrón es organizar los componentes de una interfaz de usuario en una jerarquía que va desde elementos básicos (átomos) hasta interfaces completas (páginas), aplicando conceptos de la química para definir su estructura.
 
 La jerarquía del Atomic Design es:
 

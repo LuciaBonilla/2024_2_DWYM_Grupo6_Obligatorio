@@ -1,4 +1,4 @@
-# Instrucciones para ejecutar la aplicación
+# Instrucciones para Ejecutar la Aplicación Web
 
 1. Encender el backend.
 
@@ -12,4 +12,4 @@
 
 2. Encender la aplicación.
 
-Sobre el directorio raíz ejecutar `npm install` (para instalar las dependencias), ejecutar `npm run dev` e ir a la ruta marcada en consola.
+Sobre el directorio raíz ejecutar `npm install`, ejecutar `npm run dev` e ir a la ruta marcada en consola.
