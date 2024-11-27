@@ -1,7 +1,7 @@
 @import "../../colors.css";
 @import "../../animations.css";
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 768px) {
     html {
         font-family: Segoe, Segoe UI, Optima, Arial, sans-serif;
         background-color: var(--background1-color);
@@ -165,5 +165,10 @@
         font-weight: bold;
         text-align: center;
         background-color: var(--background1-lighter-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100px;
+        width: 100%; 
     }
 }

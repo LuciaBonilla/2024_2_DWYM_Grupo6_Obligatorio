@@ -166,5 +166,10 @@
         font-weight: bold;
         text-align: center;
         background-color: var(--background1-lighter-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100px;
+        width: 100%; 
     }
 }
