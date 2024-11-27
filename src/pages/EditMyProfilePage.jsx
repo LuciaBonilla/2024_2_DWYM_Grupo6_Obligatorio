@@ -11,10 +11,14 @@ import BackendCaller from "../auxiliar-classes/BackendCaller";
 import MyProfileCard from "../components/EditMyProfilePage/MyProfileCard";
 import AttributeToEditMenu from "../components/EditMyProfilePage/AttributeToEditMenu";
 import EditMyProfileForm from "../components/EditMyProfilePage/EditMyProfileForm";
+import GoToPageButton from "../components/shared/others/GoToPageButton";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
+
+// RUTAS.
+import routes from "../constants/routes";
 
 /**
  * Page de editar perfil.
@@ -103,6 +107,12 @@ function EditMyProfilePage() {
                             attributeToEdit={attributeToEdit}
                             fetchMyUser={fetchMyUser}
                         />}
+
+                    <GoToPageButton
+                        route={routes.MY_PROFILE_ROUTE}
+                        textContent="VOLVER"
+                        buttonClass="edit-my-profile__back-button"
+                    />
                 </>
             ) : (
                 <p className="loading-message">CARGANDO...</p>

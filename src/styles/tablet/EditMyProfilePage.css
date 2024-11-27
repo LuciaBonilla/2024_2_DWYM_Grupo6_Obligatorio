@@ -17,7 +17,7 @@
     .edit-my-profile-page__title {
         align-self: center;
         text-align: center;
-        margin-top: 25vh;
+        margin-top: 20vh;
         margin-bottom: 30px;
         text-shadow: 2px 2px 4px var(--shadow-color);
         color: var(--primary-color);
@@ -77,6 +77,25 @@
 
     .edit-my-profile-menu__option-button:hover {
         background-color: var(--primary-darker-color);
+        color: var(--white-friendly-darker-color);
+    }
+
+    .edit-my-profile__back-button {
+        width: 250px;
+        height: 50px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .edit-my-profile__back-button:hover {
+        background-color: var(--secondary-darker-color);
         color: var(--white-friendly-darker-color);
     }
 

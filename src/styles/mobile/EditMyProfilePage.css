@@ -77,6 +77,26 @@
         color: var(--white-friendly-darker-color);
     }
 
+    .edit-my-profile__back-button {
+        width: 250px;
+        height: 50px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
+        font-size: 16px;
+        align-self: center;
+        margin-top: 20px;
+    }
+
+    .edit-my-profile__back-button:hover {
+        background-color: var(--secondary-darker-color);
+        color: var(--white-friendly-darker-color);
+    }
+
     .edit-my-profile-form {
         animation: popup 0.7s;
 
