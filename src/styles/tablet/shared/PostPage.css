@@ -1,5 +1,5 @@
-@import "../../colors.css";
-@import "../../animations.css";
+@import "@/styles/colors.css";
+@import "@/styles/animations.css";
 
 @media only screen and (min-width: 425px) and (max-width: 769px) {
     html {
@@ -15,7 +15,7 @@
 
         /* Imagen de fondo con repetición y tamaño pequeño */
         background: linear-gradient(rgba(230, 135, 67, 0.833), rgba(230, 135, 67, 0.853)),
-            url("../../../assets/logo-unicolor.png");
+            url("@/assets/logo-unicolor.png");
         background-repeat: repeat;
         background-size: 10%;
         /* Ajusta el tamaño de la imagen para crear espacio */
@@ -49,12 +49,6 @@
         flex-direction: column;
         padding: 0 10px;
         row-gap: 10px;
-    }
-
-    .loading-message {
-        color: var(--text1-color);
-        font-weight: bold;
-        text-align: center;
     }
 
     .post-card-container__no-posts-message {

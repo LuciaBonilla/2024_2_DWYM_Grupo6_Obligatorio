@@ -2,30 +2,33 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // COMPONENTES.
-import FileInput from "../shared/inputs/FileInput";
-import TextAreaInput from "../shared/inputs/TextAreaInput";
+import FileInput from "@/components/shared/inputs/FileInput";
+import TextAreaInput from "@/components/shared/inputs/TextAreaInput";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // RUTAS.
-import routes from "../../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Formulario para subir post.
- * @param {*} handleShowUnsuccessfulUploadModal
- * @param {*} setUnsuccessfulUploadModalMessage
- * @estado componente terminado.
+ * @param {*} handleShowUnsuccessfulUploadModal - Función para manejar la visualización de un modal en caso de error al subir.
+ * @param {*} setUnsuccessfulUploadModalMessage - Función para establecer el mensaje del modal en caso de error.
+ * @estado Componente terminado.
  */
-function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUploadModalMessage }) {
-    // Atributos para crear un post.
+export default function CreatePostForm({
+    handleShowUnsuccessfulUploadModal,
+    setUnsuccessfulUploadModalMessage
+}) {
+    // Estado para crear un post.
     const [image, setImage] = useState();
     const [caption, setCaption] = useState("");
     const { token } = useAuthContext();
@@ -34,9 +37,8 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
     const navigate = useNavigate();
 
     /**
-     * Cancela subir un post.
-     * @param {*} event 
-     * @estado función terminada.
+     * Maneja cancelar subir un post.
+     * @param {*} event
      */
     function handleCancelUpload(event) {
         // Evita el submit.
@@ -46,9 +48,8 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
     }
 
     /**
-     * Sube un post.
-     * @param event 
-     * @estado función terminada.
+     * Maneja subir un post.
+     * @param {*} event
      */
     async function handleUploadPost(event) {
         // Evita el submit.
@@ -60,9 +61,9 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
         } else {
             const response = await BackendCaller.uploadPost(token, image, caption);
 
-            if (response.statusCode === 201) { // Created
+            if (response.statusCode === 201) { // Created.
                 navigate(routes.MY_PROFILE_ROUTE);
-            } else {
+            } else { // Error.
                 setUnsuccessfulUploadModalMessage(response.data.message);
                 handleShowUnsuccessfulUploadModal();
             }
@@ -71,6 +72,7 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
 
     return (
         <form className="create-post-form">
+            {/* Imagen. */}
             <FileInput
                 labelClass="create-post-form__input-container create-post-form__input-container--image"
                 labelContent="IMAGEN"
@@ -80,6 +82,7 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
                 accept="image/*"
                 icon={<FontAwesomeIcon className="create-post-form__input-icon" icon={faImage} />}
             />
+            {/* Descripción. */}
             <TextAreaInput
                 labelClass="create-post-form__input-container create-post-form__input-container--caption"
                 labelContent="DESCRIPCIÓN"
@@ -89,10 +92,9 @@ function CreatePostForm({ handleShowUnsuccessfulUploadModal, setUnsuccessfulUplo
                 value={caption}
                 icon={<FontAwesomeIcon className="create-post-form__input-icon" icon={faPenToSquare} />}
             />
+            {/* Botones de acción. */}
             <button className="create-post-form__upload-button" onClick={(event) => handleUploadPost(event)}>SUBIR</button>
             <button className="create-post-form__cancel-button" onClick={(event) => handleCancelUpload(event)}>CANCELAR</button>
         </form>
     );
 }
-
-export default CreatePostForm;

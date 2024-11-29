@@ -7,21 +7,24 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import NormalInput from "../shared/inputs/NormalInput";
+import NormalInput from "@/components/shared/inputs/NormalInput";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // RUTAS.
-import routes from "../../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Formulario para el inicio de sesión.
- * @param {*} handleShowUnsuccessfulLoginModal
- * @param {*} setUnsuccessfulLoginMessage
+ * @param {*} handleShowUnsuccessfulLoginModal - Función para mostrar el modal de inicio de sesión no exitoso.
+ * @param {*} setUnsuccessfulLoginMessage - Función para setear el mensaje de inicio de sesión no exitoso.
  * @estado componente terminado.
  */
-function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessage }) {
+export default function LoginForm({
+    handleShowUnsuccessfulLoginModal,
+    setUnsuccessfulLoginMessage
+}) {
     // Para cambiar de ruta.
     const navigate = useNavigate();
 
@@ -35,7 +38,6 @@ function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessa
     /**
      * Maneja el inicio de sesión de un usuario.
      * @param {*} event 
-     * @estado función terminada.
      */
     async function handleLogin(event) {
         // Para evitar el submit.
@@ -60,6 +62,7 @@ function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessa
 
     return (
         <form className="login-form">
+            {/* Email. */}
             <NormalInput
                 labelClass="login-form__input-container login-form__input-container--email"
                 labelContent="EMAIL"
@@ -70,6 +73,7 @@ function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessa
                 value={email}
                 icon={<FontAwesomeIcon className="login-form__input-icon" icon={faEnvelope} />}
             />
+            {/* Contraseña. */}
             <NormalInput
                 labelClass="login-form__input-container login-form__input-container--password"
                 labelContent="CONTRASEÑA"
@@ -84,5 +88,3 @@ function LoginForm({ handleShowUnsuccessfulLoginModal, setUnsuccessfulLoginMessa
         </form>
     );
 }
-
-export default LoginForm;

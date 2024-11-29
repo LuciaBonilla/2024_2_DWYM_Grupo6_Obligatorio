@@ -2,29 +2,29 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import MyProfileCard from "../components/EditMyProfilePage/MyProfileCard";
-import AttributeToEditMenu from "../components/EditMyProfilePage/AttributeToEditMenu";
-import EditMyProfileForm from "../components/EditMyProfilePage/EditMyProfileForm";
-import GoToPageButton from "../components/shared/others/GoToPageButton";
+import MyProfileCard from "@/components/EditMyProfilePage/MyProfileCard";
+import AttributeToEditMenu from "@/components/EditMyProfilePage/AttributeToEditMenu";
+import EditMyProfileForm from "@/components/EditMyProfilePage/EditMyProfileForm";
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPen } from "@fortawesome/free-solid-svg-icons";
 
 // RUTAS.
-import routes from "../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Page de editar perfil.
  * @estado componente terminado.
  */
-function EditMyProfilePage() {
+export default function EditMyProfilePage() {
     // Indica si el formulario de editar perfil se debe mostrar.
     const [isShowingEditMyProfileForm, setIsShowingEditMyProfileForm] = useState(false);
 
@@ -34,7 +34,6 @@ function EditMyProfilePage() {
     /**
      * Muestra el formulario de editar perfil.
      * @param {*} attributeToEdit Atributo del perfil a editar.
-     * @estado función terminada.
      */
     function handleShowEditMyProfileForm(attributeToEdit) {
         setAttributeToEdit(attributeToEdit);
@@ -43,7 +42,6 @@ function EditMyProfilePage() {
 
     /**
      * Oculta el formulario de editar perfil.
-     * @estado función terminada.
      */
     function handleHideEditMyProfileForm() {
         setAttributeToEdit();
@@ -58,7 +56,6 @@ function EditMyProfilePage() {
 
     /**
      * Obtiene la información de usuario.
-     * @estado función terminada.
      */
     async function fetchMyUser() {
         const response = await BackendCaller.getUserProfile(userID, token);
@@ -115,10 +112,15 @@ function EditMyProfilePage() {
                     />
                 </>
             ) : (
-                <p className="loading-message">CARGANDO...</p>
+                <div className="loading-container">
+                    <p className="loading-message">CARGANDO...</p>
+                    <GoToPageButton
+                        route="/login"
+                        textContent="VOLVER A HOME"
+                        buttonClass="back-button"
+                    />
+                </div>
             )}
         </main>
     );
 }
-
-export default EditMyProfilePage;

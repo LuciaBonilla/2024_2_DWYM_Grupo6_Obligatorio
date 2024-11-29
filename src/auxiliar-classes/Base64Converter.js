@@ -1,10 +1,10 @@
-import defaultPhoto from "../assets/default_profile.png";
+import defaultPhoto from "@/assets/default_profile.png";
 
 /**
  * Retorna imágenes en base64 y checkea si un string es una imagen en base64.
  * @estado clase terminada.
  */
-export class Base64Converter {
+export default class Base64Converter {
     /**
      * Verifica que la imagen en base 64 es correcta y la retorna.
      * Ej. imagen de punto rojo en base64: "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
@@ -32,7 +32,7 @@ export class Base64Converter {
 
     /**
      * Convierte una imagen a base 64.
-     * Se asegura que no supere los 95kB.
+     * Se asegura que no supere los 95kB porque la HTTP request no deja enviar un dato más grande.
      * @param {*} file 
      * @param {*} maxWidth 
      * @param {*} maxHeight 
@@ -111,5 +111,3 @@ export class Base64Converter {
         });
     }
 }
-
-export default Base64Converter;

@@ -1,27 +1,27 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // RUTAS.
-import routes from "./constants/routes";
+import routes from "@/constants/routes";
 
-// RUTA PROTEGIDA.
-import ProtectedRoute from "./routes-protection/ProtectedRoute";
+// RUTA PROTEGIDA@
+import ProtectedRoute from "@/routes-protection/ProtectedRoute";
 
 // 9 PAGES.
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import MyFeedPage from "./pages/MyFeedPage";
-import MyProfilePage from "./pages/MyProfilePage";
-import CreatePostPage from "./pages/CreatePostPage";
-import EditMyProfilePage from "./pages/EditMyProfilePage";
-import MyPostPage from "./pages/MyPostPage";
-import OtherUserProfilePage from "./pages/OtherUserProfilePage";
-import OtherUserPostPage from "./pages/OtherUserPostPage";
+import LoginPage from "@/pages/LoginPage";
+import RegisterPage from "@/pages/RegisterPage";
+import MyFeedPage from "@/pages/MyFeedPage";
+import MyProfilePage from "@/pages/MyProfilePage";
+import CreatePostPage from "@/pages/CreatePostPage";
+import EditMyProfilePage from "@/pages/EditMyProfilePage";
+import MyPostPage from "@/pages/MyPostPage";
+import OtherUserProfilePage from "@/pages/OtherUserProfilePage";
+import OtherUserPostPage from "@/pages/OtherUserPostPage";
 
 /**
  * Define las rutas públicas y las rutas privadas.
  * @estado TERMINADO.
  */
-function AppRouter() {
+export default function AppRouter() {
   return (
     <>
       <Routes>
@@ -105,5 +105,3 @@ function AppRouter() {
     </>
   )
 }
-
-export default AppRouter;

@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import NormalInput from "../shared/inputs/NormalInput";
+import NormalInput from "@/components/shared/inputs/NormalInput";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,13 +12,18 @@ import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Formulario para el registro.
- * @param {*} handleShowUnsuccessfulRegisterModal
- * @param {*} setUnsuccessfulRegisterModalMessage
- * @param {*} handleShowSuccessfulRegisterModal
- * @param {*} setSuccessfulRegisterModalMessage
- * @estado componente terminado.
+ * @param {*} handleShowUnsuccessfulRegisterModal - Función para mostrar el modal de registro fallido.
+ * @param {*} setUnsuccessfulRegisterModalMessage - Función para establecer el mensaje del modal de registro fallido.
+ * @param {*} handleShowSuccessfulRegisterModal - Función para mostrar el modal de registro exitoso.
+ * @param {*} setSuccessfulRegisterModalMessage - Función para establecer el mensaje del modal de registro exitoso.
+ * @estado Componente terminado.
  */
-function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegisterModalMessage, handleShowSuccessfulRegisterModal, setSuccessfulRegisterModalMessage }) {
+export default function RegisterForm({
+    handleShowUnsuccessfulRegisterModal,
+    setUnsuccessfulRegisterModalMessage,
+    handleShowSuccessfulRegisterModal,
+    setSuccessfulRegisterModalMessage
+}) {
     // Valores de los inputs.
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -27,22 +32,21 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
 
     /**
      * Maneja el registro de un usuario.
-     * @param {*} event 
-     * @estado función terminada.
+     * @param {*} event
      */
     async function handleRegister(event) {
         // Para evitar el submit.
         event.preventDefault();
 
-        if (username === "" || email === "" || password === "" || repeatPassword === "") {
+        if (username === "" || email === "" || password === "" || repeatPassword === "") { // Campos vacíos.
             // Renderiza el mensaje de registro no exitoso.
             setUnsuccessfulRegisterModalMessage("Hay campos vacíos");
             handleShowUnsuccessfulRegisterModal();
-        } else if (password !== repeatPassword) {
+        } else if (password !== repeatPassword) { // Contraseñas no coinciden.
             // Renderiza el mensaje de registro no exitoso.
             setUnsuccessfulRegisterModalMessage("Las contraseñas no coinciden");
             handleShowUnsuccessfulRegisterModal();
-        } else if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+        } else if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) { // El email no tiene el formato correcto.
             // Renderiza el mensaje de registro no exitoso.
             setUnsuccessfulRegisterModalMessage("No es un email");
             handleShowUnsuccessfulRegisterModal();
@@ -50,11 +54,11 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
             // Resultado del register.
             const result = await BackendCaller.register(username, email, password);
 
-            if (result.statusCode !== 201) { // Created.
+            if (result.statusCode !== 201) { // No Created.
                 // Renderiza el mensaje de registro no exitoso.
                 setUnsuccessfulRegisterModalMessage(result.data.message);
                 handleShowUnsuccessfulRegisterModal();
-            } else {
+            } else { // Created.
                 // Renderiza el mensaje de registro exitoso.
                 setSuccessfulRegisterModalMessage(`¡Bienvenido, ${username}!`);
                 handleShowSuccessfulRegisterModal();
@@ -64,6 +68,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
 
     return (
         <form className="register-form">
+            {/* Email. */}
             <NormalInput
                 labelClass="register-form__input-container register-form__input-container--email"
                 labelContent="EMAIL"
@@ -74,6 +79,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
                 value={email}
                 icon={<FontAwesomeIcon className="register-form__input-icon" icon={faEnvelope} />}
             />
+            {/* Nombre de usuario. */}
             <NormalInput
                 labelClass="register-form__input-container register-form__input-container--username"
                 labelContent="NOMBRE DE USUARIO"
@@ -84,6 +90,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
                 value={username}
                 icon={<FontAwesomeIcon className="register-form__input-icon" icon={faUser} />}
             />
+            {/* Contraseña. */}
             <NormalInput
                 labelClass="register-form__input-container register-form__input-container--password"
                 labelContent="CONTRASEÑA"
@@ -94,6 +101,7 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
                 value={password}
                 icon={<FontAwesomeIcon className="register-form__input-icon" icon={faLock} />}
             />
+            {/* Repetir contraseña. */}
             <NormalInput
                 labelClass="register-form__input-container register-form__input-container--repeat-password"
                 labelContent="REPETIR CONTRASEÑA"
@@ -108,5 +116,3 @@ function RegisterForm({ handleShowUnsuccessfulRegisterModal, setUnsuccessfulRegi
         </form>
     );
 }
-
-export default RegisterForm;

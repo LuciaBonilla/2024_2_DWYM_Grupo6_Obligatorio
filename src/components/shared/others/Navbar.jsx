@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseChimney, faSquarePlus, faUserLarge } from "@fortawesome/free-solid-svg-icons";
 
 // RUTAS.
-import routes from "../../../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Navbar.
  * @estado componente terminado.
  */
-function Navbar() {
+export default function Navbar() {
     const navigate = useNavigate();
 
     function handleGoToMyFeedPage() {
@@ -46,5 +46,3 @@ function Navbar() {
         </nav>
     );
 }
-
-export default Navbar;

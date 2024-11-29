@@ -1,5 +1,5 @@
-@import "../colors.css";
-@import "../animations.css";
+@import "@/styles/colors.css";
+@import "@/styles/animations.css";
 
 @media only screen and (min-width: 769px) {
     html {

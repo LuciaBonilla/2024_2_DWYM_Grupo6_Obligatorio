@@ -6,18 +6,23 @@ import { faHeart as GivedLike } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as NoneLike } from "@fortawesome/free-regular-svg-icons";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 /**
  * Botón para dar o quitar like a un post.
- * @param handleGiveLike
- * @param likes
- * @estado componente terminado.
+ * @param {*} postID - Identificador del post al que se le va a dar o quitar like.
+ * @param {*} likes - Array con las IDs de usuarios que dieron like al post.
+ * @param {*} fetchFeed - Función para actualizar la lista de posts después de dar un like.
+ * @estado Componente terminado.
  */
-function LikeButton({ postID, likes, fetchFeed }) {
+export default function LikeButton({
+    postID,
+    likes,
+    fetchFeed
+}) {
     const { userID, token } = useAuthContext();
 
     // Indica si se dio like al post.
@@ -28,7 +33,6 @@ function LikeButton({ postID, likes, fetchFeed }) {
 
     /**
      * Da un like al post.
-     * @estado función terminada.
      */
     async function handleGiveLike() {
         const response = await BackendCaller.giveLike(postID, token);
@@ -41,7 +45,6 @@ function LikeButton({ postID, likes, fetchFeed }) {
 
     /**
      * Quita el like a un post.
-     * @estado función terminada.
      */
     async function handleDeleteLike() {
         const response = await BackendCaller.deleteLike(postID, token);
@@ -66,5 +69,3 @@ function LikeButton({ postID, likes, fetchFeed }) {
         </button>
     );
 }
-
-export default LikeButton;

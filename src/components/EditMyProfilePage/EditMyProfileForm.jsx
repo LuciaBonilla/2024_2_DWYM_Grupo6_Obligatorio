@@ -1,30 +1,35 @@
 import { useState } from "react";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../auxiliar-classes/BackendCaller";
-import Base64Converter from "../../auxiliar-classes/Base64Converter";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
+import Base64Converter from "@/auxiliar-classes/Base64Converter";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // ÍCONOS.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCircleXmark, faImagePortrait } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import NormalInput from "../shared/inputs/NormalInput";
-import FileInput from "../shared/inputs/FileInput";
-import OperationResultModal from "../shared/others/OperationResultModal";
+import NormalInput from "@/components/shared/inputs/NormalInput";
+import FileInput from "@/components/shared/inputs/FileInput";
+import OperationResultModal from "@/components/shared/others/OperationResultModal";
 
 /**
  * Formulario para editar perfil.
- * @param {*} userData
- * @param {*} handleHideEditMyProfileForm
- * @param {*} attributeToEdit
- * @param {*} fetchMyUser
- * @estado componente terminado.
+ * @param {*} userData - Datos actuales del usuario.
+ * @param {*} handleHideEditMyProfileForm - Función para ocultar el formulario de edición.
+ * @param {*} attributeToEdit - Atributo específico del perfil que será editado.
+ * @param {*} fetchMyUser - Función para actualizar los datos del usuario después de la edición.
+ * @estado Componente terminado.
  */
-function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToEdit, fetchMyUser }) {
+export default function EditMyProfileForm({
+    userData,
+    handleHideEditMyProfileForm,
+    attributeToEdit,
+    fetchMyUser
+}) {
     // Indica si el modal de edición no exitosa se debe mostrar.
     const [isShowingUnsuccessfulEditModal, setIsShowingUnsuccessfulEditModal] = useState(false);
 
@@ -33,7 +38,6 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Muestra el modal de edición no exitosa.
-     * @estado función terminada.
      */
     function handleShowUnsuccessfulEditModal() {
         setIsShowingUnsuccessfulEditModal(true);
@@ -41,7 +45,6 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Oculta el modal de edición no exitosa.
-     * @estado función terminada.
      */
     function handleHideUnsuccessfulEditModal() {
         setUnsuccessfulEditMessage();
@@ -57,13 +60,12 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
     /**
      * Edita el perfil del usuario autenticado (edita el atributo elegido).
      * @param {*} event
-     * @estado función terminada. 
      */
     async function handleEditMyProfile(event) {
         // Para evitar submit.
         event.preventDefault();
 
-        if (inputContent === "") {
+        if (inputContent === "") { // Input vacío.
             handleShowUnsuccessfulEditModal();
             setUnsuccessfulEditMessage("Está vacío");
         } else {
@@ -77,10 +79,10 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
                     break;
             }
 
-            if (response.statusCode === 200) {
+            if (response.statusCode === 200) { // OK.
                 fetchMyUser();
                 handleHideEditMyProfileForm();
-            } else {
+            } else { // Error.
                 handleShowUnsuccessfulEditModal();
                 setUnsuccessfulEditMessage(response.data.message);
             }
@@ -89,8 +91,7 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
 
     /**
      * Cancela la edición del perfil.
-     * @param {*} event 
-     * @estado función terminada.
+     * @param {*} event
      */
     function handleCancelEditMyProfile(event) {
         event.preventDefault();
@@ -126,9 +127,11 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
                 /> : null
             }
 
+            {/* Botones de acción. */}
             <button className="edit-my-profile-form__cancel-button" onClick={(event) => handleCancelEditMyProfile(event)}>CANCELAR</button>
             <button className="edit-my-profile-form__ok-button" onClick={(event) => handleEditMyProfile(event)}>ACEPTAR</button>
-
+            
+            {/* Modal de operación no exitosa. */}
             {isShowingUnsuccessfulEditModal &&
                 <OperationResultModal
                     modalClass="unsuccessful-edit-modal"
@@ -144,5 +147,3 @@ function EditMyProfileForm({ userData, handleHideEditMyProfileForm, attributeToE
         </form>
     )
 }
-
-export default EditMyProfileForm;

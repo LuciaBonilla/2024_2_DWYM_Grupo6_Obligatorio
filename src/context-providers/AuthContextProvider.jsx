@@ -1,19 +1,22 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../auxiliar-classes/BackendCaller";
-import LocalStorageManager from "../auxiliar-classes/LocalStorageManager";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
+import LocalStorageManager from "@/auxiliar-classes/LocalStorageManager";
+
+// COMPONENTES.
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
 
 // Contexto de autenticación.
 const AuthContext = createContext();
 
 /**
  * Provee del contexto de autenticación.
- * @param {*} children
- * @estado componente terminado.
+ * @param {*} children - Hijos a pasarle el contexto.
+ * @estado Componente terminado.
  */
 export function AuthContextProvider({ children }) {
-    // Atributos del contexto de autenticación.
+    // Estado del contexto de autenticación.
     const [userID, setUserID] = useState();
     const [token, setToken] = useState();
     const [isAuthorizated, setIsAuthorizated] = useState(false);
@@ -44,7 +47,6 @@ export function AuthContextProvider({ children }) {
      * @param {*} email 
      * @param {*} password 
      * @returns Resultado de la operación.
-     * @estado función terminada.
      */
     async function login(email, password) {
         // Intenta iniciar sesión por backend.
@@ -72,7 +74,6 @@ export function AuthContextProvider({ children }) {
 
     /**
      * Cierra sesión.
-     * @estado función terminada.
      */
     async function logout() {
         setUserID();
@@ -85,7 +86,14 @@ export function AuthContextProvider({ children }) {
             {
                 loading ? (
                     // Mientras se cargan los datos del LocalStorage, evita renderizar los hijos.
-                    <div className="loading-message">Cargando...</div>
+                    <div className="loading-container">
+                        <p className="loading-message">CARGANDO...</p>
+                        <GoToPageButton
+                            route="/login"
+                            textContent="VOLVER A HOME"
+                            buttonClass="back-button"
+                        />
+                    </div>
                 ) : (
                     <AuthContext.Provider value={{ userID, token, isAuthorizated, login, logout }}>
                         {children}

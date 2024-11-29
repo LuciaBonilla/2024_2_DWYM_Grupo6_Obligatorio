@@ -2,21 +2,22 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 // COMPONENTES.
-import Navbar from "../components/shared/others/Navbar";
-import ProfileCard from "../components/shared/profiles/ProfileCard";
-import ImagesContainer from "../components/shared/profiles/ImagesContainer";
+import Navbar from "@/components/shared/others/Navbar";
+import ProfileCard from "@/components/shared/profiles/ProfileCard";
+import ImagesContainer from "@/components/shared/profiles/ImagesContainer";
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 /**
  * Other User Profile Page.
  * @estado componente terminado.
  */
-function OtherUserProfilePage() {
+export default function OtherUserProfilePage() {
     // Id del otro usuario cuyo perfil muestro.
     const { id } = useParams();
 
@@ -53,11 +54,16 @@ function OtherUserProfilePage() {
                     />
                 </>
             ) : (
-                <p>CARGANDO..</p>
+                <div className="loading-container">
+                    <p className="loading-message">CARGANDO...</p>
+                    <GoToPageButton
+                        route="/login"
+                        textContent="VOLVER A HOME"
+                        buttonClass="back-button"
+                    />
+                </div>
             )}
             <Navbar />
         </main>
     );
 }
-
-export default OtherUserProfilePage;

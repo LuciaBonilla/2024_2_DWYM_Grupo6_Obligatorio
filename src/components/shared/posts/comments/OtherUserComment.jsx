@@ -1,12 +1,12 @@
 // COMPONENTES.
-import ShortProfileCard from "../../profiles/ShortProfileCard";
+import ShortProfileCard from "@/components/shared/profiles/ShortProfileCard";
 
 /**
- * El comentario de otro usuario.
- * @param {*} data 
- * @estado componente terminado.
+ * Componente para mostrar el comentario de otro usuario en un post.
+ * @param {*} data - Información del comentario (texto, autor, etc.).
+ * @estado Componente terminado.
  */
-function OtherUserComment({ data }) {
+export default function OtherUserComment({ data }) {
     return (
         <section className="other-user-comment">
             <ShortProfileCard user={data.user} />
@@ -21,5 +21,3 @@ function OtherUserComment({ data }) {
         </section>
     );
 }
-
-export default OtherUserComment;

@@ -2,7 +2,7 @@
  * Permite guardar y cargar el contexto de autenticación en el LocalStorage.
  * @estado clase terminada.
  */
-class LocalStorageManager {
+export default class LocalStorageManager {
     /**
      * Guarda el contexto de autenticación en el LocalStorage.
      * @param {*} userID 
@@ -29,5 +29,3 @@ class LocalStorageManager {
         }
     }
 }
-
-export default LocalStorageManager;

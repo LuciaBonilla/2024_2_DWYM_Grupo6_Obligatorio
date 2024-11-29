@@ -1,17 +1,16 @@
 /**
- * Input normal (no de selection y no de file).
- * @param {*} labelClass 
- * @param {*} labelContent 
- * @param {*} inputName 
- * @param {*} inputClass 
- * @param {*} inputType 
- * @param {*} placeholder 
- * @param {*} setState
- * @param {*} value
- * @param {*} icon
- * @estado componente terminado.
+ * Input normal de texto.
+ * @param {*} labelClass - Clase CSS para estilizar la etiqueta asociada al input.
+ * @param {*} labelContent - Contenido de la etiqueta del input (texto visible).
+ * @param {*} inputName - Nombre único del input (atributo `name`).
+ * @param {*} inputClass - Clase CSS para estilizar el input.
+ * @param {*} placeholder - Texto del placeholder mostrado dentro del input.
+ * @param {*} setState - Función para actualizar el estado con el archivo seleccionado.
+ * @param {*} value - Valor actual del input.
+ * @param {*} icon - Ícono que acompaña al input, si aplica.
+ * @estado Componente terminado.
  */
-function NormalInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {
+export default function NormalInput({ labelClass, labelContent, inputName, inputClass, inputType, placeholder, setState, value, icon }) {
     return (
         <label className={labelClass}>
             {labelContent}
@@ -29,5 +28,3 @@ function NormalInput({ labelClass, labelContent, inputName, inputClass, inputTyp
         </label>
     );
 }
-
-export default NormalInput;

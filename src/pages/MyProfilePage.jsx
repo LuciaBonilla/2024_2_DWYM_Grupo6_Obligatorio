@@ -1,25 +1,25 @@
 import { useState, useEffect } from "react";
 
 // COMPONENTES.
-import ImagesContainer from "../components/shared/profiles/ImagesContainer";
-import GoToPageButton from "../components/shared/others/GoToPageButton";
-import ProfileCard from "../components/shared/profiles/ProfileCard";
-import Navbar from "../components/shared/others/Navbar";
+import ImagesContainer from "@/components/shared/profiles/ImagesContainer";
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
+import ProfileCard from "@/components/shared/profiles/ProfileCard";
+import Navbar from "@/components/shared/others/Navbar";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // RUTAS.
-import routes from "../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Página de mi perfil.
  * @estado componente terminado.
  */
-function MyProfilePage() {
+export default function MyProfilePage() {
     // Perfil y posts.
     const [userInfo, setUserInfo] = useState();
 
@@ -66,11 +66,16 @@ function MyProfilePage() {
                     />
                 </>
             ) : (
-                <p>CARGANDO..</p>
+                <div className="loading-container">
+                    <p className="loading-message">CARGANDO...</p>
+                    <GoToPageButton
+                        route="/login"
+                        textContent="VOLVER A HOME"
+                        buttonClass="back-button"
+                    />
+                </div>
             )}
             <Navbar />
         </main>
     );
 }
-
-export default MyProfilePage;

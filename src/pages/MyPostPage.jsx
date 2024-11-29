@@ -2,23 +2,24 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // BACKEND_URI.
-import BACKEND_URI from "../constants/BACKEND_URI";
+import BACKEND_URI from "@/constants/BACKEND_URI";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import PostCard from "../components/shared/posts/PostCard";
-import Navbar from "../components/shared/others/Navbar";
+import PostCard from "@/components/shared/posts/PostCard";
+import Navbar from "@/components/shared/others/Navbar";
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
 
 /**
  * Página para ver un post específico.
  * @estado componente terminado.
  */
-function MyPostPage() {
+export default function MyPostPage() {
     const [post, setPost] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -27,7 +28,6 @@ function MyPostPage() {
 
     /**
      * Obtiene el post específico por ID.
-     * @estado función terminada.
      */
     async function fetchPost() {
         const response = await BackendCaller.getFeed(token);
@@ -63,21 +63,26 @@ function MyPostPage() {
                             user={post.user}
                             imageSrc={`${BACKEND_URI}/${post.imageUrl.replace("\\", "/")}`}
                             caption={post.caption}
-                            comments={post.comments} 
-                            likes={post.likes} 
+                            comments={post.comments}
+                            likes={post.likes}
                             createdAt={post.createdAt}
-                            fetchFeed={fetchPost} 
+                            fetchFeed={fetchPost}
                         />
                     </article>
                 ) : (
                     <p className="post-card-container__no-posts-message">Post no encontrado</p>
                 )
             ) : (
-                <p className="loading-message">Cargando...</p>
+                <div className="loading-container">
+                    <p className="loading-message">CARGANDO...</p>
+                    <GoToPageButton
+                        route="/login"
+                        textContent="VOLVER A HOME"
+                        buttonClass="back-button"
+                    />
+                </div>
             )}
             <Navbar />
         </main>
     );
 }
-
-export default MyPostPage;

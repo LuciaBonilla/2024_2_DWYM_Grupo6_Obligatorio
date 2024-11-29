@@ -1,25 +1,29 @@
 // CLASES AUXILIARES.
-import BackendCaller from "../../../../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // COMPONENTES.
-import ShortProfileCard from "../../profiles/ShortProfileCard";
+import ShortProfileCard from "@/components/shared/profiles/ShortProfileCard";
 
 /**
- * Mi comentario.
- * @param {*} data
- * @param {*} fetchFeed
- * @estado componente terminado.
+ * Componente para mostrar y gestionar un comentario propio en un post.
+ * @param {*} postID - ID del post al que pertenece el comentario.
+ * @param {*} data - Información del comentario.
+ * @param {*} fetchCommentsData - Función para actualizar los comentarios después de realizar cambios.
+ * @estado Componente terminado.
  */
-function MyComment({ postID, data, fetchCommentsData }) {
+export default function MyComment({
+    postID,
+    data,
+    fetchCommentsData
+}) {
     // Necesario para eliminar comentario.
     const { token } = useAuthContext();
 
     /**
      * Elimina un comentario propio.
-     * @estado función terminada.
      */
     async function handleDeleteComment() {
         const response = await BackendCaller.deleteComment(postID, data._id, token);
@@ -43,5 +47,3 @@ function MyComment({ postID, data, fetchCommentsData }) {
         </section>
     );
 }
-
-export default MyComment;

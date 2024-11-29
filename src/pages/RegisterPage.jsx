@@ -5,21 +5,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus, faPersonCircleXmark, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import RegisterForm from "../components/RegisterPage/RegisterForm";
-import GoToPageButton from "../components/shared/others/GoToPageButton";
-import OperationResultModal from "../components/shared/others/OperationResultModal";
+import RegisterForm from "@/components/RegisterPage/RegisterForm";
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
+import OperationResultModal from "@/components/shared/others/OperationResultModal";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // RUTAS.
-import routes from "../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Página de registro.
  * @estado componente terminado.
  */
-function RegisterPage() {
+export default function RegisterPage() {
     // Indica si el modal de registro no exitoso se debe renderizar.
     const [isUnsuccessfulRegisterModalShowing, setIsUnsuccessfulRegisterModalShowing] = useState(false);
 
@@ -34,7 +34,6 @@ function RegisterPage() {
 
     /**
      * Muestra el modal de registro no exitoso.
-     * @estado función terminada.
      */
     function handleShowUnsuccessfulRegisterModal() {
         setIsUnsuccessfulRegisterModalShowing(true);
@@ -42,7 +41,6 @@ function RegisterPage() {
 
     /**
      * Oculta el modal de registro no exitoso.
-     * @estado función terminada.
      */
     function handleHideUnsuccessfulRegisterModal() {
         setIsUnsuccessfulRegisterModalShowing(false);
@@ -50,7 +48,6 @@ function RegisterPage() {
 
     /**
      * Muestra el modal de registro exitoso.
-     * @estado función terminada.
      */
     function handleShowSuccessfulRegisterModal() {
         setIsSuccessfulRegisterModalShowing(true);
@@ -58,7 +55,6 @@ function RegisterPage() {
 
     /**
      * Oculta el modal de registro exitoso.
-     * @estado función terminada.
      */
     function handleHideSuccessfulRegisterModal() {
         setIsSuccessfulRegisterModalShowing(false);
@@ -122,5 +118,3 @@ function RegisterPage() {
         </main>
     )
 }
-
-export default RegisterPage;

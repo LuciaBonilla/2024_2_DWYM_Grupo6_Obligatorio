@@ -1,23 +1,23 @@
 import { useNavigate } from "react-router-dom";
 
 // IMAGES.
-import defaultPhoto from "../../../assets/default_profile.png";
+import defaultPhoto from "@/assets/default_profile.png";
 
 // RUTAS.
-import routes from "../../../constants/routes";
+import routes from "@/constants/routes";
 
 // CLASES AUXILIARES.
-import Base64Converter from "../../../auxiliar-classes/Base64Converter";
+import Base64Converter from "@/auxiliar-classes/Base64Converter";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 /**
  * Tarjeta corta identificadora de usuario.
- * @param user
- * @estado componente terminadi.
+ * @param user - Info de usuario.
+ * @estado Componente terminado.
  */
-function ShortProfileCard({ user }) {
+export default function ShortProfileCard({ user }) {
     const { userID } = useAuthContext();
 
     // Para cambiar de ruta.
@@ -25,7 +25,6 @@ function ShortProfileCard({ user }) {
 
     /**
      * Redirige a un perfil de usuario. En algunos casos puede ser al perfil propio de un usuario.
-     * @estado función terminada.
      */
     function handleGoToUserProfile() {
         if (user._id !== userID) {
@@ -42,5 +41,3 @@ function ShortProfileCard({ user }) {
         </div>
     );
 }
-
-export default ShortProfileCard;

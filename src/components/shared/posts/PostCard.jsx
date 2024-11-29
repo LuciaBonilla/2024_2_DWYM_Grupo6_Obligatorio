@@ -2,32 +2,40 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 // COMPONENTES.
-import ShortProfileCard from "../profiles/ShortProfileCard";
-import LikeButton from "./LikeButton";
-import CommentSection from "./comments/CommentSection";
+import ShortProfileCard from "@/components/shared/profiles/ShortProfileCard";
+import LikeButton from "@/components/shared/posts/LikeButton";
+import CommentSection from "@/components/shared/posts/comments/CommentSection";
 
 // RUTAS.
-import routes from "../../../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Tarjeta de post.
- * @param {*} id
- * @param {*} user
- * @param {*} imageSrc
- * @param {*} caption 
- * @param {*} commentsIDs
- * @param {*} likes
- * @param {*} createdAt
- * @param {*} fetchFeed
- * @estado componente terminado.
+ * @param {*} id - Identificador único del post.
+ * @param {*} user - Información del usuario que creó el post.
+ * @param {*} imageSrc - Fuente de la imagen del post.
+ * @param {*} caption - Descripción del post.
+ * @param {*} comments - Comentarios asociados al post.
+ * @param {*} likes - Array de IDs de los usuarios que dieron like al post.
+ * @param {*} createdAt - Fecha de creación del post.
+ * @param {*} fetchFeed - Función para actualizar la lista de posts.
+ * @estado Componente terminado.
  */
-function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fetchFeed }) {
+export default function PostCard({
+    id,
+    user,
+    imageSrc,
+    caption,
+    comments,
+    likes,
+    createdAt,
+    fetchFeed
+}) {
     // Indica si la sección de comentarios se debe mostar.
     const [isCommentSectionShowing, setIsCommentSectionShowing] = useState(false);
 
     /**
      * Muestra la sección de comentarios.
-     * @estado función terminada.
      */
     function handleShowCommentSection() {
         setIsCommentSectionShowing(true);
@@ -35,7 +43,6 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Oculta la sección de comentarios.
-     * @estado función terminada.
      */
     function handleHideCommentSection() {
         setIsCommentSectionShowing(false);
@@ -46,7 +53,6 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
     /**
      * Redirige a la page de un post de un usuario ajeno.
-     * @estado función terminada.
      */
     function handleGoToOtherUserPostPage() {
         navigate(routes.OTHER_USER_POST_ROUTE.replace(":id", id));
@@ -78,11 +84,11 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
 
             {/* Fecha de publicación. */}
             <p className="post-card__created-at">Publicado el: {new Date(createdAt).toLocaleDateString(document.documentElement.lang, {
-                day: '2-digit',
-                month: 'long',  // mes completo, o 'short' para abreviado
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
+                day: "2-digit",
+                month: "long",  // mes completo, o "short" para abreviado
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
             })}
             </p>
 
@@ -100,5 +106,3 @@ function PostCard({ id, user, imageSrc, caption, comments, likes, createdAt, fet
         </article>
     );
 }
-
-export default PostCard;

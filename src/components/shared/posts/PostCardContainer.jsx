@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 
 // BACKEND_URI.
-import BACKEND_URI from "../../../constants/BACKEND_URI";
+import BACKEND_URI from "@/constants/BACKEND_URI";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // CLASES AUXILIARES.
-import BackendCaller from "../../../auxiliar-classes/BackendCaller";
+import BackendCaller from "@/auxiliar-classes/BackendCaller";
 
 // COMPONENTES.
-import PostCard from "./PostCard";
+import PostCard from "@/components/shared/posts/PostCard";
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
 
 /**
  * Contenedor de los posts.
  * @estado componente terminado.
  */
-function PostCardContainer() {
+export default function PostCardContainer() {
     // Posts a mostrar.
     const [posts, setPosts] = useState([]);
 
@@ -28,8 +29,7 @@ function PostCardContainer() {
 
     /**
      * Dados los posts obtenidos, quita los posts propios del usuario y los restantes los ordena cronológicamente.
-     * @param posts
-     * @estado función terminada.
+     * @param {*} posts
      */
     function getMyFeed(posts) {
         // Filtra los posts para eliminar los del usuario actual.
@@ -41,7 +41,6 @@ function PostCardContainer() {
 
     /**
      * Obtiene el feed del usuario.
-     * @estado función terminada.
      */
     async function fetchFeed() {
         const response = await BackendCaller.getFeed(token);
@@ -80,11 +79,15 @@ function PostCardContainer() {
                         )}
                     </article>
                 ) : (
-                    <p className="loading-message">CARGANDO...</p>
+                    <div className="loading-container">
+                        <p className="loading-message">CARGANDO...</p>
+                        <GoToPageButton
+                            route="/login"
+                            textContent="VOLVER A HOME"
+                            buttonClass="back-button"
+                        />
+                    </div>
                 )}
         </>
-
     );
 }
-
-export default PostCardContainer;

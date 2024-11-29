@@ -2,21 +2,24 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // BACKEND URI.
-import BACKEND_URI from "../../../constants/BACKEND_URI";
+import BACKEND_URI from "@/constants/BACKEND_URI";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 // RUTAS.
-import routes from "../../../constants/routes";
+import routes from "@/constants/routes";
 
 /**
  * Contenedor de imágenes subidas por un usuario que llevan a los posts.
- * @param {*} userAuthorPostsID id del usuario autor de los posts.
- * @param {*} posts
- * @estado componente terminado.
+ * @param {*} userAuthorPostsID - Identificador del usuario autor de los posts.
+ * @param {*} posts - Lista de posts con imágenes.
+ * @estado Componente terminado.
  */
-function ImagesContainer({ userAuthorPostsID, posts }) {
+export default function ImagesContainer({
+    userAuthorPostsID,
+    posts
+}) {
     const [postsSorted, setPostsSorted] = useState(sortPosts(posts));
 
     // Para cambiar de ruta.
@@ -27,8 +30,7 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
 
     /**
      * Ordena los posts en orden cronológico.
-     * @param posts
-     * @estado función terminada.
+     * @param {*} posts
      */
     function sortPosts(posts) {
         // Ordena los posts por fecha de forma descendente (más recientes primero).
@@ -37,7 +39,6 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
 
     /**
      * Redirige al post de otro usuario al clickear sobre la imagen.
-     * @estado función terminada.
      */
     function handleGoToOtherUserPostPage(postID) {
         navigate(routes.OTHER_USER_POST_ROUTE.replace(':id', postID));
@@ -45,7 +46,6 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
 
     /**
      * Redirige al post propio del usuario al clickear sobre la imagen.
-     * @estado función terminada.
      */
     function handleGoToMyPostPage(postID) {
         navigate(routes.MY_POSTS_ROUTE.replace(":id", postID));
@@ -84,7 +84,4 @@ function ImagesContainer({ userAuthorPostsID, posts }) {
             )}
         </section>
     );
-
 }
-
-export default ImagesContainer;

@@ -1,5 +1,5 @@
-@import "../../colors.css";
-@import "../../animations.css";
+@import "@/styles/colors.css";
+@import "@/styles/animations.css";
 
 @media only screen and (max-width: 425px) {
     html {
@@ -41,13 +41,6 @@
         flex-direction: column;
         padding: 0 10px;
         row-gap: 10px;
-    }
-
-    .loading-message {
-        background-color: ar(--background1-lighter-color);
-        color: var(--text1-color);
-        font-weight: bold;
-        text-align: center;
     }
 
     .post-card-container__no-posts-message {

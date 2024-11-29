@@ -1,0 +1,38 @@
+@import "@/styles/colors.css";
+@import "@/styles/animations.css";
+
+@media only screen and (min-width: 769px) {
+    .loading-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .loading-message {
+        font-size: 16px;
+        margin-top: 200;
+        color: var(--text1-color);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .back-button {
+        width: 250px;
+        height: 50px;
+
+        border-radius: 10px;
+
+        font-weight: bold;
+
+        background-color: var(--secondary-color);
+        color: var(--white-friendly-color);
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .back-button:hover {
+        background-color: var(--secondary-darker-color);
+        color: var(--white-friendly-darker-color);
+    }
+}

@@ -1,17 +1,21 @@
 // IMAGES.
-import defaultPhoto from "../../../assets/default_profile.png";
+import defaultPhoto from "@/assets/default_profile.png";
 
 // CLASES AUXILIARES.
-import Base64Converter from "../../../auxiliar-classes/Base64Converter";
+import Base64Converter from "@/auxiliar-classes/Base64Converter";
 
 /**
  * Tarjeta detallada de perfil.
- * @param {*} user
- * @param {*} postsQuantity 
- * @param {*} children
- * @estado componente terminado.
+ * @param {*} user - Información del usuario para mostrar en la tarjeta.
+ * @param {*} postsQuantity - Cantidad de posts del usuario.
+ * @param {*} children - Contenidos adicionales o elementos anidados dentro de la tarjeta.
+ * @estado Componente terminado.
  */
-function ProfileCard({ user, postsQuantity, children }) {
+export default function ProfileCard({
+    user,
+    postsQuantity,
+    children
+}) {
     return (
         <article className="profile-card">
             <section className="profile-card__info">
@@ -29,10 +33,7 @@ function ProfileCard({ user, postsQuantity, children }) {
                     })}
                 </p>
             </section>
-
             {children}
         </article>
     )
 }
-
-export default ProfileCard;

@@ -5,23 +5,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 // COMPONENTES.
-import OtherUserComment from "./OtherUserComment";
-import MyComment from "./MyComment";
-import CommentSectionForm from "./CommentSectionForm";
+import OtherUserComment from "@/components/shared/posts/comments/OtherUserComment";
+import MyComment from "@/components/shared/posts/comments/MyComment";
+import CommentSectionForm from "@/components/shared/posts/comments/CommentSectionForm";
+import GoToPageButton from "@/components/shared/others/GoToPageButton";
 
 // PROVEEDOR DE CONTEXTO.
-import { useAuthContext } from "../../../../context-providers/AuthContextProvider";
+import { useAuthContext } from "@/context-providers/AuthContextProvider";
 
 /**
- * Sección de comentarios.
- * Los comentarios propios van arriba del todo y los de otros usuarios abajo.
- * @param {*} postID 
- * @param {*} commentsIDs
- * @param {*} handleHideCommentSection
- * @param {*} fetchFeed
- * @estado componente terminado.
+ * Sección de comentarios que muestra comentarios de un post.
+ * Los comentarios propios se muestran en la parte superior y los de otros usuarios en la parte inferior.
+ * @param {*} postID - ID del post al que se asocian los comentarios.
+ * @param {*} comments - Lista de comentarios para mostrar.
+ * @param {*} handleHideCommentSection - Función para ocultar la sección de comentarios.
+ * @param {*} fetchFeed - Función para actualizar el feed de comentarios.
+ * @estado Componente terminado.
  */
-function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed }) {
+export default function CommentSection({
+    postID,
+    comments,
+    handleHideCommentSection,
+    fetchFeed
+}) {
     // Para controlar carga.
     const [loading, setLoading] = useState(true);
 
@@ -35,7 +41,6 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
     /**
      * Ordena los comentarios de forma cronológica y los retorna.
      * @param {*} comments
-     * @estado función terminada.
      */
     function sortCommentsByDate(comments) {
         // Ordena los comentarios por fecha de forma descendente (más recientes primero).
@@ -51,7 +56,6 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
      * 
      * @param {*} newComment
      * @param {*} commentToDeleteID
-     * @estado función terminada.
      */
     async function fetchCommentsData(newComment = null, commentToDeleteID = null) {
         // Actualiza el feed de los posts.
@@ -82,7 +86,16 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
     }, []);
 
     if (loading) {
-        return (<p className="loading-message">CARGANDO...</p>);
+        return (
+            <div className="loading-container">
+                <p className="loading-message">CARGANDO...</p>
+                <GoToPageButton
+                    route="/login"
+                    textContent="VOLVER A HOME"
+                    buttonClass="back-button"
+                />
+            </div>
+        );
     }
 
     return (
@@ -133,5 +146,3 @@ function CommentSection({ postID, comments, handleHideCommentSection, fetchFeed 
         </section>
     );
 }
-
-export default CommentSection;

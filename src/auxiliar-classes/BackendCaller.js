@@ -1,10 +1,10 @@
-import BACKEND_URI from "../constants/BACKEND_URI";
+import BACKEND_URI from "@/constants/BACKEND_URI";
 
 /**
  * Realiza llamadas a la API y retorna los resultados desde el backend de fake_instagram.
  * @estado clase terminada.
  */
-export class BackendCaller {
+export default class BackendCaller {
     /**
      * Identificador de la API.
      */
@@ -444,5 +444,3 @@ export class BackendCaller {
         }
     }
 }
-
-export default BackendCaller;

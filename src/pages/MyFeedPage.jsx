@@ -1,12 +1,12 @@
 // COMPONENTES.
-import Navbar from "../components/shared/others/Navbar";
-import PostCardContainer from "../components/shared/posts/PostCardContainer";
+import Navbar from "@/components/shared/others/Navbar";
+import PostCardContainer from "@/components/shared/posts/PostCardContainer";
 
 /**
  * My Feed Page.
  * @estado componente terminado.
  */
-function MyFeedPage() {
+export default function MyFeedPage() {
     return (
         <main className="post-page">
             <h1 className="post-page__social-network-title">PhantyNet</h1>
@@ -15,5 +15,3 @@ function MyFeedPage() {
         </main>
     );
 }
-
-export default MyFeedPage;

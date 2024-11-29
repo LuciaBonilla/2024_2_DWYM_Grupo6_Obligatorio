@@ -1,13 +1,17 @@
 import { useNavigate } from "react-router-dom"
 
 /**
- * Al apretar redirige a "route".
- * @param {*} route
- * @param {*} textContent
- * @param {*} buttonClass
- * @estado componente terminado.
+ * Botón que redirige a una página especificada al hacer clic.
+ * @param {*} route - La ruta a la que se debe redirigir al hacer clic.
+ * @param {*} textContent - El texto que se muestra en el botón.
+ * @param {*} buttonClass - Clase CSS para estilizar el botón.
+ * @estado Componente terminado.
  */
-function GoToPageButton({ route, textContent, buttonClass }) {
+export default function GoToPageButton({
+    route,
+    textContent,
+    buttonClass
+}) {
     const navigate = useNavigate();
 
     function handleGoToPage() {
@@ -18,5 +22,3 @@ function GoToPageButton({ route, textContent, buttonClass }) {
         <button className={buttonClass} onClick={() => handleGoToPage()}>{textContent}</button>
     )
 }
-
-export default GoToPageButton;
