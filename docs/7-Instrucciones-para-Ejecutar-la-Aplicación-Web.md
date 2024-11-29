@@ -10,6 +10,20 @@
 
 - Para activar el backend es necesario, a nivel de la carpeta `api-node`, crear la carpeta `uploads` (para luego poder subir imágenes en la aplicación), ejecutar `npm install` (para instalar las dependencias necesarias) y, finalmente, ejecutar `npm run start`.
 
+---
+
+## En Web:
+
 2. Encender la aplicación.
 
-Sobre el directorio raíz ejecutar `npm install`, ejecutar `npm run dev` e ir a la ruta marcada en consola.
+- Sobre el directorio raíz ejecutar `npm install`, ejecutar `npm run dev` e ir a la ruta marcada en consola.
+
+---
+
+## En Mobile:
+
+2. Encender la aplicación.
+
+- Ir a [BACKEND_URI](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/blob/main/PhantyNet/constants/BACKEND_URI.js), donde está definida la URI de la API de backend, y cambiar la dirección IP a la IPv4 del adaptador WiFi de la computadora que corre el proyecto, pero mantener el mismo puerto que está marcado. Esto es necesario porque el backend no corre en el móvil, sino en la computadora.
+
+- Sobre el directorio [PhantyNet](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/tree/main/PhantyNet) ejecutar `npm install`, ejecutar `npx expo dev`, y utilizar un emulador o el móvil.
