@@ -20,9 +20,9 @@ La jerarquía del Atomic Design es:
 
 - Páginas/pantallas: son instancias concretas de las plantillas con datos reales. Representan la interfaz final que ve el usuario y muestran cómo interactúan los componentes con datos específicos.
 
-En el código fuente de la aplicación se observa que aplicamos Atomic Design al crear los templates e ir a los más profundo hasta la creación de los átomos.
+En el código fuente de la aplicación, aplicamos Atomic Design desde la creación de templates hasta los niveles más básicos, como los átomos.
 
-Aclaración: para facilitar la compresión, no distinguimos plantillas de páginas/pantallas.
+Aclaración: Para facilitar la comprensión, no distinguimos plantillas de páginas/pantallas.
 
 ### ¿Por Qué Usamos Atomic Design?
 
@@ -40,7 +40,7 @@ Aclaración: para facilitar la compresión, no distinguimos plantillas de págin
 
 La composición permite combinar componentes simples para crear otros más complejos, lo cual permite separar las responsabilidades.
 
-Ejemplo de uso en el código: en todo el código se usa.
+Ejemplo de uso en el código: Este patrón se utiliza ampliamente en todo el código de la aplicación.
 
 ---
 
@@ -50,7 +50,7 @@ Este patrón separa los componentes en:
 
 - Contenedores: Manejan la lógica y el estado.
 
-- Presentacionales: Se enfocan en la UI y reciben datos a través de props.
+- Presentacionales: Se enfocan en la UI (interfaz de usuario) y reciben datos a través de props.
 
 Ejemplo de caso de uso en el código:
 
@@ -66,7 +66,7 @@ El Context API permite compartir datos globales entre componentes sin necesidad 
 Ejemplo de caso de uso en el código:
 
 - En web: [AuthContextProvider](../src/context-providers/AuthContextProvider.jsx) (este da el contexto de autenticación del usuario, es decir, token e ID de usuario a toda la aplicación).
-- En mobile: [AuthContextProvider](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/blob/main/PhantyNet/context-providers/AuthContextProvider.tsx) (también aplica lo mismo que la verisón web) y [WindowDimensionsProvider](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/blob/main/PhantyNet/context-providers/WindowDimensionsProvider.tsx) (este da las dimensiones de la ventana a toda la aplicación en tiempo real para que los estilos puedan ser dinámicos y depender de las dimensiones reales).
+- En mobile: [AuthContextProvider](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/blob/main/PhantyNet/context-providers/AuthContextProvider.tsx) (aplica el mismo concepto que en la versión web) y [WindowDimensionsProvider](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/blob/main/PhantyNet/context-providers/WindowDimensionsProvider.tsx) (este da las dimensiones de la ventana a toda la aplicación en tiempo real para que los estilos puedan ser dinámicos y depender de las dimensiones reales).
 
 ---
 
@@ -78,6 +78,8 @@ Ejemplo de caso de uso en el código:
 
 - En web: [MyProfilePage](../src/pages/MyProfilePage.jsx) al pasar parte de un estado a sus dos hijos (ProfileCard e ImagesContainer).
 - En mobile: [MyProfileScreen](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/blob/main/PhantyNet/app/modules/(tabs)/MyProfileScreen.jsx) que hace lo mismo que la versión web.
+
+---
 
 ## Componentes Controlados
 

@@ -8,4 +8,4 @@
 
 Ej. con la familia y tamaño de determinada fuente, en CSS sólo basto definirlo en el padre, pero en React Native tuvimos que escribir la declaración a cada hijo.
 
-- Por el poco tiempo que nos quedó, no pudimos crear el sistema de notificaciones y amigos, así como también el sistema de comentarios en mobile, pero eso fueron requisitos no obligatorios de la tarea.
+- Por el poco tiempo que nos quedó, no pudimos crear el sistema de notificaciones y amigos, así como también el sistema de comentarios en mobile, pero esos fueron requisitos no obligatorios de la tarea.
