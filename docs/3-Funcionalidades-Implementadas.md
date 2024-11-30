@@ -90,7 +90,7 @@
 
 ---
 
-# Requisitos No Alcanzados Propuestos en Ninguna Versión
+# Requisitos Propuestos No Alcanzados en Ninguna Versión
 
 - [] Implementación de un sistema de notificaciones cuando alguien siga o interactúa con las publicaciones de un usuario.
 

@@ -27,3 +27,5 @@
 - Ir a [BACKEND_URI](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/blob/main/PhantyNet/constants/BACKEND_URI.js), donde está definida la URI de la API de backend, y cambiar la dirección IP a la IPv4 del adaptador WiFi de la computadora que corre el proyecto, pero mantener el mismo puerto que está marcado. Esto es necesario porque el backend no corre en el móvil, sino en la computadora.
 
 - Sobre el directorio [PhantyNet](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/tree/main/PhantyNet) ejecutar `npm install`, ejecutar `npx expo start`, y utilizar un emulador o el móvil.
+
+---

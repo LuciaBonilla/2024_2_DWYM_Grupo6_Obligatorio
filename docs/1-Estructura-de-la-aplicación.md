@@ -88,7 +88,7 @@ El código fuente de la aplicación mobile se encuentra en la carpeta [PhantyNet
 
 - [constants](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/tree/main/PhantyNet/constants): Almacena archivos con variables constantes, como rutas, la URI de la API del backend y los colores utilizados, centralizando estos valores para facilitar su uso en diferentes archivos.
 
-- [context-providers](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/tree/main/PhantyNet/context-providers): Incluye componentes que proporcionan un contexto común a sus hijos. Actualmente, solo contiene el proveedor del contexto de autenticación del usuario (id de usuario, token, etc.).
+- [context-providers](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/tree/main/PhantyNet/context-providers): Incluye componentes que proporcionan un contexto común a sus hijos. Actualmente, solo contiene el proveedor del contexto de autenticación del usuario (id de usuario, token, etc.) y el proveedor del contexto de dimensiones (ancho y alto de la ventana).
 
 - [app/modules](https://github.com/LuciaBonilla/2024_2_DWYM_Grupo6_Obligatorio_ReactNative/tree/main/PhantyNet/app/modules): Contiene los archivos correspondientes a las nueve pantallas de la aplicación y su estructura define el flujo de la navegación. :newspaper:
 
